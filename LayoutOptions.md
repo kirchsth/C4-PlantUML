@@ -113,7 +113,7 @@ SHOW_LEGEND()
 
 ```csharp
 @startuml Layout With Whitespace Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
 
 Container_Ext(A, "Ext. Container A", "techn")
 Person(B, "Person B")
@@ -132,7 +132,7 @@ SHOW_LEGEND()
 @enduml
 ```
 
-![Layout With Whitespace Sample](https://www.plantuml.com/plantuml/png/NSwnReCm40RWtK_XCZbI0akdJWbWjGDj8r35Y1mu5IJR8FkiDc_VYw9QWOcxZz-_xkXHEGn6yqfTvu2ydN3axJWX-4Nrm1jb5WtiQRAz3WFm4N7nBrdcr4_wJTbm2HvSFri4Ysa_cspHojuQ3nu7FLsoulbmlj7NUvKPvH4SKLVG2pLPSEb2MSRYtibV5ASzJ-YRyiZyb90XzADDTkmCpizMv4JtaUUapPNQZIX8xoClI6E5AEb7t7WP2rSXkGh9nn2hGNSr7PVla-314_rBiP9Iv1kfwQfoczaAPMGKrhnzjbqbN-L7ANRi27O8Hly1 "Layout With Whitespace Sample")
+![Layout With Whitespace Sample](https://www.plantuml.com/plantuml/png/NSz1JuCm5C3nUpz5vTGb4owUF6r0euUf2yHm9BMyM68ff7sDsxVt9OjLE55-_FDuFGHK7kDa-KbTvuYy6z7mpem8OL4QUAkcnGAx6vssSG1k49VmM1HUVUUVrCQF6C3hsI4upFKy5L-ZroQWAQg7-xDL3jzVJWLS4Dm00s5VKQn61pvVwCUCfVTUNb0SzpoZPyuJysD6Xg2DotRi33xCJfH4joClITjhG9X4HNexyeeqZH0rVVWRMAU1gqYk8la_OWtOlg7bodr65mv4lrAjf1RbHXhQgjusMw569c7jyrlNd-IJVAt5ZXt03N6oFm00 "Layout With Whitespace Sample")
 
 Therefore calculated legends can be defined relative to an element too that existing whitespace can be reused like below.
 
@@ -143,7 +143,7 @@ Therefore calculated legends can be defined relative to an element too that exis
 
 ```csharp
 @startuml Compact Legend Layout Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
 
 Container_Ext(A, "Ext. Container A", "techn")
 Person(B, "Person B")
@@ -163,7 +163,7 @@ SHOW_LEGEND_RIGHT(E)
 @enduml
 ```
 
-![Compact Legend Layout Sample](https://www.plantuml.com/plantuml/png/NT51Ru8m50VmUp_56vTXed3PQIS56bt2DeDRTYGLdzAajAHznFdjzumPcvneV_pvvz4k0obFGsSWTrsl6e8IJsWFKAgB6mXsgkiDYWTj6pCS45gYFZodgLVdvAIf7VP3GDyuIsWfQLoNzaRPQ-4YqC7eVPe_BRPN-dmjqqu5GizKv_o5qXPzqdDMY75Vos-ALtE8-9d0oB2As0YRraOpiKKVd8qpfjiICjRTXTkxE6UzBI5d7IlYWb-CEoZ6mhkGl0l9_o5HeQah7YwRH_pNWUbNyZifucmY5KzLJ3DJuOmSHJo2kTt4KHiJuDngmi0tX40Eg4Nm-jGIk2CqV-EAtURzgoxbMhuLTVMotdp4SYQMNCEd_0C0 "Compact Legend Layout Sample")
+![Compact Legend Layout Sample](https://www.plantuml.com/plantuml/png/NP7FJiCm38VlUGhJ2vqqsWidJbl_Q4CgC7KWZbN8l2KYJQh4rRQtnz94OJl5_lBf5ojUH9A1njv2wVj1Ae863-XsqCYp7mcsiXyiYZlZb1rt29feY4zv7kGnEnZIuzSOCIZl21rbolVvjmbAHz9v-VYmiTBHnqkJuuau57SCkv9bQHo6RE1tXPZwhZvHkfn3mcS64uPbmenGQPVCn0P3z2uj65rAA9Xkpv6mJqkcbn9AfbD4Ml75r44r1Lv9zPLK_vT4YxPhURXYdemH8wDVKbwHAYrkICjJLRVEBM6ddeYu1tjPmjvO6-6e3M7avI2G1z88mHmqWT-3-XjNRDTldrrJh-hNgckVL-ltj9w91SVmBuiV "Compact Legend Layout Sample")
 
 ## LAYOUT_AS_SKETCH()
 
