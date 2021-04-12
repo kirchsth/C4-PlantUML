@@ -107,6 +107,64 @@ SHOW_LEGEND()
 
 ![SHOW_LEGEND Sample](https://www.plantuml.com/plantuml/png/JKzDR-8m4BtdLyoo1uB49cArfpsHfWWEGACcb6DaacbZrH-MFL6AglxtJbGAzUN9ypxqtZAGyDHh5VsIfb5zYz0HkV0_JRqOaXT9NN_g0_h66a93IMDr-YfzqmNgqlpVdq89GuVTDiKtvbji-LZdB1RIe4_S61qLw8CriMYrD7EOP2FAG5wGzPDPL9u3eQxlR6zQuSznivZ3j1JQAPpEu3q2VjV8UC1JBPpZd2EU87DEoKQGj6R2f_pt7BAoIFQhYYqUuM-oWDrJFdAPKdO8CAu9G1PuYXCiqRqYwHH2DKWYz41Iev860tVxkBIBwOlad8kCoUWHrVUgMwr3O2VZfggAabMZwChUOjP8WRyumhEt-gSbAZSFntgxMg_sz_4iMg9fUwq-0G00 "SHOW_LEGEND Sample")
 
+## SHOW_LEGEND_UP(alias, ?hideStereotype), SHOW_LEGEND_DOWN(...), SHOW_LEGEND_LEFT(...) or SHOW_LEGEND_RIGHT(...) 
+
+`LAYOUT_WITH_LEGEND()` and SHOW_LEGEND(?hideStereotype)` adds the legend at the bottom right of the picture like below and additional whitespace is created.
+
+```csharp
+@startuml Layout With Whitespace Sample
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Container_Ext(A, "Ext. Container A", "techn")
+Person(B, "Person B")
+System(C, "System C")
+Container(D, "Container D", "techn")
+Container(E, "Container E", "techn")
+
+Rel_R(A,B,"uses")
+Rel_R(A,C,"uses")
+Rel_D(B,C,"uses")
+Rel_R(C,D,"uses")
+Rel_D(B,D,"uses")
+Rel_D(C,E,"uses")
+
+SHOW_LEGEND()
+@enduml
+```
+
+![Layout With Whitespace Sample](https://www.plantuml.com/plantuml/png/NSwnReCm40RWtK_XCZbI0akdJWbWjGDj8r35Y1mu5IJR8FkiDc_VYw9QWOcxZz-_xkXHEGn6yqfTvu2ydN3axJWX-4Nrm1jb5WtiQRAz3WFm4N7nBrdcr4_wJTbm2HvSFri4Ysa_cspHojuQ3nu7FLsoulbmlj7NUvKPvH4SKLVG2pLPSEb2MSRYtibV5ASzJ-YRyiZyb90XzADDTkmCpizMv4JtaUUapPNQZIX8xoClI6E5AEb7t7WP2rSXkGh9nn2hGNSr7PVla-314_rBiP9Iv1kfwQfoczaAPMGKrhnzjbqbN-L7ANRi27O8Hly1 "Layout With Whitespace Sample")
+
+Therefore calculated legends can be defined relative to an element too that existing whitespace can be reused like below.
+
+- **SHOW_LEGEND_UP(alias, ?hideStereotype)**: shows the legend above the alias element  
+- **SHOW_LEGEND_DOWN(alias, ?hideStereotype)**: shows the legend below the alias element  
+- **SHOW_LEGEND_LEFT(alias, ?hideStereotype)**: shows the legend left of the alias element
+- **SHOW_LEGEND_RIGHT(alias, ?hideStereotype)**: shows the legend right of the alias element
+
+```csharp
+@startuml Compact Legend Layout Sample
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Container_Ext(A, "Ext. Container A", "techn")
+Person(B, "Person B")
+System(C, "System C")
+Container(D, "Container D", "techn")
+Container(E, "Container E", "techn")
+
+Rel_R(A,B,"uses")
+Rel_R(A,C,"uses")
+Rel_D(B,C,"uses")
+Rel_R(C,D,"uses")
+Rel_D(B,D,"uses")
+Rel_D(C,E,"uses")
+
+' legend fills whitespace to the right of container E
+SHOW_LEGEND_RIGHT(E)
+@enduml
+```
+
+![Compact Legend Layout Sample](https://www.plantuml.com/plantuml/png/NT51Ru8m50VmUp_56vTXed3PQIS56bt2DeDRTYGLdzAajAHznFdjzumPcvneV_pvvz4k0obFGsSWTrsl6e8IJsWFKAgB6mXsgkiDYWTj6pCS45gYFZodgLVdvAIf7VP3GDyuIsWfQLoNzaRPQ-4YqC7eVPe_BRPN-dmjqqu5GizKv_o5qXPzqdDMY75Vos-ALtE8-9d0oB2As0YRraOpiKKVd8qpfjiICjRTXTkxE6UzBI5d7IlYWb-CEoZ6mhkGl0l9_o5HeQah7YwRH_pNWUbNyZifucmY5KzLJ3DJuOmSHJo2kTt4KHiJuDngmi0tX40Eg4Nm-jGIk2CqV-EAtURzgoxbMhuLTVMotdp4SYQMNCEd_0C0 "Compact Legend Layout Sample")
+
 ## LAYOUT_AS_SKETCH()
 
 C4-PlantUML can be especially helpful during up-front design sessions.
