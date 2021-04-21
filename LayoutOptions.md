@@ -107,7 +107,7 @@ SHOW_LEGEND()
 
 ![SHOW_LEGEND Sample](https://www.plantuml.com/plantuml/png/JKzDR-8m4BtdLyoo1uB49cArfpsHfWWEGACcb6DaacbZrH-MFL6AglxtJbGAzUN9ypxqtZAGyDHh5VsIfb5zYz0HkV0_JRqOaXT9NN_g0_h66a93IMDr-YfzqmNgqlpVdq89GuVTDiKtvbji-LZdB1RIe4_S61qLw8CriMYrD7EOP2FAG5wGzPDPL9u3eQxlR6zQuSznivZ3j1JQAPpEu3q2VjV8UC1JBPpZd2EU87DEoKQGj6R2f_pt7BAoIFQhYYqUuM-oWDrJFdAPKdO8CAu9G1PuYXCiqRqYwHH2DKWYz41Iev860tVxkBIBwOlad8kCoUWHrVUgMwr3O2VZfggAabMZwChUOjP8WRyumhEt-gSbAZSFntgxMg_sz_4iMg9fUwq-0G00 "SHOW_LEGEND Sample")
 
-## SHOW_FLOATING_LEGEND(?alias, ?hideStereotype)
+## SHOW_FLOATING_LEGEND(?alias, ?hideStereotype) and LEGEND()
 
 `LAYOUT_WITH_LEGEND()` and SHOW_LEGEND(?hideStereotype)` adds the legend at the bottom right of the picture like below and additional whitespace is created.
 
@@ -132,9 +132,10 @@ SHOW_LEGEND()
 
 ![Layout With Whitespace Sample](https://www.plantuml.com/plantuml/png/LT2nJiCm40RWtKzXEhaI90iJKo69O0XGDK8PewjzmX6E4zbdqRuz5ogbpHJxk_zNJjv5Wa1fSBA6yvX8jZrPsTgUC4wWKJOmJ0x5NU-rImQb9PhYKvu7-Cs-EPkEAMBGeoVqbEbno7_we6qacnUF3ti7dhxUwnnFF3Te6Bk2mz1x3Dd4FnPYZo6ENi6zt5oEydcp5KjA7NcmtEJBXg-4sdeEDUT8E2ZDT3dAObKrgsfvMrsugqwaa2VypUGrNTscnG5TTvXtdBVHu5nadR5KB9enHRmQWraPbnbmjia0_RDetZxRhgvUguzIRSKElU47-GC0 "Layout With Whitespace Sample")
 
-Therefore a floating legends can be added via SHOW_FLOATING_LEGEND() and positioned with Lay_Distance() that existing whitespace can be reused like below.
+Therefore a floating legend can be added via SHOW_FLOATING_LEGEND(), positioned with Lay_Distance() and existing whitespace is reused like below.
 
 - `SHOW_FLOATING_LEGEND(?alias, ?hideStereotype): shows the legend in the drawing area
+- `LEGEND()`: is the default alias of the created floating legend and can be used in Lay_Distance() call
 
 ```csharp
 @startuml Compact Legend Layout Sample
@@ -152,11 +153,11 @@ Rel_D(c, d, "uses")
 Rel_R(d, e, "updates")
 
 SHOW_FLOATING_LEGEND()
-Lay_Distance(legend, e, 1)
+Lay_Distance(LEGEND(), e, 1)
 @enduml
 ```
 
-![Compact Legend Layout Sample](https://www.plantuml.com/plantuml/png/LP7DQiCm48JlUWer9mTQcq9FFIMrtRJW9Y5fwT5if2KsbMGZhMZozbqra9-JPx-PmGEQ1G9FqHfP3dO4HRB1FJej6pWEaUGMx6XGtFLEcQXHTaHZU2uA3x_vlgSkxc90hmP7w2XNWor-Ug-wG5rHFZsi3JZw-cWAFB2lKJDiImv3xz3d8_zNY3NwCBWCxkNa9ELyCXNdLBPZutp9bmcVXAfp7DeU0w7D5AEJbELDLTzKg-lg6RVrWJ9aXx-vlAJhwxJOe6atQMDQey2Om3J1AkrB0sB02sEWRzacZS74HWtqZyNsRVNTlZQh-UVxSj4szQ9ULjbKD71igpuGE8MPISzngZvEnOnrjEOF "Compact Legend Layout Sample")
+![Compact Legend Layout Sample](https://www.plantuml.com/plantuml/png/LT11JuCm50VmUpz5tQaa2Z7nv6aJS9hWjWoDnwQqBuDO2caVSVlsFhR8nedsz_x_qBnbGELnQ2rFkxPN6da11t265-hK3SXBrVOMs5tZj1qCy1gn3yz9ujLlV6Ym7geXWDUTGt0OwwvDVXglwu1raZuzxAno-FLH972akG53A5CAgyQ1ZtlwBsCxyA5pGjtpnUN8Luk8JIbHqM2wyPS5NH5qxIXKdW92ApJHvSZJMTNCgjbjTMAP7r40JUWRysiwlqspFLYv7zzOaMfbRI0TCHCacf3sS3K2CpCg4y1elL5uPbQ-RR_bQx5TVRvlrhB8r_ac4n6ZrSki2QYS1l6lv_9Zn9RW3Atj3m00 "Compact Legend Layout Sample")
 
 ## LAYOUT_AS_SKETCH()
 

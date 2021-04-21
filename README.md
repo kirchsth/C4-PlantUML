@@ -330,7 +330,7 @@ Rel_L(x, s4, "uses")
 (In combination with [SHOW_FLOATING_LEGEND()](LayoutOptions.md#show_floating_legend)) a greater distance between an element and the
 e.g. floating legend could be required that all e.g. corners of the drawing area can be reached.
 
-* `Lay_Distance(from, to, ?distance)`: Sets the distance between `from` and `to` with down alignment. (Lay_Distance(from,to,0) equals Lay_D(from, to))
+* `Lay_Distance(from, to, ?distance)`: Sets the distance between `from` and `to` with down alignment (Lay_Distance(from,to,0) equals Lay_D(from, to)). The default alias of the floating legend is LEGEND().
 
 In following sample the floating legend should be in the left bottom corner of the drawing are.
 (The normal SHOW_LEGEND() call requires no extra Lay_Distance() call and the legend is automatically drawn below the diagram on the right side)
@@ -356,11 +356,11 @@ Rel(spa, api, "Uses")
 Rel_R(api, db, "Reads/Writes")
 
 SHOW_FLOATING_LEGEND()
-Lay_Distance(legend, db, 1)
+Lay_Distance(LEGEND(), db, 1)
 @enduml
 ```
 
-![db below legend, 1 unit distance](https://www.plantuml.com/plantuml/png/hP5DZzem48Rl-HLUr0D82r7LzbAfqY9WTv7ueC2MOpJ40t7hsAbd0ks_xnXI5BMgrCEURBypVjxvU226m7LfaplZSbjhL0LpHH_JDC1vS3HSrFkQCEJUCJeUvBvClvcG5yH5EdhVNrbm_3AVfVX3uXgrYDb8ai4u38CgefCxZGTvgl7aotIqN6p-muFh2dHubrQHBv2-aMZ_81bzge9XfBG4OWofnbECqStbSRdO3dUJpN8-ULMZYmPd95zY_yDjOBUkKd37saBJzD_Xht22VyLA-cupmd32FxwtkqbZxTJCT2LNxxfHkbUTKKqiPOMEt5VeAukA2s3b4BMgWjTrpYJ1DzUUFdKkg4ulkQsgInN8vyrg61bDA_6wBL2LagACOmm7o1iqYvutjjSOY8SwovHRHZTIsmeg8-3XQXhvSIpnV0QdBP82QvLiIHA9bFL7axTnCRlD6k-xUY-_ny2m1y98cfiyUF87LflFimlQMqs_nt2lVD0ObDX9sITlSfJpu4C9RBnhcxMs8fx96cqpx-kiNWX9z2XVXDXMMytMrqul1QuHDAMx2AO8spmlTzdZR3dSJXTFsMpoD5cCkxra1Z-piI46bsFNuX6TlWBUzf87USZkVm40 "db below legend, 1 unit distance")
+![db below legend, 1 unit distance](https://www.plantuml.com/plantuml/png/hL7DZXez4BpFKtZHTm1fmVgKv18fKX2mkqZy4633STJO3UF4Oq_S7aZUFcqOq2XHf1no6azLkyfL_M2SihL6KSHOqNif0vm7HnEBUbyJ1kLTH1S7ofVogmcge5Z8qTl-oeABh_EPnE_CQzGCvYCU1kCm3Agwj5dseF70ls8y-JmTBHURl_28TGKwl95LqcUHlc6sV-29FbN1H2HP0aKCKkCfSNHtULekjiFTPBESJ_wfqGM3Cv8liVykknLsJoN17MiBJUZVwIzmWZzn9NspEM4uuI_NssbaUZirdQxuw5qtGO-YCwef-X93Xyyhz9L54Gk8mY5gKGMlQnM9oV-kcJvqBbATNdPVLPSguCkRrJ1fD57ISLkWA7b461Sn740rqf5nrTXUEM0FSUQMsqOtfROLL8Q5Xwjfqa-rfEyBE6sH15WhU4iyI2IiFnhLbalJRQtnlgltV7iC4VP0c9JcHWLF_X35vjFi8ksjfbiDZy87ZK6m7J_xv8r2_XvyA24QxzfchQsmPxP6s_HzxUgLC5MOu0kGOhNHV7rDUddW6a6Jt2NXH6URb-KkVvejXzlfuZcVJPudYt6tbytWHpus5C4fxDxGgyJ_lUmZEitR_ma0 "db below legend, 1 unit distance")
 
 ## Layout Options
 
