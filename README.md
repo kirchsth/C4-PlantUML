@@ -129,7 +129,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS", $link="https://plantuml.com/l
 > Github does not support `svg` links in README.md.
 > If you click on the image a new window is opened and there you can use the links.
 
-![Click on the image that the links are working](https://www.plantuml.com/plantuml/png/jP9FQzj04CNl-XHRfGS7R8c4dWg6kAQqXwGrjT8UnKexhPRidsLcX6fAltjdhJWXz5H3TT2YDwFtVZpfXbWZZzuLhspetMX03So9tjOrwgdwONaOkv40-nWO0bTzzFM3nNuW7khjczNEwS3tTxSr_9Iv0IDYkvLbRGDWbR9riGEa61RQU1kMgjpaqnAZveZbKhscX9PXNQRZtdMMd0qFw_B4CdCSmrCE5DSLiN6sUy7GkTZLNXC3rhVw44V-dDZ6G9Kt5uCrqCu9xHouYhYY8KulrVbUNXRxWnZvzbqSWz5uMFHNmhxNFZbGy-nSqF9I_IgKN4z5BIReMfsI97o3JcrIShRNcRqKQNknL9lzhlhqlf5N4DHrTQNklcvplW7gSLrkd8iJgVofI75KGf2qRFhHiSt4pMIP0HLR3y8Cz5zQbjf-FnQtu3bH-1-ppw-hABw0E_q_prNT4r3kvsFJxFP_kvyiZ_vv94RPvydWcV03CCaZvECxHl-FhZSGZ4X_0000 "Click on the image that the links are working")
+![Click on the image that the links are working](https://www.plantuml.com/plantuml/svg/jP9FQzj04CNl-XHRfGS7R8c4dWg6kAQqXwGrjT8UnKexhPRidsLcX6fAltjdhJWXz5H3TT2YDwFtVZpfXbWZZzuLhspetMX03So9tjOrwgdwONaOkv40-nWO0bTzzFM3nNuW7khjczNEwS3tTxSr_9Iv0IDYkvLbRGDWbR9riGEa61RQU1kMgjpaqnAZveZbKhscX9PXNQRZtdMMd0qFw_B4CdCSmrCE5DSLiN6sUy7GkTZLNXC3rhVw44V-dDZ6G9Kt5uCrqCu9xHouYhYY8KulrVbUNXRxWnZvzbqSWz5uMFHNmhxNFZbGy-nSqF9I_IgKN4z5BIReMfsI97o3JcrIShRNcRqKQNknL9lzhlhqlf5N4DHrTQNklcvplW7gSLrkd8iJgVofI75KGf2qRFhHiSt4pMIP0HLR3y8Cz5zQbjf-FnQtu3bH-1-ppw-hABw0E_q_prNT4r3kvsFJxFP_kvyiZ_vv94RPvydWcV03CCaZvECxHl-FhZSGZ4X_0000 "Click on the image that the links are working")
 
 Elements and relations can be decorated with tags and explained via a calculated legend, for example:
 
