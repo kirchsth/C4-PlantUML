@@ -1,6 +1,7 @@
 ' convert it with additional command line argument -DRELATIVE_INCLUDE="." to use locally
 !if %variable_exists("RELATIVE_INCLUDE")
-  !include %get_variable_value("RELATIVE_INCLUDE")/C4.puml
+  ' use !include_many that Kroki and Antora ignores the not supported calculated !include
+  !include_many %get_variable_value("RELATIVE_INCLUDE")/C4.puml
 !else
   !include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4.puml
 !endif
