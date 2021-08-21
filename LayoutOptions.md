@@ -55,7 +55,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ```csharp
 @startuml LAYOUT_LANDSCAPE Sample
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
 
 LAYOUT_LANDSCAPE()
 
@@ -84,7 +84,7 @@ SHOW_LEGEND()
 @enduml
 ```
 
-![LAYOUT_LANDSCAPE Sample](https://www.plantuml.com/plantuml/png/NOzFRvj04CNlV8gjUmYM75kfUkef5ApaG1nae55FQ0sJUANzizeTXAAgtxqpCNQiSa7lDxFllRcFA0EEHeio-_tSDbsPxOewpwgjgANn6f8lolPw740S4NtyiTa4EQtV51x7mnWXzCuYM5ptpcoybfQzRYCEMXqs-VVRYb7xL6wCZ0Y1K9VJ2waiXBMdtIJvFpXT9aa58JgRoi4eknABZFygOf3emcAPrEzaPhgVRhI33EzfVxSIDwU-Dqln9n7qNMBI2GwTz9vyNk0WCk-rwYKgPnU4ygyhaTNLUhTjw4a0yMrz9vv-vJpBj7PJ57nc5EW4tUWbhPXHew8iqKmA4O90PK1JLgHkV-TsAPw6v3ElqJ3PWpvVzLchZH0vxx5fgfgsUEao_RHv08maWN-lmPdh9-VGUhLWULOjIT7wAr8mATnahrZ9h8HNl69xPdlrTiIvTjTwSXTrouNPaHaRVT22A8kPiza7Bucpc3aRdWPx6bpiwyVdbwxSFcntHKho7kmm6lqF "LAYOUT_LANDSCAPE Sample")
+![LAYOUT_LANDSCAPE Sample](https://www.plantuml.com/plantuml/png/NO_DRjim48JlUWhMFKG6N0afUkefgcGa1yKHBAb1Jm8jRIAY_2785TIWwBjtQIks4Lw8-MOvixppo1rEIh8o-_NKDbsPxOewpwejgxco4g9FGlTo6e2DYDP_JrF7v-HLu3WT9W-kDnf1Oz8RbVuMhXyzZcd-xKibkSRsiKpX3_a330Ixd8QvqE0IIvLHzB4pNaTH1SuR7VD12RrXgopSmgFZQDng7TLl7a5rFyoa1-xUulvsmsvEgzwisT-8qJdNn3CSEcujvJp3WMNMIj5p54Ql2EMVDoohgsItRUY90_OrkMMFF_FWPLAQsRFmGy_GCFgUvJIY9ec2kbWp2qHm38K2ILsUTlktR1VZoQISPOpCQ0_o_LUNjLfFB-b-Q9ggfgamT7OlCVU0dYI4wyKPTVtalRJUh4YULKkIjVQA584KPjPNh0oiX1UyOll0zk9rn6NjhhMKpkgMMaFYaOMW8os81h7m47Ra9V4W5Xu2JyQUZ7Dy_V3qt9NR--skY4dUWHuc9Vy3 "LAYOUT_LANDSCAPE Sample")
 
 ## LAYOUT_WITH_LEGEND() or SHOW_LEGEND(?hideStereotype)
 
