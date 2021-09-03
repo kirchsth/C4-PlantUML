@@ -167,14 +167,16 @@ SHOW_LEGEND()
 
 ## Supported Diagram Types
 
-Diagram types 
+> * `arg`.. argument required (e.g. `alias`)
+> * `?arg`.. argument optional  (e.g. `?descr`)
+> * `*techn` .. technology argument is required, but if the technology is defined via $tags then no `techn` argument is required
 
 * System Context & System Landscape diagrams
   * Import: `!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Context.puml`
   * Macros: 
-    * `Person(alias, label, ?description, ?sprite, ?tags, $link)`
+    * `Person(alias, label, ?descr, ?sprite, ?tags, $link)`
     * `Person_Ext`
-    * `System(alias, label, ?description, ?sprite, ?tags, $link)`
+    * `System(alias, label, ?descr, ?sprite, ?tags, $link)`
     * `SystemDb`
     * `SystemQueue`
     * `System_Ext`
@@ -183,25 +185,28 @@ Diagram types
     * `Boundary(alias, label, ?type, ?tags, $link)`
     * `Enterprise_Boundary(alias, label, ?tags, $link)`
     * `System_Boundary` 
+
 * Container diagram
   * Import: `!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml`
   * Additional Macros: 
-    * `Container(alias, label, technology, ?description, ?sprite, ?tags, $link)`
+    * `Container(alias, label, *techn, ?descr, ?sprite, ?tags, $link)`
     * `ContainerDb`
     * `ContainerQueue`
     * `Container_Ext`
     * `ContainerDb_Ext`
     * `ContainerQueue_Ext`
     * `Container_Boundary(alias, label, ?tags, $link)`
+
 * Component diagram
   * Import: `!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Component.puml`
   * Additional Macros: 
-    * `Component(alias, label, technology, ?description, ?sprite, ?tags, $link)`
+    * `Component(alias, label, *techn, ?descr, ?sprite, ?tags, $link)`
     * `ComponentDb`
     * `ComponentQueue`
     * `Component_Ext`
     * `ComponentDb_Ext`
     * `ComponentQueue_Ext`
+
 * Dynamic diagram
   * Import: `!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Dynamic.puml`
   * Additional Macros: 
@@ -217,16 +222,16 @@ Diagram types
 * Deployment diagram
   * Import: `!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Deployment.puml`
   * Additional Macros: 
-    * `Deployment_Node(alias, label, ?type, ?description, ?sprite, ?tags, $link)`
-    * `Node(alias, label, ?type, ?description, ?sprite, ?tags, $link)`: short name of Deployment_Node()
-    * `Node_L(alias, label, ?type, ?description, ?sprite, ?tags, $link)`: left aligned Node()
-    * `Node_R(alias, label, ?type, ?description, ?sprite, ?tags, $link)`: right aligned Node()
+    * `Deployment_Node(alias, label, ?type, ?descr, ?sprite, ?tags, $link)`
+    * `Node(alias, label, ?type, ?descr, ?sprite, ?tags, $link)`: short name of Deployment_Node()
+    * `Node_L(alias, label, ?type, ?descr, ?sprite, ?tags, $link)`: left aligned Node()
+    * `Node_R(alias, label, ?type, ?descr, ?sprite, ?tags, $link)`: right aligned Node()
 
 Take a look at each of the [C4 Model Diagram Samples](samples/C4CoreDiagrams.md).
 
 ## Relationship Types
 
-* `Rel(from, to, label, ?technology, ?description, ?sprite, ?tags, $link)`
+* `Rel(from, to, label, ?techn, ?descr, ?sprite, ?tags, $link)`
 * `BiRel` (bidirectional relationship)
 
 You can force the direction of a relationship by using:
@@ -383,11 +388,11 @@ C4-PlantUML also comes with some person sprite/portrait options:
 
 Additional tags/stereotypes can be added to the existing element stereotypes (component, ...) and highlight,... specific aspects:
 
-* `AddElementTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`:
+* `AddElementTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`:
   Introduces a new element tag. The styles of the tagged elements are updated and the tag is displayed in the calculated legend.
-* `AddRelTag(tagStereo, ?textColor, ?lineColor, ?lineStyle, ?sprite, ?legendText, ?legendSprite)`:
+* `AddRelTag(tagStereo, ?textColor, ?lineColor, ?lineStyle, ?sprite, ?techn, ?legendText, ?legendSprite)`:
   Introduces a new relation tag. The styles of the tagged relations are updated and the tag is displayed in the calculated legend.
-* `UpdateElementStyle(elementName, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`:
+* `UpdateElementStyle(elementName, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`:
   This call updates the default style of the elements (component, ...) and creates no additional legend entry.
 * `UpdateRelStyle(textColor, lineColor)`:
   This call updates the default relationship colors and creates no additional legend entry.
@@ -416,11 +421,12 @@ Following calls introduces new element tags with element specific default colors
 * `AddExternalPersonTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`
 * `AddSystemTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`
 * `AddExternalSystemTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`
-* `AddComponentTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`
-* `AddExternalComponentTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`
-* `AddContainerTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`
-* `AddExternalContainerTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`
-* `AddNodeTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?legendText, ?legendSprite)`
+* `AddComponentTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
+* `AddExternalComponentTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
+* `AddContainerTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
+* `AddExternalContainerTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?techn, ?sprite, ?legendText, ?legendSprite)`
+* `AddNodeTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
+  (node specific: $type reuses $techn definition of $tags)
 
 **Comments**
 
