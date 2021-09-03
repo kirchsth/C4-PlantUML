@@ -9,7 +9,7 @@
 !procedure C4VersionDetails()
 rectangle C4VersionDetailsArea <<legendArea>> [
 | PlantUML | **%version()** |
-| C4-PlantUML-kirchsth-extended) | **C4Version()** |
+| C4-PlantUML-kirchsth-extended | **C4Version()** |
 ]
 !end procedure
 
