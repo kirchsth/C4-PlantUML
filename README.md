@@ -408,11 +408,11 @@ Multiple tags can be combined with `+`, like `Container(api, "API", $tags="v1.0+
 **Element specific tag definitions**
 
 Sometimes an added element tag is element specific and all element specific colors should be used, e.g. a specific user role should be defined as element tag with the specific colors `...PERSON_...` like
-```csharp
+```plantuml
 AddElementTag("admin", $fontColor=$ELEMENT_FONT_COLOR, $bgColor=$PERSON_BG_COLOR, $borderColor=$PERSON_BORDER_COLOR, $sprite="osa_user_audit", $legendText="administration user")
 ```
 Therefore element Add...Tag() shortcuts are added which use the specific colors as default values and the call can be simplified like
-```csharp
+```plantuml
 AddPersonTag("admin", $sprite="osa_user_audit", $legendText="administration user")
 ```
 
@@ -638,7 +638,7 @@ C4-PlantUML offers version information like PlantUML with its `%version()` call.
 * `C4Version()`: Current C4-PlantUML version (e.g. `2.4.0beta1`).
 * `C4VersionDetails()`: (Floating) version details with the current PlantUML and C4-PlantUML version. (It can be referenced via the alias `C4VersionDetailsArea`.)
 
-```
+```plantuml
 @startuml
 !include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
 
