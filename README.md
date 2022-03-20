@@ -292,12 +292,12 @@ Rel_D(user, user1, "requests", "async message", "if sprite starts with &, it def
 
 ![Relation with sprite or OpenIconic](https://www.plantuml.com/plantuml/png/bLJVQzim47xtNt4reMl1ZTDa6sGGAEimZ7MqjFIvAD8b5f4bJvANbR7_VVfXDSaQ3telydsdk--xu-GhOucsNIEo4owfw1X2RMrhFfMb9jlncjkwMtO6DLNIehHZgffompMjZQtBw_SNTu98-_ZzfiHVBiwGEV3fsbrs_hZrXRCxr4R9Cr-bWFpH7VdvFdZPet1vY4yJFZt4PmcVEJnxU3OMcpCJ3XU9le-y0wbqGmIOLdEB1eX6i4h1agyXkqVnTDEBIcnShbo6oTqdLPtcgFtdS1KN7KLuaRT1u3GI6qe4ieCKjGcKztkKiq7A8_cttuwm5U7YOZB-47cfQfPSOfy8HB8enGa60XAtVIGx6VLNsSDWnJVeJSM65V_3vzJwCRL8kH-jcwz0_P9DYOGbUawMHGn6LdCYrmBXTmRE9ZlR-TMXNtsk_kTNy_cy6lQhZzwg8R-QHQk6_6IJLth_fCd6vNzPNQKPwZ1Q_mRz6GQJnbA0u1i4MoD4F8raVp4I5lU1hz8gX7TkOCjj3QT5GXckk4G316vRb5-fafmM3hM42mC6Tty3fvM7SFW3A7Ux35ryIVlHFsIDFpeqDdH1pBEaqA0nP8qU69J3xL4fiU5Jb3zHECeBAfH1jciN5f2_YfvdLoXPruY_ "Relation with sprite or OpenIconic")
 
-In rare cases, you can force the layout of objects which have no relationships by using:
+In rare cases, you can force the layout of elements which have no relationships by using:
 
-* `Lay_U(from, to)`
-* `Lay_D(from, to)`
-* `Lay_L(from, to)`
-* `Lay_R(from, to)`
+* `Lay_U(from, to)`, `Lay_Up(from, to)`
+* `Lay_D(from, to)`, `Lay_Down(from, to)`
+* `Lay_L(from, to)`, `Lay_Left(from, to)`
+* `Lay_R(from, to)`, `Lay_Right(from, to)`
 
 In following sample a person uses different systems, and group of persons which have no relations
 
