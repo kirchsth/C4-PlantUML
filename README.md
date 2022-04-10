@@ -15,13 +15,21 @@ C4-PlantUML combines the benefits of [PlantUML](https://plantuml.com/) and the [
 
 C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippets) for creating C4 diagrams with PlantUML.
 
-* [Getting Started](#getting-started)
-* [Supported Diagram Types](#supported-diagram-types)
-* [Snippets for Visual Studio Code](#snippets-for-visual-studio-code)
-* [Layout Options](#layout-options)
-* [Samples](#advanced-samples)
-* [Background](#background)
-* [License](#license)
+- [C4-PlantUML](#c4-plantuml)
+  - [Getting Started](#getting-started)
+  - [Supported Diagram Types](#supported-diagram-types)
+  - [Relationship Types](#relationship-types)
+  - [Layout (arrange) elements (without relationships)](#layout-arrange-elements-without-relationships)
+  - [Global Layout Options](#global-layout-options)
+  - [Sprites and other images](#sprites-and-other-images)
+  - [Custom tags/stereotypes support and skinparam updates](#custom-tagsstereotypes-support-and-skinparam-updates)
+  - [Element and Relationship properties](#element-and-relationship-properties)
+  - [Version information](#version-information)
+  - [Snippets for Visual Studio Code](#snippets-for-visual-studio-code)
+  - [Live Templates for IntelliJ](#live-templates-for-intellij)
+  - [Advanced Samples](#advanced-samples)
+  - [Background](#background)
+  - [License](#license)
 
 ## Getting Started
 
@@ -131,7 +139,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS", $link="https://plantuml.com/l
 
 ![Click on the image that the links are working](https://www.plantuml.com/plantuml/svg/jP9FQzj04CNl-XHRfGS7R8c4dWg6kAQqXwGrjT8UnKexhPRidsLcX6fAltjdhJWXz5H3TT2YDwFtVZpfXbWZZzuLhspetMX03So9tjOrwgdwONaOkv40-nWO0bTzzFM3nNuW7khjczNEwS3tTxSr_9Iv0IDYkvLbRGDWbR9riGEa61RQU1kMgjpaqnAZveZbKhscX9PXNQRZtdMMd0qFw_B4CdCSmrCE5DSLiN6sUy7GkTZLNXC3rhVw44V-dDZ6G9Kt5uCrqCu9xHouYhYY8KulrVbUNXRxWnZvzbqSWz5uMFHNmhxNFZbGy-nSqF9I_IgKN4z5BIReMfsI97o3JcrIShRNcRqKQNknL9lzhlhqlf5N4DHrTQNklcvplW7gSLrkd8iJgVofI75KGf2qRFhHiSt4pMIP0HLR3y8Cz5zQbjf-FnQtu3bH-1-ppw-hABw0E_q_prNT4r3kvsFJxFP_kvyiZ_vv94RPvydWcV03CCaZvECxHl-FhZSGZ4X_0000 "Click on the image that the links are working")
 
-Elements and relations can be decorated with tags and explained via a calculated legend, for example:
+Elements and relationships can be decorated with tags and explained via a calculated legend, for example:
 
 ```plantuml
 @startuml
@@ -164,12 +172,10 @@ SHOW_LEGEND()
 
 ![tags](https://www.plantuml.com/plantuml/png/bLJVJzim47xdh_2oFQGQQs4_X3G9YQf5OrBPkXR48xhQryJ3iIFVfS1_ltEQKkWgfZtPkljyttrtNt96396RoXsyiLwxng0gcMlwEXX4kEyNbijcqH167JoZvxuErU3EHbqIbuFHvmzJ1vwlBoS3V92yGIF1sv60mNgC_JgLFXWQS-wmalTNKEJPwhX_b1sgTuiG3SPHS26UPc_DoQUZZoTPRm_wEA6NKlHVs0NekwRUGOS8la019_GCtGwIyM47AK4dtUyDpldHeJfLOw0IpKGYUKygJp5Iy7cQrA7AHWrng31cSfzYgEK5by3A8nfLns0QpIGDTQ_0LDOBT9XEIno1mrzlOPj4aX0-5L8h2st0uxrAqrAof3fuz4ojG2Zej1sZK3wj9gSQX68-7IOcaTWuQ4clf58b46KzOro2xXf83BeJjiv18hyNYxGTT5lTqXtjqWsVwrJxcU7v3FwtXSq0Nb4DjKqTJBydmj-mWdHUW3SEIO5pIjmkG2BbGc6rojDdqT-EjhKvsU2fzrBi-rsgyI8t2oa-1eO542QYIwjZeB1aDVyrQPc3CxJPvA5gFmWbtOYwLR0QvLo6M04BuqiTKPTsXKdB-fQbQsCifyOBwuiKc7E8ekkBUaI8MpDit2_6dQ7hNBlsmpKXfPVjNq00ATzcP73xqxUpzL1RiJC4GuERQ1cxzCRTs_tlv-ZIhn5DraHRwHsFt2eaWWBtIfnV_BovdPn_E_ynpdi7P-XDKxa_ "tags")
 
-
 ## Supported Diagram Types
 
 > * `arg`.. argument required (e.g. `alias`)
 > * `?arg`.. argument optional  (e.g. `?descr`)
-> * `*techn` .. technology argument is required, but if the technology is defined via $tags then no `techn` argument is required
 
 * System Context & System Landscape diagrams
   * Import: `!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Context.puml`
@@ -189,7 +195,7 @@ SHOW_LEGEND()
 * Container diagram
   * Import: `!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml`
   * Additional Macros: 
-    * `Container(alias, label, *techn, ?descr, ?sprite, ?tags, $link)`
+    * `Container(alias, label, ?techn, ?descr, ?sprite, ?tags, $link)`
     * `ContainerDb`
     * `ContainerQueue`
     * `Container_Ext`
@@ -200,7 +206,7 @@ SHOW_LEGEND()
 * Component diagram
   * Import: `!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Component.puml`
   * Additional Macros: 
-    * `Component(alias, label, *techn, ?descr, ?sprite, ?tags, $link)`
+    * `Component(alias, label, ?techn, ?descr, ?sprite, ?tags, $link)`
     * `ComponentDb`
     * `ComponentQueue`
     * `Component_Ext`
@@ -241,56 +247,40 @@ You can force the direction of a relationship by using:
 * `Rel_L`, `Rel_Left`
 * `Rel_R`, `Rel_Right`
 
-Relationship specific sprites are typically smaller and therefore following options are possible:
-* use smaller icons (like the $triangle in the following sample)
-* use an additional scale factor (direct as part of the argument, or via a variable)
-* if sprite argument starts with `&` an OpenIconic name can be used too (details see https://useiconic.com/open)
+In following sample a person uses different systems, and a group of persons which have bidirectional relationships
 
 ```plantuml
 @startuml
-!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Context.puml
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
+HIDE_STEREOTYPE()
 
-Person(user, "User")
-Person(user1, "User 1")
-Person(user2, "User 2")
-Person(user3, "User 3")
+Person(a, "A")
+Person(b, "B")
+Person(c, "C")
+Person(d, "D")
+Person(e, "E")
 
-System(system, "System")
+BiRel_U(a, b, "talk with")
+BiRel_R(a, c, "talk with")
+BiRel_D(a, d, "talk with")
+BiRel_L(a, e, "talk with")
 
-' normal sprites are too big 
-Rel_L(user, user2, "informs", "courier", "normal sprites are too big", $sprite="person2")
+Person(x, "X")
+System(s1, "S1")
+System(s2, "S2")
+System(s3, "S3")
+System(s4, "S4")
 
-' scaled sprites are ok
-Rel_R(user, user3, "informs", "courier", "scaled sprites are OK", $sprite="person2,scale=0.5")
-
-' combine sprite and scale to a new sprite
-!$combinedSprite="person2,scale=0.5"
-Rel_R(user, user3, "informs", "courier", "combined sprites are OK", $sprite=$combinedSprite)
-
-
-' special smaller sprites can be used
-sprite $triangle {
-    00000000000
-    00000F00000
-    0000FBF0000
-    0000FBF0000
-    000F999F000
-    000F999F000
-    00F66666F00
-    00F66666F00
-    0F3333333F0
-    0F3333333F0
-    0FFFFFFFFF0
-    00000000000
-}
-Rel_R(user1, system, "orders", "http", "small sprites, like the small triangle", $sprite="triangle")
-
-' if sprite starts with &, sprite defines a OpenIconic, details see https://useiconic.com/open/
-Rel_D(user, user1, "requests", "async message", "if sprite starts with &, it defines a OpenIconic like &envelope-closed", $sprite = "&envelope-closed")
+Rel_U(x, s1, "uses")
+Rel_R(x, s2, "uses")
+Rel_D(x, s3, "uses")
+Rel_L(x, s4, "uses")
 @enduml
 ```
 
-![Relation with sprite or OpenIconic](https://www.plantuml.com/plantuml/png/bLJVQzim47xtNt4reMl1ZTDa6sGGAEimZ7MqjFIvAD8b5f4bJvANbR7_VVfXDSaQ3telydsdk--xu-GhOucsNIEo4owfw1X2RMrhFfMb9jlncjkwMtO6DLNIehHZgffompMjZQtBw_SNTu98-_ZzfiHVBiwGEV3fsbrs_hZrXRCxr4R9Cr-bWFpH7VdvFdZPet1vY4yJFZt4PmcVEJnxU3OMcpCJ3XU9le-y0wbqGmIOLdEB1eX6i4h1agyXkqVnTDEBIcnShbo6oTqdLPtcgFtdS1KN7KLuaRT1u3GI6qe4ieCKjGcKztkKiq7A8_cttuwm5U7YOZB-47cfQfPSOfy8HB8enGa60XAtVIGx6VLNsSDWnJVeJSM65V_3vzJwCRL8kH-jcwz0_P9DYOGbUawMHGn6LdCYrmBXTmRE9ZlR-TMXNtsk_kTNy_cy6lQhZzwg8R-QHQk6_6IJLth_fCd6vNzPNQKPwZ1Q_mRz6GQJnbA0u1i4MoD4F8raVp4I5lU1hz8gX7TkOCjj3QT5GXckk4G316vRb5-fafmM3hM42mC6Tty3fvM7SFW3A7Ux35ryIVlHFsIDFpeqDdH1pBEaqA0nP8qU69J3xL4fiU5Jb3zHECeBAfH1jciN5f2_YfvdLoXPruY_ "Relation with sprite or OpenIconic")
+![(unidirectional) relationship versus bidirectional relationship](https://www.plantuml.com/plantuml/png/bLJVQzim47xtNt4reMl1ZTDa6sGGAEimZ7MqjFIvAD8b5f4bJvANbR7_VVfXDSaQ3telydsdk--xu-GhOucsNIEo4owfw1X2RMrhFfMb9jlncjkwMtO6DLNIehHZgffompMjZQtBw_SNTu98-_ZzfiHVBiwGEV3fsbrs_hZrXRCxr4R9Cr-bWFpH7VdvFdZPet1vY4yJFZt4PmcVEJnxU3OMcpCJ3XU9le-y0wbqGmIOLdEB1eX6i4h1agyXkqVnTDEBIcnShbo6oTqdLPtcgFtdS1KN7KLuaRT1u3GI6qe4ieCKjGcKztkKiq7A8_cttuwm5U7YOZB-47cfQfPSOfy8HB8enGa60XAtVIGx6VLNsSDWnJVeJSM65V_3vzJwCRL8kH-jcwz0_P9DYOGbUawMHGn6LdCYrmBXTmRE9ZlR-TMXNtsk_kTNy_cy6lQhZzwg8R-QHQk6_6IJLth_fCd6vNzPNQKPwZ1Q_mRz6GQJnbA0u1i4MoD4F8raVp4I5lU1hz8gX7TkOCjj3QT5GXckk4G316vRb5-fafmM3hM42mC6Tty3fvM7SFW3A7Ux35ryIVlHFsIDFpeqDdH1pBEaqA0nP8qU69J3xL4fiU5Jb3zHECeBAfH1jciN5f2_YfvdLoXPruY_ "(unidirectional) relationship versus bidirectional relationship")
+
+## Layout (arrange) elements (without relationships)
 
 In rare cases, you can force the layout of elements which have no relationships by using:
 
@@ -299,7 +289,7 @@ In rare cases, you can force the layout of elements which have no relationships 
 * `Lay_L(from, to)`, `Lay_Left(from, to)`
 * `Lay_R(from, to)`, `Lay_Right(from, to)`
 
-In following sample a person uses different systems, and group of persons which have no relations
+In following sample a person uses different systems, and a group of persons which have no relationships
 
 ```plantuml
 @startuml
@@ -330,7 +320,7 @@ Rel_L(x, s4, "uses")
 @enduml
 ```
 
-![Relation versus Layout](https://www.plantuml.com/plantuml/png/LSrHQxCm5CRnUpz5trufl5EgNksgcmeRE2PQORkIc1ocJ6D9JbZxxNTY6R5tv_yZF3bgP0hDF7d_Hiad8s0t89xrOnGfzXD-ZJYOtcXGV9484aE-pD7tgFYWSOYozA6QcCJshOpWWY052C8keyTibA32ivr-USsBhZaLTV5--gmAF_2y2fHUfC_-x_PF--0lUyfdbvmoSoaeSvT0ML1w9RjshPtgW_MkxSrlTsvlSRjBUuFx_4837pJGN3N2xEi3TNFOG6mXta1Y8Tb0QY4by6gOkjPEhZD6WoQrMAyOtsE-OdAFvOgfmoD8OURf5m00 "Relation versus Layout")
+![Relationship versus Layout](https://www.plantuml.com/plantuml/png/LSrHQxCm5CRnUpz5trufl5EgNksgcmeRE2PQORkIc1ocJ6D9JbZxxNTY6R5tv_yZF3bgP0hDF7d_Hiad8s0t89xrOnGfzXD-ZJYOtcXGV9484aE-pD7tgFYWSOYozA6QcCJshOpWWY052C8keyTibA32ivr-USsBhZaLTV5--gmAF_2y2fHUfC_-x_PF--0lUyfdbvmoSoaeSvT0ML1w9RjshPtgW_MkxSrlTsvlSRjBUuFx_4837pJGN3N2xEi3TNFOG6mXta1Y8Tb0QY4by6gOkjPEhZD6WoQrMAyOtsE-OdAFvOgfmoD8OURf5m00 "Relationship versus Layout")
 
 (In combination with [SHOW_FLOATING_LEGEND()](LayoutOptions.md#show_floating_legend)) a greater distance between an element and the
 e.g. floating legend could be required that all e.g. corners of the drawing area can be reached.
@@ -367,7 +357,7 @@ Lay_Distance(LEGEND(), db, 1)
 
 ![db below legend, 1 unit distance](https://www.plantuml.com/plantuml/png/hL7DZXez4BpFKtZHTm1fmVgKv18fKX2mkqZy4633STJO3UF4Oq_S7aZUFcqOq2XHf1no6azLkyfL_M2SihL6KSHOqNif0vm7HnEBUbyJ1kLTH1S7ofVogmcge5Z8qTl-oeABh_EPnE_CQzGCvYCU1kCm3Agwj5dseF70ls8y-JmTBHURl_28TGKwl95LqcUHlc6sV-29FbN1H2HP0aKCKkCfSNHtULekjiFTPBESJ_wfqGM3Cv8liVykknLsJoN17MiBJUZVwIzmWZzn9NspEM4uuI_NssbaUZirdQxuw5qtGO-YCwef-X93Xyyhz9L54Gk8mY5gKGMlQnM9oV-kcJvqBbATNdPVLPSguCkRrJ1fD57ISLkWA7b461Sn740rqf5nrTXUEM0FSUQMsqOtfROLL8Q5Xwjfqa-rfEyBE6sH15WhU4iyI2IiFnhLbalJRQtnlgltV7iC4VP0c9JcHWLF_X35vjFi8ksjfbiDZy87ZK6m7J_xv8r2_XvyA24QxzfchQsmPxP6s_HzxUgLC5MOu0kGOhNHV7rDUddW6a6Jt2NXH6URb-KkVvejXzlfuZcVJPudYt6tbytWHpus5C4fxDxGgyJ_lUmZEitR_ma0 "db below legend, 1 unit distance")
 
-## Layout Options
+## Global Layout Options
 
 C4-PlantUML also comes with some layout options to make it easy and reusable to create nice and useful diagrams:
 
@@ -384,6 +374,95 @@ C4-PlantUML also comes with some person sprite/portrait options:
 * [SHOW_PERSON_PORTRAIT()](LayoutOptions.md#show_person_portrait)
 * [SHOW_PERSON_OUTLINE()](LayoutOptions.md#show_person_outline) (requires PlantUML version >= 1.2021.4)
 
+## Sprites and other images
+
+`$sprite` (images) can be defined with following PlantUML supported options:
+
+* included (standard library) sprites via their `{SpriteName}`; details see [sprites](https://plantuml.com/sprite)
+* images via `img:{File or Url}`
+* OpenIconic via `&{OpenIconicName}`; details see [openiconic](https://plantuml.com/openiconic)
+
+Size of the displayed images can be changed with `,scale={factor}`.
+Color of the displayed images can be changed with `,color={color}   `.
+
+(If sprites are defined via $tags then the calculated legend is updated too)
+
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+'stdlib users.puml defines sprite "users"
+!include <office/users/users.puml>
+
+
+AddRelTag("plantuml", $textColor="$ARROW_COLOR", $lineColor="$ARROW_COLOR", $sprite="img:http://plantuml.com/logo3.png{scale=0.3}", $legendSprite="img:http://plantuml.com/logo3.png{scale=0.1}", $legendText="console triggered")
+
+Person(user, "user group displayed with a sprite", $sprite="users")
+
+
+Container(container, "Container with scaled and colored OpenIconic", $sprite="&folder,scale=5.0,color=gray")
+
+System(system, "System with an image", $sprite="img:http://plantuml.com/logo3.png")
+
+Rel(user, system, "Rel with image (via tags)", $tags="plantuml")
+Rel(user, container, "Rel with OpenIconinc", $sprite="&folder")
+
+SHOW_LEGEND()
+@enduml
+```
+
+![Sprite, image and OpenIconic](https://www.plantuml.com/plantuml/png/bP91RzGm48Nl_XL3L45MsYP5XSkAe5PB1KWBMwL572itddKjENPaEvGLuhypjfTi3d3OKvonvvltddtb0tTXx3LxeKodHu7m5CBWLtNj-7CbLNWQ7qUFhhCce0bLP_jwqDp4ddCVX5QFzVhD-MqiVVkogNlk0pegFQofWok3hXeYdxtAfo7IVAg1m1qTyE07fm92aRQAevHtThTJ7TQfNXyRtpF6heLeKTzpMHP_zHHBE0luCwojjgufpgxRTllzORtTRDkufMdMVxQoWAPGlLn5_wjwCfaSQoljPJKO-SjtN6DpKLt-JaYKQCJToTslPzttfBWfA5zlDK9mIafqA8e5OxTas9eo6b_cT40wEmuWbAS9UnJmJ3S4_93Wt4hEaY1ikeYoowj4cwePaPG9u4P05pEYzNP0yvbQL3VdljnPBOYGhRojBfRfV2CTtyTnTtiVi2zz-j2S_7_GQK3rNE99aKTeY_gGmiIbKe9c8fG_58V0fLz4U5mqntUnc06c3EQCoQhvbzTawnEzbytDnvkl7ye5kq8Z2Fm7 "Sprite, image and OpenIconic")
+
+Relationship specific sprites are typically smaller and therefore following options are possible:
+* use smaller icons (like the $triangle in the following sample)
+* use an additional scale factor (direct as part of the argument, or via a variable)
+* if sprite argument starts with `&` an OpenIconic name can be used too (details see https://useiconic.com/open)
+
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(user, "User")
+Person(user1, "User 1")
+Person(user2, "User 2")
+Person(user3, "User 3")
+
+System(system, "System")
+
+' normal sprites are too big 
+Rel_L(user, user2, "informs", "courier", "normal sprites are too big", $sprite="person2")
+
+' scaled sprites are ok
+Rel_R(user, user3, "informs", "courier", "scaled sprites are OK", $sprite="person2,scale=0.5")
+
+' combine sprite and scale to a new sprite
+!$combinedSprite="person2,scale=0.5"
+Rel_R(user, user3, "informs", "courier", "combined sprites are OK", $sprite=$combinedSprite)
+
+' special smaller sprites can be used
+sprite $triangle {
+    00000000000
+    00000F00000
+    0000FBF0000
+    0000FBF0000
+    000F999F000
+    000F999F000
+    00F66666F00
+    00F66666F00
+    0F3333333F0
+    0F3333333F0
+    0FFFFFFFFF0
+    00000000000
+}
+Rel_R(user1, system, "orders", "http", "small sprites, like the small triangle", $sprite="triangle")
+
+' if sprite starts with &, sprite defines a OpenIconic, details see https://useiconic.com/open/
+Rel_D(user, user1, "requests", "async message", "if sprite starts with &, it defines a OpenIconic like &envelope-closed", $sprite = "&envelope-closed")
+@enduml
+```
+
+![Relationship with sprite or OpenIconic](https://www.plantuml.com/plantuml/png/bLJVQnin37w_lq8DeMiXoQN9DiWWKDPnCDRHqjBdujXAOkgpRvPlMHdxt-SVSPEikK7rujCdIzyd8TybEMPTMwlYH6gkMe6mTgwXJsLfsMQqacxTBbf2oursgDs8cxfi5DCXPqXEABaehzuFRmFqyFswh1avj1vwl0ePlzoe2TMBMxHaz5aeDO3UWpzwv_lWnHQ5YqDyal798JxD-DJZnVspPwtFA1u-almGUGVQs9efeCPAXmJC8ZXZO25NKDoXUhpUYifiKYzz1lNy9pUjbMZ3PtSL7-qdUDvhei198YRE58g35FCKAU_sAAUTb4VoRxuTOHl4Y_Fnw4FYvQPUI8tRH61Q92bUC33GkDb6YfF-zgguxwpu1hsvMBVYV_YysZ2c1haCe_NpLMXViZdJiC30AOg4GTzPoVHA8VmkmDjuPpk_ElIhpzN__6escrNTVlKnMDNbLzDaLPUVRVnAxvyysRJyBwjhh40RHniUOZZZOF9O1g3a4u9R8oGyZsH_CJAMza4kyoh4nqwmaMuDfuEC2bnAZGGCRXhKNxdHaWyywfXK18IxNuBNAcCu_WQClrt6BhxizYC-P8i_MYGNks3qh3dKICHM681EET8TbP8QFaNz4vMd779b2CMkNPX3xrNqlBX4BTfQ_GK0 "Relationship with sprite or OpenIconic")
+
 ## Custom tags/stereotypes support and skinparam updates
 
 Additional tags/stereotypes can be added to the existing element stereotypes (component, ...) and highlight,... specific aspects:
@@ -391,7 +470,7 @@ Additional tags/stereotypes can be added to the existing element stereotypes (co
 * `AddElementTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`:
   Introduces a new element tag. The styles of the tagged elements are updated and the tag is displayed in the calculated legend.
 * `AddRelTag(tagStereo, ?textColor, ?lineColor, ?lineStyle, ?sprite, ?techn, ?legendText, ?legendSprite)`:
-  Introduces a new relation tag. The styles of the tagged relations are updated and the tag is displayed in the calculated legend.
+  Introduces a new Relationship tag. The styles of the tagged relationships are updated and the tag is displayed in the calculated legend.
 * `UpdateElementStyle(elementName, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`:
   This call updates the default style of the elements (component, ...) and creates no additional legend entry.
 * `UpdateRelStyle(textColor, lineColor)`:
@@ -435,7 +514,7 @@ Following calls introduces new element tags with element specific default colors
 * `SHOW_LEGEND()` has to be last line in diagram.
 * Don't use space between `$tags` and `=` (PlantUML does not support it).
 * Don't use `,` as part of the tag names (PlantUML does not support it in combination with keyword arguments).
-* If 2 tags defines the same skinparam, the first definition is used.
+* If 2 tags define the same skinparam, the first definition is used.
 * If specific skinparams have to be merged (e.g. 2 tags change the font color) an additional combined tag has to be defined. Use `&` as part of combined tag names.
 
 * Colors of relationship tags cannot be automatically merged (PlantUML does not support it).
@@ -589,7 +668,7 @@ SHOW_LEGEND()
 
 ![custom schema](https://www.plantuml.com/plantuml/png/dL9TRvim57tdLr0MJOcK9eIG1asAr9AXhH9DgdneUqC6tmGKOoBRgEs_dy5ik2rTfIWluNpSUuxjMouG4sLEZAkC9gJ4OAP2dFctyPYXfz4n4saPbnnOKb01L8oI8X-VCfQaNAJZfNlzI10L-uTm3C-Inu0b62sbM7wFpjLWuwgtN8VhJNGNpSo5QNsP7wQnxLaQxjPuF9rvzesEJsiSRC-Pk3hkrFW1nzxDLCSd2WUmOstEAjZlDdUXukRLh-NyneCzZ23MSRKZTb2C7HrNcJnxFaM9ZgiECzUPUvwEgyuEjcrNcxy9mYYyNmKTmnIv2txlNf76_eoHW8103bHinGk1ldK6nWjg3SrUV5mMf62BzgmbU93tqCBjKLJwWc5WRpmJIV0KuU8feyU59LW9rg1pSNNRZ28IVPZ0lo21l8tkTVo52yWxUxeNz7G-AVNXEl-2TNwxRWD4hUgHZ8AcQX_4qFmgP0wDQz_3m30Uw-Fk9oKNHGviQ5eAGSJq4Jt9QpEN3ITlRbltwCUAQMf9ppsjYeBuvr52wMWiKV0i-ZdAIEi9hgjlapVADq9wO2W7ANlu-xzZjgol9N-NQi-1IvbKHJvAJfhqTP8jKCnDgFDmKnIDPmNPCPNd_wxkVzpAskLG9TfKnlRd-bSK1Z-2rVV-mBYLKygS_040 "custom schema")
 
-## Element and Relation properties
+## Element and Relationship properties
 
 A model can be extended with (a table of) properties that concrete deployments or more detailed concepts can be documented:
 
@@ -625,7 +704,7 @@ Deployment_Node_L(nodeAlias, "Label", "Optional Type", "Optional Description (wi
 
 System(systemAlias, "Label", "Optional Description (without properties)")
 
-' starting with v.2.5.0 relations support properties too
+' starting with v.2.5.0 relationships support properties too
 WithoutPropertyHeader()
 AddProperty("PropC1", "ValueC1")
 AddProperty("PropC2", "ValueC2")
@@ -675,24 +754,25 @@ It is possible to save them directly inside VS Code: [Creating your own snippets
 
 ## Live Templates for IntelliJ
 
-### Prerequisites  
+**Prerequisites**
+
 [Graphviz download](https://graphviz.gitlab.io/download/)  
 [PlantUML Integration](https://plugins.jetbrains.com/plugin/7017-plantuml-integration)
 
-### Install
+**Install**
 
 1. Download [IntelliJ live template](intellij/c4_live_template.zip).  
 2. Select `File | Manage IDE Settings | Import Settings` from the IntelliJ IDEA menu.
 3. Specify the path to the downloaded ZIP file: `c4_live_template.zip`.
 4. In the Import Settings dialog, select the Live templates checkbox and click OK.
-4. Restart IntelliJ.
+5. Restart IntelliJ.
 
-### Usage
+**Usage**
 
 * Create new PlantUML file (.puml).
 * Type `c4_` for displaying artifacts templates for C4-PlantUML
 * Live template create correct C4 model artifact with stubbed arguments. 
-    * E.g. alias, label, type, technology, description
+  * E.g. alias, label, type, technology, description
 * Replace stubbed arguments with desired values.
 
 ![C4-PlantUML Snippets Video](images/intellij_c4plantum_live_template1.gif)
@@ -704,19 +784,17 @@ The following advanced samples are reproductions with C4-PlantUML from official 
 
 The core diagram samples from [c4model.com](https://c4model.com/#coreDiagrams) are available [here](samples/C4CoreDiagrams.md).
 
-### techtribes.js
+**techtribes.js**
 
 Source: [C4_Container Diagram Sample - techtribesjs.puml](samples/C4_Container%20Diagram%20Sample%20-%20techtribesjs.puml)
 
 ![techtribesjs](https://www.plantuml.com/plantuml/png/ZLHDR-Cs4BthLqnzMGTGxTsasm0zhHEdoMwTZqPoWvu4IXpBt52aIb9nZAB_lKDAaQsuWEk39Syy3j-RUUClrZ7Zcah2o66nTaRaQB_RKVI3K8LiECBQkTh-CfqQjfcKmgsRlB5e2gqSAZSfT3Lz5gPOMxUUNlxquuDaoYrl5rDyfJn7Ji7iai1CA3IJccwAFa2Zw5n5vy6j4LPQIhqHgWH9862Amo0jZAKt3NGlI5qmARTKeoTuU46qcFrvlqopzFuXczy_tOrFeWzTQ9PaoMzNwUKDnRhGqzVq9bjSNL_TpIaOHGzeh5RPrQiRCwNLjjADpRpc64Qpjm0iAJ0wwS1ZLfO6I-QGzyW-yXxAAw64TOOveLKF7qJVZaJ9rZgiiWlTACxCTbnyYlS7DQ59dVmT0Nt2Lz-7yGRpZDKrePymXrbTIr64qYCAVMClB8QaDhxdjtzSnf3gYj9mFddr-PcVXmLFpVh6lmZSG8swbXX3UtCCdGDYm1TwKE2xpkaRNJ61bT4LpQuR5tZ2CN11zc4opFTh2XOBfxt88VDvFZOeCvuJZqUKWJCTcZF7ScRHqxlT9hyluFFaSyiseJ9e3_Y59rHOvQHYBMgACFbit_FD6Iyz_5gucoO7WxNkL1nG6w-4H1icGjV-IZ-WdS_8_vobPwTxT2mosWeGYkChsl-IgRJzIzA1EqroWa08PuD4hKezlu3JoUb0P6ZiOv9CPuvULeZSmZYNkWIYxUn9QAxR83fxIB-fENF1RSlsxSqBSEvHLalqJXdr00krqK5qt1KTzYdSrla0j086jbWZRoHoe649p-6VtiH-eTn6k9P2shuHOY_T_hzGjhrbcFGoBUKkw1dKHUIFWnNT6Pzso7ejDsdwa12UqCCzFGuVxkhH8-5CdzwpCUFTw7p3DaRurZhjZzBefz_c5xI2jJOEpiu-_ao51dLshXlKUWyBTXeYzeoq4GRzD9qkjEmkEpt_-EcyevqjUtiS8queTeJzeDo0_rCl_W0N11nfr_-LiwkwSzmrkjxG8DHAcogCTRSpVTlwYGvAxTn9q665N3SEwYQNee12SsptGpXj11wf6cpT5UsNgR52bNxH0xb-sOUblDO5ssQF_J_chjMK-eAADvNy5m00 "techtribesjs")
 
-
-### Message Bus and Microservices
+**Message Bus and Microservices**
 
 Source: [C4_Container Diagram Sample - message bus.puml](samples/C4_Container%20Diagram%20Sample%20-%20message%20bus.puml)
 
 ![messagebus](https://www.plantuml.com/plantuml/png/bLNVRzis47xtNt7J1im1t1WTzZGWGFt3M5iuYMlPwADneiuI4PeKICgfD-n_tr6oLSPLjoOFCNcy-xxlVf1wvpnQNnyK90To3WlAQfSCVf9Qg3edABslt1_ZiSNdsqBwikPZii9eJzhV2dCOFqahIkVByUptDok5sc_lbsFwmkSvvMpSpTWPfIPxMp7Fu5UeDSSTE1vyIR0tIfbdgGjGx0IeStXnBAtZbG7c1MK4AdLYZ4xWjmI3IPul50M43HR3v225DS2gZr9GCe9VN8aLtIraKVfKiiWqx8StV98LCwEClKjcnkezoo8xLNKJj6UIy-5pAJqbDzSypXkBHSImDdMemTHywM5G3VtJwJ_m1-dxny-xrMATFZxi7hURvOU7nP3DAxBEwA6ecV50TWIpRfLCu69k04xEqs4t3KBGdeRYBRjSlE63tXjxG2-DJcxWxm7mNrVB8LPLx3ofAYL5wypsZtX49woi_0WckgWLsYJGXrwwJeCBZJkWne92CwM5ofgzL9pT5TibOdVkKqoTjgOBxGZIoePvcHhZWt5J4bH6QWzc3oW4EGUSMQS2P9GebzfZuU0EhWRZMj7vEknuu9dZljt1j7Q1SerP9ltzfuRUedQLiRuXPNUfWm8walRk6rXBmPNbHvckBxOurNMTdSBlp19wSg132aewoY57ZmrP1mPLRIlZoFruVbZdqaSY9c4V2vZzFBvzM6p2ScNDKUOimjW2jNHDATyyima2JADWZq8gNhv2mppxslSyYri-HuyPkaR7eqMX2Dx-9i8kzSQI-z_UjfUnXp5g05F6jOyvxq_ffsL4XvVo_qKv7CawfckcJQckur_RWZcKHlHsfqTXVr_uDEeAxnfT2nwgRjkfYse0c9dQduSFV8aUIZmI_wigqfJtA_XdC5YJsisZDwMz_jjMTF9-ircbx7XsQmvxhkosoj5_fpiGobG4C7GdBKRmaP-ryGlWRSypqEf8IUUkoye4bC-KfKOyaUVexmL7TxW3wRJLZTW8jC7fGObdjAjvqspPleNpwUoSmijNe-Uk_w286AQzOg-2Q31ws3jJRoejzHLRD8vTn8MhYHaiyRHRzx6zGBfypfQBFnSFS_wClUCimkVwNm00 "messagebus")
-
 
 ## Background
 
