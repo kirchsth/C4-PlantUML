@@ -471,10 +471,15 @@ Additional tags/stereotypes can be added to the existing element stereotypes (co
   Introduces a new element tag. The styles of the tagged elements are updated and the tag is displayed in the calculated legend.
 * `AddRelTag(tagStereo, ?textColor, ?lineColor, ?lineStyle, ?sprite, ?techn, ?legendText, ?legendSprite)`:
   Introduces a new Relationship tag. The styles of the tagged relationships are updated and the tag is displayed in the calculated legend.
+* `AddBoundaryTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)`:
+  Introduces a new Boundary tag. The styles of the tagged boundaries are updated and the tag is displayed in the calculated legend.
 * `UpdateElementStyle(elementName, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`:
   This call updates the default style of the elements (component, ...) and creates no additional legend entry.
 * `UpdateRelStyle(textColor, lineColor)`:
   This call updates the default relationship colors and creates no additional legend entry.
+* `UpdateBoundaryStyle(?elementName, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)
+  This call updates the default style of the existing boundaries and creates no additional legend entry.
+  If the element name is "" then it updates generic, enterprise, system and container boundary style in on call.
 * `RoundedBoxShape()`: This call returns the name of the rounded box shape and can be used as ?shape argument.
 * `EightSidedShape()`: This call returns the name of the eight sided shape and can be used as ?shape argument.
 * `DashedLine()`: This call returns the name of the dashed line and can be used as ?lineStyle argument.
@@ -506,6 +511,13 @@ Following calls introduces new element tags with element specific default colors
 * `AddExternalContainerTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?techn, ?sprite, ?legendText, ?legendSprite)`
 * `AddNodeTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
   (node specific: $type reuses $techn definition of $tags)
+
+**Boundary specific tag definitions**
+
+Like the element specific tag definitions exist boundary specific calls with their default colors **and type**:
+* `UpdateContainerBoundaryStyle(?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)`
+* `UpdateSystemBoundaryStyle(?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)`
+* `UpdateEnterpriseBoundaryStyle(?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)`
 
 **Comments**
 
@@ -624,6 +636,55 @@ SHOW_LEGEND()
 ```
 
 ![tags with sprites and custom legend](https://www.plantuml.com/plantuml/png/dLPTR-Cs47pth-0Pz-00ZfLpcWOewiCvTjhhmRca_cWUXRMubjMZI9MauZEA_lSkgLXqREMZpLF4dPqTxWo3V38Mj2rpqNgNoKIK7DdQsiBy54KQDhqqi-joMHhKYP8MfUqbAe--PJfP6xkEHZ-StWcGTd4pYV0xrJboEen718PCekuLZhhrZkEAFfaoS4S7RnWnqc3MoFDCycWtubGLA0qcfSxi5aX2PZ6nfSR-QKQz9ih1MDIxczJZef7ASoMzbkFYWYP784HL3lMVrMgL9HZDK3-WDX472qim61j_yF5vv2eJRq11KOWi0Pif-JoO5fbWOKta47GGxtMz02S96ZTqgO-jrf3pQx96In1tD5V9EQITDaWbjxagJKo-jRlilIbegpXeAmEnCoDU2aY-nMlmLO4fcJidx22qCeThdxW9Uyn9QQpAKJUI2j0fngbMPN54cwOQKx38ctd1XQ6H54gUsMwYXD83ZJmGpvgH9W61WxDU_-AeAQXnqp9ZjL_rJf6JL6VRgzhWSbWK-xAEVJtafXv6A9Ric8ZvY9Wlzqb3-1eOG_bbIfTBiyzA1ysCLObLfPT9gNYmW8Qe7h9Jar42ZxRWwASeFF4kmgxNKjV8MzL-FvnER-_ZqUtaTkffgRMf50JLJBNnvy_v7h1EJ1M-c5vF9pmNbuGkQryfxu-5r0mE7jF9OsCd97hNDOEyotvxK1Bhvl1UGj-JxDKJKKiUsZp8gPnjZSKylbAbvA2tdUG3WIqcQwkp9PhUdwPzydUBqKzjN8SIwEmXu3rbSVZ4gFONU80kSsz7fkpcZr6NpLLEPNRP-rxFtmN_v2dpUDdHA6A-91uoqdE2OEF7V3hwc-tizmcxw5tii_7b8LF7fzNVZPf-eGzMtRJjFeVpytxezj06ALAPlmJ1loeQwKMmcLMwag5agiPNhD_hloAaB3XORy6Y-cst97P9g2h8RXN1KIMhrVpJQj4IZi8JjhymQ1pRv_dyRXO8GWXzVyZH_oKu3DH_9V4iTSEUmy0DMscLCv2SRTnpCymgHqORZxwChoWzXTAMdP-V_LYf2JnF70vSXx2TYm6nxz-6LB92AwiI9Hw7zI_FFbm-oeuNmS1NX1CANbCVw0xqtzUNFyA52pIlwytNcS0sdjOFB8odqkmp_UMRNFzw_NNSEMbzGidTVpF_0W00 "tags with sprites and custom legend")
+
+**Sample with different boundary tag combinations**
+
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' Update the generic boundary style and the "system", "enterprise", "container" boundaries styles too
+UpdateBoundaryStyle($bgColor="gold", $fontColor="brown", $borderColor="brown")
+' (Re-)Updates the system boundary styles; re-set $bgColor avoids '(no back color)' in legend too
+UpdateSystemBoundaryStyle($bgColor="gold", $fontColor="white", $borderColor="white")
+
+Boundary(b, "A Boundary") {
+}
+
+Container_Boundary(cb, "A Container Boundary") {
+}
+
+System_Boundary(sb, "A System Boundary") {
+}
+
+' defines a new border style incl. new border type
+AddBoundaryTag("repository", $bgColor="green", $fontColor="white", $borderColor="white", $shadowing="true", $shape = RoundedBoxShape(), $type="GitHub repository")
+
+Boundary(c4Respository, "plantuml-stdlib/C4-PlantUML", $tags="repository") {
+  Component(readMe, "README.md", "Markdown")
+}
+
+' boundary tags are internally extended with '_boundary' that it uses a different name space
+' this enables different element and boundary styles for the same tag name
+AddBoundaryTag("v1", $bgColor="lightgreen", $fontColor="green", $borderColor="green")
+AddElementTag("v1", $bgColor="lightred", $fontColor="red", $borderColor="red")
+
+Boundary(anotherBoundary, "Another Boundary", $type="BOUNDARY TYPE", $tags="v1") {
+  Component(anotherComponent, "Another Component", $techn="COMPONENT TYPE", $tags="v1", $descr="Component and boundary use different tag name spaces that both v1 tags can use different styles")
+}
+
+Lay_R(b, cb)
+Lay_R(cb, sb)
+
+Lay_D(b, c4Respository)
+
+Lay_R(c4Respository, anotherBoundary)
+
+SHOW_LEGEND()
+@enduml
+```
+
+![custom border tags](https://www.plantuml.com/plantuml/png/bLHHRzem47xFhxX5bKYa0ghKfqr8fO3QXm8Lj9hwX9puIAmcTcGxfMZQVvyF4vg6RTgUsllkxlEN--wuCPPfMvT5y4N8jAWvGcvjPRuEXvhj1fcmUPtK1dMgf4Lf1wagXrN19FNqZUM5I8QJw_uZGS_pXs79Z4NjeCr4bPMIr5CHVz23vuepYs1pX0mbQf52ech9cTw3iVi2WKb-I8TcxsZAy192Hu2wqi8WHII32TSRDgq2ZMysO9KA_1ktHzer9QAB99keGkbHcAc2EvgBhQCvGebMEqbOeZH7_GcDdUXeXVtOivg3DY-jezny0urzWnQQnu2zAS4Dz2Af867fAwG4npqG4WhCKFAMuFM1z3zaxt9XiIExGUCWQ9YYn0rj34qOnl0Z-1a4asQCcrDXwYjFcRCUB_6ZmVW63vzLzu3Zrl4OO21n1rxcqMPQjK4RjliAWp7d3SiJow9GOwMCiCgHNa9h61fH_liq23KvusedP3OAhQuRg48OmOfUHFVm-vgGA7OvKZCAxuIzhnDegMZFDRrUeMaoRX1_kOcGA5bcHkqleZ41d6uaqiZu71tHQZQUpcU3aWmFvqo_Sh-9DDEFfIC-O9f6QL5BLXHxm7UBz2sm4pQ7tgOfxe7DcGLXeJO7FxZORb6Zj21PYM0gbc90LS80IfOKQ5erM619VvdatQM7hTB-9eZ7QIB2SoFVhZuPM8WijxzpqMDT5pqQ4-lCI_aZgSRkcH3I9IIiRIMJokQecvYscf3s2PoMudRvl9YELo_mzF8uEnbBOZg6Dgmde4LxmWu4cEPo54wMyyVbOhPuEcEc_pcQr2dtZLqpoDQMNwwlvQlnvYVkPNYxydkJCjdfyNRwBNjW-ysAVZVI93u6gOkCYmxXz91hht_SD7MEeZDOLxQ-NtxVFCpkPejf50StABaxcLy0 "custom border tags")
 
 **Custom schema definition**
 
