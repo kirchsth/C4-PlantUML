@@ -190,7 +190,12 @@ SHOW_LEGEND()
     * `SystemQueue_Ext`
     * `Boundary(alias, label, ?type, ?tags, $link)`
     * `Enterprise_Boundary(alias, label, ?tags, $link)`
-    * `System_Boundary` 
+    * `System_Boundary`
+  * Sprites:
+    * `person`
+    * `person2`
+    * `robot`
+    * `robot2`
 
 * Container diagram
   * Import: `!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml`
@@ -376,7 +381,28 @@ C4-PlantUML also comes with some person sprite/portrait options:
 
 ## Sprites and other images
 
-`$sprite` (images) can be defined with following PlantUML supported options:
+C4-PlantUML offers predefined person and robot sprites which can be directly used:
+
+* `person`,`person2`
+* `robot`, `robot2`
+
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Component.puml
+
+Person(pB, "Sam", $sprite="person2")
+Person_Ext(pA, "Bob", $sprite="person")
+
+System_Ext(robB, "Robot A", $sprite="robot2")
+System_Ext(robA, "Robot B", $sprite="robot")
+
+SHOW_LEGEND()
+@enduml
+```
+
+![Predefined person and robot sprites](https://www.plantuml.com/plantuml/png/PS_1IiGm4CRnUv-Y5WzTM3SWdWHXsxNeOTN5HJoM9XrCiCc4oGJNjpSf8hAzplpumxSDF117EnKNngafZb1gPXzkXQ3XQ_DXM4SP0v12n-1uez2AJqDA1zPYTtDrc0R7Rqzx0QVq7s5Cntw7rgFBtETqSG0Aw6hVhilgEDXgNLu6JuRXhlBpwxfQ_QA-Et7jcmHRb4kON77y3WnsXeGoDrzH8fVDVqxvbB9dkldJxKBFxSUNztxVFNJFz_MgsAP5QS0F "Predefined person and robot sprites")
+
+Additional `$sprite` (images) can be defined with following PlantUML supported options:
 
 * included (standard library) sprites via their `{SpriteName}`; details see [sprites](https://plantuml.com/sprite)
 * images via `img:{File or Url}`
