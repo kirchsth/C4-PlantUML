@@ -1,12 +1,15 @@
 # Layout Options
 
+C4-PlantUML comes with some layout options.
+
+<!--TOC-->
+<!--/TOC-->
+
+## Layout Guidance and Practices
+
 PlantUML uses [Graphviz](https://www.graphviz.org/) for its graph visualization. Thus the rendering itself is done automatically for you - that it one of the biggest advantages of using PlantUML.
 
 ...and also sometimes one of the biggest disadvantages, if the rendering is not what the user intended.
-
-For this reason, C4-PlantUML also comes with some layout options.
-
-## Layout Guidance and Practices
 
 ### Overall Guidance
 
@@ -353,7 +356,7 @@ Person(userB, "User B", "with predefined sprite person2", "person2")
 ![Predefined sprites Sample](https://www.plantuml.com/plantuml/png/XSvFYy8m40NmUpz5jgTTs6sWx6bF_NDTeI0zIqn64qpJC9bGFxvJKHGyUCeG7h_tcaGAAKzUH0G31nV0Y1JH4IInLLFqK7oue7qs82nHJ7zIebggeoERzpa1wZaG1AhqFCcJGsqJMTd__WnU1Het_nBE1C60uSzTps759LX5BYsA0J3DuNDrsczHZloAjkHhOVzrauZN_1guNL_FH7SdkhT4_J1gHXfUo8Ck "Predefined sprites Sample")
 
 
-**Using HIDE_PERSON_SPRITE()**
+### Using HIDE_PERSON_SPRITE()
 
 ```plantuml
 @startuml HIDE_PERSON_SPRITE Sample
@@ -374,7 +377,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ![HIDE_PERSON_SPRITE Sample](https://www.plantuml.com/plantuml/png/PL1Fxz904BtlfnZnG4cm3SQJ9sfjX4ImeKMFpTAETkF-sUnEKudnkpiD22Q_NYQTz-RzsMqa6MWq6dRxZsLRbQVwox6jgzE-AQ6MnciKhvJjzDWZ34G-li-o8AVqXw9Xl8mHG-SieQMqSoRxgK8tH1goujsRIajBvyFd37yntcFFoxPWibGMG-hPL8YNhibAY0f3T3QHlL5s3OjydYfIaEJ2OYNgQoGqxGStsbw6Qz9jrh2yXLskuBS0_Xv6oOINLdhFEj_m0hdtMdMIbBCBNXMlrv3NLNei6pu926_J3Ho-5ZEMQ-sc27F72EI02th953DgKkm5pQI8C00fWvgz8cVxSq-Nq0radJkDGN52_Q_LCzOvyYNFNTDKDRDcqWDzodn2YloBy_WUdFd_P8ksv_Vy2m00 "HIDE_PERSON_SPRITE Sample")
 
-**Using SHOW_PERSON_SPRITE()**
+### Using SHOW_PERSON_SPRITE()
 
 ```plantuml
 @startuml SHOW_PERSON_SPRITE Sample
@@ -396,7 +399,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ![SHOW_PERSON_SPRITE Sample](https://www.plantuml.com/plantuml/png/PL5DZvH04BtthoZn09ECa3MUF2sIYMlYpfA1TO-aQMgbOtzqkelWnlZVBPpHCP5BXNgltaVwDf6Cj5W3tTt3qz0UJjt3SUZQqwV-09sqmQ1ufPqoouGm4uNqlggYNCklckPbN196vHsXer9vMttJKSs9vgfvzwOrqj7Z_USAlpC-uSJBeM6or0vZ6TXKY2g7eoTmY4o04PLaIQ1P9z299yA4pt8n12iRGWfH4q8MC2RlCiWhyN_kOYT4-vjGoCbgjuUitgPE52NvcEr4zv88xV31BswIyQLGDtl8ptNp7VmGmD_VgCMAuo13O9qd7A4EmMWbINC0NZMlzr1tRNayz7mI4TwMDt3_fTcmsXY_9k1ACG5vKDu6oHJBXJHxGS-j22EGjcZOAt6sdvTq1Pr1rhdG61GdD7zQNMCz9hxaUTVtRSSi9br3NsK-8YN-nMqyHs__FRb5DsqlyWi0 "SHOW_PERSON_SPRITE Sample")
 
-**Using SHOW_PERSON_SPRITE(sprite)**
+### Using SHOW_PERSON_SPRITE(sprite)
 
 ```plantuml
 @startuml SHOW_PERSON_SPRITE(sprite) Sample
@@ -420,7 +423,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ![SHOW_PERSON_SPRITE(sprite) Sample](https://www.plantuml.com/plantuml/png/ZP1FQzj04CNl-XGRzn0PR8c4ddgAAqnJQ19XoSrHh5UJQEd-MNPcSKtfT-yiTknIUeWkOlQzcVURkKEIaP8rehj_UXxQzQPxUXowTlErNvSOeYQOYqxQOA2uqawPD8AOY09-gkiezzMhfYdj4a9KtX4ugfItzGyTrOGqrSt7PMkae-t3jnf-iZx2o8z3msQf7SGgS7XnDS8BLyAZRBb-Hq8J9KumMkt6-YrXwGCu19KO-o2PG1CeIX5kbvfxiROI2U9baLDStNXhlJkX_2jkERcMnXpbuZztch5ro833QmHmmpbwDY-A5Y9wLygCkX2pLVvhf2Z9HzQx0nBOuRDFRfJnKAgRXRW-7lnwBduLWh_piSezx0OP0izvXfrOXM2qagIzc_5Jys4XLbrRFQvxReaWRgiRyV2zoThA6Bz7aI5Ha1VAso3POfCXpLcYtsiYY8Aq1SDPo6o_JtGb7KMUSxBbnJPWthQwO6qHCEVTzttRiIkRpkfbp1SWv1BoxoLw-tVB7RWnMVC7 "SHOW_PERSON_SPRITE(sprite)")
 
-**Using SHOW_PERSON_PORTRAIT()**
+### Using SHOW_PERSON_PORTRAIT()
 
 ```plantuml
 @startuml SHOW_PERSON_PORTRAIT() Sample
@@ -444,7 +447,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ![SHOW_PERSON_PORTRAIT() Sample](https://www.plantuml.com/plantuml/png/RL3DQjmm4BxxAQRRmdfXQvFGKw4GTmbDeScQjTCSZTQUh4Nr8wGHxbBwxXrLJT93VB2acM--dxaA93n5hQ2xsJyCxVMXszyDxVxG7vglVRc1JcYdi7WZpQZYX30JkV2nhhrOgfEaEHvZG3zQGsYe6gskVqW_pe7cUlVXVQk4eVlRRpN-93GJJbmSTjQGa0PzvLYuA5vNBeeMVR2c59EMPWkh9fqoa1Ta_MfJTET0g8VFDff9-7CvNcnXdUskD_2h0FwUfSe5ZuDmZdaUy0YDSqgEWgGrAoxjtcwXwThgxhhd4OzmMLt0xVTTwZLAsIL0IXc0B8nMEy4G7HL9fn3wHHAX1v8Q5Mi5zlRxdxkISfDvCYmPBzOW7q60-viFP4YSHvwSW34pTuBpaX1eHfD-u74aOKuifiJPHaepCJ1Ud3ZTqw8o7qlbToRBL1paNRvzMcNOPJ9oGFMqtfVzt0SCAVXDtxSTenBekVkIvmjIu2Ucuz5R_V_85PefQlK7 "SHOW_PERSON_PORTRAIT()")
 
-**Using SHOW_PERSON_OUTLINE()**
+### Using SHOW_PERSON_OUTLINE()
 
 > This call requires PlantUML version >= v1.2021.4!
 

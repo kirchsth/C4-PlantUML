@@ -15,7 +15,6 @@ C4-PlantUML combines the benefits of [PlantUML](https://plantuml.com/) and the [
 
 C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippets) for creating C4 diagrams with PlantUML.
 
-- [C4-PlantUML](#c4-plantuml)
   - [Getting Started](#getting-started)
   - [Supported Diagram Types](#supported-diagram-types)
   - [Relationship Types](#relationship-types)
@@ -23,11 +22,23 @@ C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippet
   - [Global Layout Options](#global-layout-options)
   - [Sprites and other images](#sprites-and-other-images)
   - [Custom tags/stereotypes support and skinparam updates](#custom-tagsstereotypes-support-and-skinparam-updates)
+    - [Element specific tag definitions](#element-specific-tag-definitions)
+    - [Boundary specific tag definitions](#boundary-specific-tag-definitions)
+    - [Comments](#comments)
+    - [Sample with different tag combinations](#sample-with-different-tag-combinations)
+    - [Sample with tag dependent sprites and custom legend text](#sample-with-tag-dependent-sprites-and-custom-legend-text)
+    - [Sample with different boundary tag combinations](#sample-with-different-boundary-tag-combinations)
+    - [Custom schema definition](#custom-schema-definition)
   - [Element and Relationship properties](#element-and-relationship-properties)
   - [Version information](#version-information)
   - [Snippets for Visual Studio Code](#snippets-for-visual-studio-code)
   - [Live Templates for IntelliJ](#live-templates-for-intellij)
+    - [Prerequisites](#prerequisites)
+    - [Install](#install)
+    - [Usage](#usage)
   - [Advanced Samples](#advanced-samples)
+    - [techtribes.js](#techtribes.js)
+    - [Message Bus and Microservices](#message-bus-and-microservices)
   - [Background](#background)
   - [License](#license)
 
@@ -515,7 +526,7 @@ Additional tags/stereotypes can be added to the existing element stereotypes (co
 Each element can be extended with one or multiple custom tags via the keyword argument `$tags="..."`, like `Container(spaAdmin, "Admin SPA", $tags="v1.1")`.
 Multiple tags can be combined with `+`, like `Container(api, "API", $tags="v1.0+v1.1")`.
 
-**Element specific tag definitions**
+### Element specific tag definitions
 
 Sometimes an added element tag is element specific and all element specific colors should be used, e.g. a specific user role should be defined as element tag with the specific colors `...PERSON_...` like
 ```plantuml
@@ -538,14 +549,14 @@ Following calls introduces new element tags with element specific default colors
 * `AddNodeTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`
   (node specific: $type reuses $techn definition of $tags)
 
-**Boundary specific tag definitions**
+### Boundary specific tag definitions
 
 Like the element specific tag definitions exist boundary specific calls with their default colors **and type**:
 * `UpdateContainerBoundaryStyle(?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)`
 * `UpdateSystemBoundaryStyle(?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)`
 * `UpdateEnterpriseBoundaryStyle(?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)`
 
-**Comments**
+### Comments
 
 * `SHOW_LEGEND()` supports the customized stereotypes
       (`LAYOUT_WITH_LEGEND()` cannot be used, if the custom tags/stereotypes should be displayed in the legend).
@@ -558,7 +569,7 @@ Like the element specific tag definitions exist boundary specific calls with the
 * Colors of relationship tags cannot be automatically merged (PlantUML does not support it).
   If one tag modifies the line color and the other the text color, an additional combined tag has to be defined and used.
 
-**Sample with different tag combinations**
+### Sample with different tag combinations
 
 ```plantuml
 @startuml
@@ -604,7 +615,7 @@ SHOW_LEGEND(false)
 
 ![merged tags](https://www.plantuml.com/plantuml/png/jLLDR-Cs4BtxLqpTOcl1Rhns5rsWG81DisbtWRGDuWGz1cDnBB5BaIg7oiU_xr0q2pbo6_GG7KoAy_Zuvcc6_i01VUWQC_bAsz9qYg0EeUKVbqkF3oUL3dMtxPXywMmW6qvAroo_Q5_M7Ehb-RllhWpQSFlhvP8U9Qv8oUBTkMjQPoEyZTIJsrPXe0j3ZQnjmfEXMKkUdLt0DpiXFdV6-TDfvOdij9YSARN7tc0rczwlJjvE3v5Vg_VVlrs_ZwjRvnNvm_MZ7Ald73jvjhinHre_hkFDKIA5zCDgJ9JMnqGxD6QBvPT-HvNHx_f7q9DluVCEkCMI6D0JUFgh8mwaG5i8DO6XIhnUx4S8uZqyw52dJL0ZGt2m9L2qqrRspUB7FG4v5vmGU42bTD3EeX5CG6rufBBHfNSRylUwfAYKQspfz49NTTXeHMeJtsU5H9AC6r5ncdO1fsqmemW7ZlW2PjRrMXSWasW0b37tObgab6MLMoer6WXOWSM66BXsdL5zCffRWq_9Xco1xA77rkXIXw4TAVC-HT3SEwXzD48i62UVRCOkk0Q3BWNp1F9RTWP35FxS6WxEOpLmvTfriVP_SezxLufSzDTaKi5lZIIyW7xelPP88ajUzVKZqdDLYThfCTmwueosz09kzIPl61CVfPYSEnjGLlsCMrp0T7DrDfK1RIK--3YzgGaQWO2sWVmkrbgeCVGrMNOizf5FCIm3fvAyrmYvWmDMV9hwkJWyxamrsie9_GZ7JyOOqnmyYlt_LuAb1qYzEv2nEf21hOuAhZx70__4UupZ9xJA4FUji-rOWCnWNANBt5IP6VeRaBMpN1oSaYwDUPpDu-nvxklazVhLp9xd2-Uew-kXxUlNzpsBoLuC9QMAvMZ8VXf512fh-m_1uSKqp6Yd3MrIQygkd-KDSgUEMN9414Zdf99F5N3BwTZ-Zr3YAPpC-W_CtMKYsN_HrFuZqFM0Ai_-1TxZFwQo73ZJCN5-N_KUXrepn5jha5sAHtzVPbc_mBBEB8CFTEZrreKQSh0tNORZfEFxQPvNveFp9fjFl_znTtdnoyLl7sTICap5v0DPrJNcRm00 "merged tags")
 
-**Sample with tag dependent sprites and custom legend text**
+### Sample with tag dependent sprites and custom legend text
 
 ```plantuml
 @startuml
@@ -663,7 +674,7 @@ SHOW_LEGEND()
 
 ![tags with sprites and custom legend](https://www.plantuml.com/plantuml/png/dLPTR-Cs47pth-0Pz-00ZfLpcWOewiCvTjhhmRca_cWUXRMubjMZI9MauZEA_lSkgLXqREMZpLF4dPqTxWo3V38Mj2rpqNgNoKIK7DdQsiBy54KQDhqqi-joMHhKYP8MfUqbAe--PJfP6xkEHZ-StWcGTd4pYV0xrJboEen718PCekuLZhhrZkEAFfaoS4S7RnWnqc3MoFDCycWtubGLA0qcfSxi5aX2PZ6nfSR-QKQz9ih1MDIxczJZef7ASoMzbkFYWYP784HL3lMVrMgL9HZDK3-WDX472qim61j_yF5vv2eJRq11KOWi0Pif-JoO5fbWOKta47GGxtMz02S96ZTqgO-jrf3pQx96In1tD5V9EQITDaWbjxagJKo-jRlilIbegpXeAmEnCoDU2aY-nMlmLO4fcJidx22qCeThdxW9Uyn9QQpAKJUI2j0fngbMPN54cwOQKx38ctd1XQ6H54gUsMwYXD83ZJmGpvgH9W61WxDU_-AeAQXnqp9ZjL_rJf6JL6VRgzhWSbWK-xAEVJtafXv6A9Ric8ZvY9Wlzqb3-1eOG_bbIfTBiyzA1ysCLObLfPT9gNYmW8Qe7h9Jar42ZxRWwASeFF4kmgxNKjV8MzL-FvnER-_ZqUtaTkffgRMf50JLJBNnvy_v7h1EJ1M-c5vF9pmNbuGkQryfxu-5r0mE7jF9OsCd97hNDOEyotvxK1Bhvl1UGj-JxDKJKKiUsZp8gPnjZSKylbAbvA2tdUG3WIqcQwkp9PhUdwPzydUBqKzjN8SIwEmXu3rbSVZ4gFONU80kSsz7fkpcZr6NpLLEPNRP-rxFtmN_v2dpUDdHA6A-91uoqdE2OEF7V3hwc-tizmcxw5tii_7b8LF7fzNVZPf-eGzMtRJjFeVpytxezj06ALAPlmJ1loeQwKMmcLMwag5agiPNhD_hloAaB3XORy6Y-cst97P9g2h8RXN1KIMhrVpJQj4IZi8JjhymQ1pRv_dyRXO8GWXzVyZH_oKu3DH_9V4iTSEUmy0DMscLCv2SRTnpCymgHqORZxwChoWzXTAMdP-V_LYf2JnF70vSXx2TYm6nxz-6LB92AwiI9Hw7zI_FFbm-oeuNmS1NX1CANbCVw0xqtzUNFyA52pIlwytNcS0sdjOFB8odqkmp_UMRNFzw_NNSEMbzGidTVpF_0W00 "tags with sprites and custom legend")
 
-**Sample with different boundary tag combinations**
+### Sample with different boundary tag combinations
 
 ```plantuml
 @startuml
@@ -712,7 +723,7 @@ SHOW_LEGEND()
 
 ![custom border tags](https://www.plantuml.com/plantuml/png/bLH1R_8u4BtdLyn6bKYa0ghKqwwGIW6rXm8Lj5hrX1nxIAm6ExATKhJQ__vvCA5f-Bv3Jp1lPfuVysQuiuuPL-_Aw2-fU5aBXCAvoluz71gs7-JI5NLMMpHSAuVA3RZU3T-buOLrnN1ostykcNAlywSXVlgyGE71pKJlAgsel2Bgg0UlbM0EmHK8EIeqaaEcQoMOEO1rXnA1AN5Cn_PW7UxYQuWz0PhAI8iKaG8cVM_Sj4gqeTc2qpeARzoVQDUKIAwoVA9BRKPnhalXQQwsdkO4PKRl5M6PDWBDDpJrefCLzjF0Qe_QWhIESliF6EnRTD0y1kn3Is6XboWD6UFlm0bEUo0Lb9YZ4Yt1woFf3sJl2-cm8xj1qoXgc9BC3sqCJHYdy5_qVnHDcZ5kpeKyL9up5pr1ubU33Gq1lgZkWS2jvx70GE4UWioJpRHbWpRi3XL6Oo4QbXUM9x71Iblfj2UzXjOm3ABwmJGyQWicz5wgV1GxKpTGXJ225Rs8_k7FDI59wdEaPXG_IFTOPz1IqPuhlrsXRJ9-45N959rGtpfHognz5J5HijoEsh-8nWHmlf7481Dpz4IhsNWwdmrsP7WyP-PTX4sacNuj7V41CpHAXqQniZn0Stombww0tgOfxe4hc0FfeBP7FuJSRj6WSg3O3i5MZ6D4LT82AfQLQ5irMEAEFfaItQM7hJRX9ZmFQIB2IoC_RhuPMCgySBzpCM1T5mEQ4kiiIFaZgS7kcH3I9IIiRILJsXLecfYscf3s2PoNudxvkfYELs_mylOyEnjBOZg6Dgnde4Lxneu4o0irYYVB-VDoCLkyN33JTu6MU-MXiMi6sThoo_UrVBN1_Co_31ytOMyuKvsUO6VOiYTssApeVuDdwIdWFh8-EePJodrR_xHfwXn5Px2-RFsu_7VpD7kOBQP96jsX4lvaVW40 "custom border tags")
 
-**Custom schema definition**
+### Custom schema definition
 
 If the custom (color) schema is defined via `UpdateElementStyle()` then the legend of existing elements is updated too.
 
@@ -843,12 +854,12 @@ It is possible to save them directly inside VS Code: [Creating your own snippets
 
 ## Live Templates for IntelliJ
 
-**Prerequisites**
+### Prerequisites
 
 [Graphviz download](https://graphviz.gitlab.io/download/)  
 [PlantUML Integration](https://plugins.jetbrains.com/plugin/7017-plantuml-integration)
 
-**Install**
+### Install
 
 1. Download [IntelliJ live template](intellij/c4_live_template.zip).  
 2. Select `File | Manage IDE Settings | Import Settings` from the IntelliJ IDEA menu.
@@ -856,7 +867,7 @@ It is possible to save them directly inside VS Code: [Creating your own snippets
 4. In the Import Settings dialog, select the Live templates checkbox and click OK.
 5. Restart IntelliJ.
 
-**Usage**
+### Usage
 
 * Create new PlantUML file (.puml).
 * Type `c4_` for displaying artifacts templates for C4-PlantUML
@@ -873,13 +884,13 @@ The following advanced samples are reproductions with C4-PlantUML from official 
 
 The core diagram samples from [c4model.com](https://c4model.com/#coreDiagrams) are available [here](samples/C4CoreDiagrams.md).
 
-**techtribes.js**
+### techtribes.js
 
 Source: [C4_Container Diagram Sample - techtribesjs.puml](samples/C4_Container%20Diagram%20Sample%20-%20techtribesjs.puml)
 
 ![techtribesjs](https://www.plantuml.com/plantuml/png/ZLHDR-Cs4BthLqnzMGTGxTsasm0zhHEdoMwTZqPoWvu4IXpBt52aIb9nZAB_lKDAaQsuWEk39Syy3j-RUUClrZ7Zcah2o66nTaRaQB_RKVI3K8LiECBQkTh-CfqQjfcKmgsRlB5e2gqSAZSfT3Lz5gPOMxUUNlxquuDaoYrl5rDyfJn7Ji7iai1CA3IJccwAFa2Zw5n5vy6j4LPQIhqHgWH9862Amo0jZAKt3NGlI5qmARTKeoTuU46qcFrvlqopzFuXczy_tOrFeWzTQ9PaoMzNwUKDnRhGqzVq9bjSNL_TpIaOHGzeh5RPrQiRCwNLjjADpRpc64Qpjm0iAJ0wwS1ZLfO6I-QGzyW-yXxAAw64TOOveLKF7qJVZaJ9rZgiiWlTACxCTbnyYlS7DQ59dVmT0Nt2Lz-7yGRpZDKrePymXrbTIr64qYCAVMClB8QaDhxdjtzSnf3gYj9mFddr-PcVXmLFpVh6lmZSG8swbXX3UtCCdGDYm1TwKE2xpkaRNJ61bT4LpQuR5tZ2CN11zc4opFTh2XOBfxt88VDvFZOeCvuJZqUKWJCTcZF7ScRHqxlT9hyluFFaSyiseJ9e3_Y59rHOvQHYBMgACFbit_FD6Iyz_5gucoO7WxNkL1nG6w-4H1icGjV-IZ-WdS_8_vobPwTxT2mosWeGYkChsl-IgRJzIzA1EqroWa08PuD4hKezlu3JoUb0P6ZiOv9CPuvULeZSmZYNkWIYxUn9QAxR83fxIB-fENF1RSlsxSqBSEvHLalqJXdr00krqK5qt1KTzYdSrla0j086jbWZRoHoe649p-6VtiH-eTn6k9P2shuHOY_T_hzGjhrbcFGoBUKkw1dKHUIFWnNT6Pzso7ejDsdwa12UqCCzFGuVxkhH8-5CdzwpCUFTw7p3DaRurZhjZzBefz_c5xI2jJOEpiu-_ao51dLshXlKUWyBTXeYzeoq4GRzD9qkjEmkEpt_-EcyevqjUtiS8queTeJzeDo0_rCl_W0N11nfr_-LiwkwSzmrkjxG8DHAcogCTRSpVTlwYGvAxTn9q665N3SEwYQNee12SsptGpXj11wf6cpT5UsNgR52bNxH0xb-sOUblDO5ssQF_J_chjMK-eAADvNy5m00 "techtribesjs")
 
-**Message Bus and Microservices**
+### Message Bus and Microservices
 
 Source: [C4_Container Diagram Sample - message bus.puml](samples/C4_Container%20Diagram%20Sample%20-%20message%20bus.puml)
 
