@@ -46,13 +46,21 @@ C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippet
 
 At the top of your C4 PlantUML `.puml` file, you need to include the `C4_Context.puml`, `C4_Container.puml` or `C4_Component.puml` file found in the `root` of this repo.
 
-To be independent of any internet connectivity, you can also download the files found in the `root` and activate the local conversion with additional command line argument `-DRELATIVE_INCLUDE="."` (that the local files are included)
+### Including the C4-PlantUML library
+To be independent of any Internet connectivity, you can download the files found in the `root` and make use of them by supplying the command line argument `-DRELATIVE_INCLUDE="."` to PlantUML:
 
-```plantuml
+```bash
 java -jar plantuml.jar -DRELATIVE_INCLUDE="."  ...
 ```
 
-If you want to use the always up-to-date version in this repo, use the following:
+For Visual Studio Code, add the following to your settings.json:
+```json
+"plantuml.jarArgs": [
+  "-DRELATIVE_INCLUDE=."
+]
+```
+
+If you want to use the always up-to-date version of the C4-PlantUML library in this repo (which obviously requires an Internet connection every time you render a document), use the following:
 
 ```plantuml
 !include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
@@ -514,7 +522,7 @@ Additional tags/stereotypes can be added to the existing element stereotypes (co
   This call updates the default style of the elements (component, ...) and creates no additional legend entry.
 * `UpdateRelStyle(textColor, lineColor)`:
   This call updates the default relationship colors and creates no additional legend entry.
-* `UpdateBoundaryStyle(?elementName, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)
+* `UpdateBoundaryStyle(?elementName, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)`:
   This call updates the default style of the existing boundaries and creates no additional legend entry.
   If the element name is "" then it updates generic, enterprise, system and container boundary style in on call.
 * `RoundedBoxShape()`: This call returns the name of the rounded box shape and can be used as ?shape argument.
@@ -566,9 +574,8 @@ Like the element specific tag definitions exist boundary specific calls with the
 * If 2 tags define the same skinparam, the first definition is used.
 * If specific skinparams have to be merged (e.g. 2 tags change the font color) an additional combined tag has to be defined. Use `&` as part of combined tag names.
 
-* (Obsolete, fixed in PlantUML >=v.1.2022.2)  
-  Colors of relationship tags cannot be automatically merged (PlantUML does not support it).
-  If one tag modifies the line color and the other the text color, an additional combined tag has to be defined and used.
+* Automatically merging colors of relationship tags is not supported in PlantUML before v.1.2022  
+  If an older version is used and one tag modifies the line color and the other the text color, an additional combined tag has to be defined and used.
 
 ### Sample with different tag combinations
 
