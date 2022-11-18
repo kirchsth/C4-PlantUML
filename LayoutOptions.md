@@ -2,12 +2,14 @@
 
 C4-PlantUML comes with some layout options.
 
+- [:page_facing_up: C4-PlantUML](README.md#c4-plantuml)
+- [:page_facing_up: Layout Options](#layout-options)
   - [Layout Guidance and Practices](#layout-guidance-and-practices)
     - [Overall Guidance](#overall-guidance)
     - [Layout Practices](#layout-practices)
   - [LAYOUT_TOP_DOWN() or LAYOUT_LEFT_RIGHT() or LAYOUT_LANDSCAPE()](#layout_top_down-or-layout_left_right-or-layout_landscape)
-  - [LAYOUT_WITH_LEGEND() or SHOW_LEGEND(?hideStereotype)](#layout_with_legend-or-show_legendhidestereotype)
-  - [SHOW_FLOATING_LEGEND(?alias, ?hideStereotype) and LEGEND()](#show_floating_legendalias-hidestereotype-and-legend)
+  - [LAYOUT_WITH_LEGEND() or SHOW_LEGEND(?hideStereotype, ?details)](#layout_with_legend-or-show_legendhidestereotype-details)
+  - [SHOW_FLOATING_LEGEND(?alias, ?hideStereotype, ?details) and LEGEND()](#show_floating_legendalias-hidestereotype-details-and-legend)
   - [LAYOUT_AS_SKETCH() and SET_SKETCH_STYLE(?bgColor, ?fontColor, ?warningColor, ?fontName, ?footerWarning, ?footerText)](#layout_as_sketch-and-set_sketch_stylebgcolor-fontcolor-warningcolor-fontname-footerwarning-footertext)
   - [HIDE_STEREOTYPE()](#hide_stereotype)
   - [HIDE_PERSON_SPRITE(), SHOW_PERSON_SPRITE(?sprite), SHOW_PERSON_PORTRAIT() and SHOW_PERSON_OUTLINE()](#hide_person_sprite-show_person_spritesprite-show_person_portrait-and-show_person_outline)
@@ -16,6 +18,8 @@ C4-PlantUML comes with some layout options.
     - [Using SHOW_PERSON_SPRITE(sprite)](#using-show_person_spritesprite)
     - [Using SHOW_PERSON_PORTRAIT()](#using-show_person_portrait)
     - [Using SHOW_PERSON_OUTLINE()](#using-show_person_outline)
+- samples
+  - [:page_facing_up: Core Diagrams](samples/C4CoreDiagrams.md#c4-model-diagrams)
 
 ## Layout Guidance and Practices
 
@@ -36,7 +40,7 @@ Please read through all practices before starting.
 
 1. Create all components, containers and boundaries first - in order top to bottom or left to right.
 2. Use `Rel` (directionless) to create initial relationships.
-3. If layout is not as desired, modify **some** Rel statements to contain direction `Rel_{direction}` to force shape layouts. 
+3. If layout is not as desired, modify **some** Rel statements to contain direction `Rel_{direction}` to force shape layouts.
 4. If the layout is not as desired, sparingly add `Lay_{direction}` to force any layouts that `Rel_{direction}` does not correct.
 5. For both `Lay_{direction}` and `Rel_{direction}` statements used above:
    1. Exhaust attempts to get a working layout with `Rel_{direction}` before adding `Lay_{direction}`
@@ -72,7 +76,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 @enduml
 ```
 
-![LAYOUT_TOP_DOWN Sample](https://www.plantuml.com/plantuml/png/NP1F3vD04CNl-od6Ue0c5LBZoPE8HW_zGuJQU28BJ6NZ_jdi3i76-DqTqjeQkRomxysRt-wxI3BGP3JiYc_7KzCsnwhzS3mVe9R6QnGlbEtrD22CH3w-pVCWv-oxed7gfeYXTvRGKjOxa_zGeHyZZNdvvbMbfQNJVfVZJ_O77FYmBJaibSMGUTueH9x0mH5OH0v0XxtaIg1HHL2H5M70YvmqGPAB__ZIjH0LXkXiAWUZx0PMnQ8gKf3amcejwciaDErxDzb1XclQRpUGtAwLhE6N0FuUIEcCNIkzvvupTb1uhrKlIJcxugFovGQAkieE7niU2GYliotilvQBLsZjvWYC7XZQ0J-5bnmn3Avu5pIp8i80f0ngtXMPxVUTBgMRoJtt69lY2-g_jtfYdI9Fidvkcghcr19wkC-QJqYHVt6HIt3cdv4_ "LAYOUT_TOP_DOWN Sample")
+![LAYOUT_TOP_DOWN Sample](https://www.plantuml.com/plantuml/png/JL1FxvD04BtlfnZh0PfKI8qdJqKqUkWV8jJ64rbWAXltpsPt23R6x-uGQ_lZyiAyDs_Ulbqa6MWoMhnIjjVJW30I-VW-puESin-AngcR8eRUMK9BMUzC_bE5VemqvkMxDvMMbiw7VOw_c1zmu65RibWgYo7pYxN84pWw0el80kYmbsm9DAe8AZ8Y37YLaoP8Sh4llf_EJTkSglRZwN9Crq9K6AApgHoCiXjO5GkgI46I2wkrg6-HqBGVt6G76Mvflzr0KalZDIPh-2s0lqUaTCQkbTwppmKxABpNgfUad5tng7ozWQAkikEdXbS2mjji2uTlvS8LMhivmj86XtR0LNZ94iF15T-2PbP4682KGSst8cVxSq-NqZ-IVUuo9iLNrFzVzOnrZhp9-ALfgffLY-Z1Fcq-8qN-nGMkmPcNApkq0pV_5m00 "LAYOUT_TOP_DOWN Sample")
 
 `LAYOUT_LEFT_RIGHT()` rotates the flow visualization to *from Left to Right* and directed relations like `Rel_Left()`, `Rel_Right()`, `Rel_Up()` and `Rel_Down()` are rotated too.
 
@@ -93,7 +97,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 @enduml
 ```
 
-![LAYOUT_LEFT_RIGHT Sample](https://www.plantuml.com/plantuml/png/PL1DhzCm4BpxLopbq5GgYOeuSMg8IelKGjIa84wHcop4mX-MlL6e4F_zRTI-zadFbvLtPdTcTXr91XgCXdt-yzkfRlQRptLp_BBTrL19upMADygsUkWGUY8VFsPPa6FwMr4_d8U8eNMMq5BQEfFzKQ7j8_LPyU5TgQMbqs6VuL_6E-ousHHCbifYI3rh2l5AD5a8KMA8pYQoCyekOPPFLKKAaboOBKHrYOIc-UG6sybmIThL4kPNh_C5_1F0xwwJZ7XkfFUyvmUU8VTUgrQISdR6hUBj4lAgJBzkQXu92E_J5Ho-5nEMQ-t625F42EI0ytd953DeKgm5zQY8C00fWvgr8dlxVtENq1NaFJSQW-A8-ZdLmzOfyYJNNLsN5RCcqXrzhDaYHVxYL7u5PrwEhFc-VCud "LAYOUT_LEFT_RIGHT Sample")
+![LAYOUT_LEFT_RIGHT Sample](https://www.plantuml.com/plantuml/png/JKzDJy904BttLwnue2JO1kF94xL1C05jQD5uQfPsj1ltOxCxcqgC_zrfH70lavttvdtCFNA7GSdeGkX6XXPOXsZzRPewtYVl0hkm3nvSOpI2ngGnAlqGhkayTcb-SrL8hd6tMQVmINWBBIthdCXSQ7297QIZTVRwjAlgzUA-ghSForKLJwAe0EUDZdchX9woKJPCuT5nD6uqYSg3Hr3rdGcwvUuGDxCf6vTSMGdZ2VkA6BsJJzp3lkRMaiuBx5bchHGDHs7qY5RvvPHbPP4yBYewSS2kandRFES3babfUi-6YfwXOTJFSgAe856G5wjwWGYEeL0WoSjJjkzZkXX_GT8vqWYCjY3_MfrZxJnTqbnLLL4IQo2TqBFC4j3J5uRnvepwVp87tGObVm00 "LAYOUT_LEFT_RIGHT Sample")
 
 `LAYOUT_LANDSCAPE()` rotates the default flow visualization to *from Left to Right* like `LAYOUT_LEFT_RIGHT()` additional **directed relations** like Rel_Left(), Rel_Right(), Rel_Up() and Rel_Down() **are not rotated** anymore.
 
@@ -160,15 +164,16 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 Instead of a static legend (activated with `LAYOUT_WITH_LEGEND()`) a calculated legend can be activated with `SHOW_LEGEND(?hideStereotype, ?details)`.
 
 The calculated legend has following differences:
-* only relevant elements are listed
-* custom tags/styles are supported
-* stereotypes can remain visible (with `SHOW_LEGEND(false)`)
-* details can be displayed in different sizes via the `$details` argument
-  * `$details = Small()` .. default; details are displayed with a smaller size compared to the legend labels
-  * `$details = Normal()` .. details and labels are displayed with same size
-  * `$details = None()` .. only the labels are displayed
-  * if `$legendText` contains `\n` then the text before is the label and the text behind the details
-* **`SHOW_LEGEND()` has to be last call in the diagram**
+
+- only relevant elements are listed
+- custom tags/styles are supported
+- stereotypes can remain visible (with `SHOW_LEGEND(false)`)
+- details can be displayed in different sizes via the `$details` argument
+  - `$details = Small()` .. default; details are displayed with a smaller size compared to the legend labels
+  - `$details = Normal()` .. details and labels are displayed with same size
+  - `$details = None()` .. only the labels are displayed
+  - if `$legendText` contains `\n` then the text before is the label and the text behind the details
+- **`SHOW_LEGEND()` has to be last call in the diagram**
 
 ```plantuml
 @startuml SHOW_LEGEND Sample
@@ -312,9 +317,9 @@ One thing which is often ignored is the fact, that these software architecture s
 
 Without any proof
 
-* if they are technically possible
-* if they can fulfill all requirements
-* if they keep what they promise
+- if they are technically possible
+- if they can fulfill all requirements
+- if they keep what they promise
 
 More often these sketches are used by many people as facts and are manifested into their documentations.
 With `LAYOUT_AS_SKETCH()` you can make a difference.
@@ -340,7 +345,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 Additional styles and the footer text can be changed with SET_SKETCH_STYLE():
 
-* `SET_SKETCH_STYLE(?bgColor, ?fontColor, ?warningColor, ?fontName, ?footerWarning, ?footerText)`:
+- `SET_SKETCH_STYLE(?bgColor, ?fontColor, ?warningColor, ?fontName, ?footerWarning, ?footerText)`:
   Enables the modification of differnt sketch styles and footer.
 
 The possible font name(s) depend on the output format (e.g. PNG uses fonts which are installed on the server and SVG fonts have to be installed on the client).
@@ -412,7 +417,6 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ![HIDE_STEREOTYPE Sample](https://www.plantuml.com/plantuml/png/NL1DJ-j03Bplh_3hEpIL-XBrYHEdXX1H90fHau8uHTl4a1NxiTfr52h4VsUZbXPnikmPpuozzCGTzKh2wlOwhyigt-GFrNEHGycLbSZ-2Dt8laNeYAo_J1B7X_XLKDVlUe-kCPfGKzmObRm9rtIUkYIx-5T8hccxlalmFU0jjc5OPu7CXKONs-38s2_BQCPOWSuR7V5M2Js7IJfMuSbnCcuoO-NU4whwolIwvMuVDOivJ0z9fpFuO0009vTem5tDhGqwJxY3r5ef6ax2w4aOPN_da9P5V9zNOSKX_8yNi7xCHYoLqWmUnWCza876ACi3HVMIX9K8rI28q049XL9ez27Rvp5TH0Smw1nf0MGRbDzNdMDjFVhHRrLLHHbO8-c4dcLka7neSImlpgYVAylmtV6PNm00 "HIDE_STEREOTYPE Sample")
 
-
 ## HIDE_PERSON_SPRITE(), SHOW_PERSON_SPRITE(?sprite), SHOW_PERSON_PORTRAIT() and SHOW_PERSON_OUTLINE()
 
 With the macros `HIDE_PERSON_SPRITE()`, `SHOW_PERSON_SPRITE()` and `SHOW_PERSON_PORTRAIT()` it is possible to change the person related default sprite or person layout itself. `SHOW_PERSON_SPRITE()` is the default.
@@ -435,7 +439,6 @@ Person(userB, "User B", "with predefined sprite person2", "person2")
 ```
 
 ![Predefined sprites Sample](https://www.plantuml.com/plantuml/png/XSvFYy8m40NmUpz5jgTTs6sWx6bF_NDTeI0zIqn64qpJC9bGFxvJKHGyUCeG7h_tcaGAAKzUH0G31nV0Y1JH4IInLLFqK7oue7qs82nHJ7zIebggeoERzpa1wZaG1AhqFCcJGsqJMTd__WnU1Het_nBE1C60uSzTps759LX5BYsA0J3DuNDrsczHZloAjkHhOVzrauZN_1guNL_FH7SdkhT4_J1gHXfUo8Ck "Predefined sprites Sample")
-
 
 ### Using HIDE_PERSON_SPRITE()
 
