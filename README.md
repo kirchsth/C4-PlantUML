@@ -1,11 +1,10 @@
 # Extended C4-PlantUML
 
-This branch is basically https://github.com/plantuml-stdlib/C4-PlantUML/tree/master
+> This branch is basically https://github.com/plantuml-stdlib/C4-PlantUML/tree/master
 extended with my open PRs.
-
-**Old master branch**
-
-The [old master branch](https://github.com/kirchsth/C4-PlantUML/blob/master/README.md) is still working. But it will not be updated anymore.
+>
+>  **Old master branch**
+> The [old master branch](https://github.com/kirchsth/C4-PlantUML/blob/master/README.md) is still working, but it will not be updated anymore.
 
 [![release][Release Badge]][Release Page]
 [![license MIT][License Badge]][License Page]
