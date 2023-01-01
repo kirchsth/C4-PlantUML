@@ -1,11 +1,3 @@
-# Extended C4-PlantUML
-
-> This branch is basically https://github.com/plantuml-stdlib/C4-PlantUML/tree/master
-extended with my open PRs.
->
->  **Old master branch**
-> The [old master branch](https://github.com/kirchsth/C4-PlantUML/blob/master/README.md) is still working, but it will not be updated anymore.
-
 [![release][Release Badge]][Release Page]
 [![license MIT][License Badge]][License Page]
  &nbsp; &nbsp; &nbsp;
@@ -24,15 +16,22 @@ extended with my open PRs.
 [Tests Badge]: https://github.com/plantuml-stdlib/C4-PlantUML/actions/workflows/run-percy-tests.yml/badge.svg
 [Tests Page]: https://github.com/plantuml-stdlib/C4-PlantUML/actions/workflows/run-percy-tests.yml
 
-# C4-PlantUML
+> This branch is basically https://github.com/plantuml-stdlib/C4-PlantUML/tree/master
+extended with my open PRs.
+>
+>  **Old master branch**
+> The [old master branch](https://github.com/kirchsth/C4-PlantUML/blob/master/README.md) is still working, but it will not be updated anymore.
 
+# (Extended) C4-PlantUML
+
+[comment]: # ("image is based on percy/C4_Container Diagram Sample - bigbankplc-styles.puml")
 ![Container diagram for Internet Banking System](https://www.plantuml.com/plantuml/png/hLPlZzh64txlJp4XYM8a7-Yd_FAcqadXm6qkWZkAkQJlq7ezsAkiTztTDHog-jqxQsmCNAfKQj_SiJCxp_Fi_1duQ1qphYvby0wuLZiq3eI3lN05i2mJJcZ59BdAagaCf508pEHrYSh1pMmLpoVh-o_nvlvXEd-QnRU3qG2SXjeYICsPb8VWbTZ2snqpWgKID_WihBFXu3foC0m0NWd5PPqXZCQZqNZw_yrKAyU8qumgh_4LIeldzmhdAllJU6pOVfIJvZebPiCfYlIDIFNucp2yiAuWj9kbPCezBUPZV2P_XjbtALGcja6GV7hykbd6g-JnOVFuj9xVFyJXa9AqPha5MrULDWwK1binZXQ40bSWA5OYX2cpc84-cceYCfGteNAm3WrgTwZGHh0l12yWq-gTEm6sQ4mTIcrmE09YlD-Up0R1uEyr4axMKKhCINBK_WU7pstvcY0ecFK5IH4otD8pis2IPR54Nq1wIpX86Vz6WQSq329uiwN3L4jjRj_4ytWHFwmtFp_Id-dZ_755_ZG_UWUltx__C9jyy36sO1NUnY8lN28ejua_XqFo79MjITXjnmQyeuCGVGXO7pCS3Bsy5Sf66hC7nJqsFQhJCrcjg32T4D-FV-j8t47YxOpP0hEvK2Jc0js3Z_yR2krSJn4uuIJ2AQ6G2PORLi9M6xXN3er21tTCVVCjaHoimp88bcYiLY6lhTCbcWYcfq-32NHcqDkcw2b5HySoLqqWauqD6EUwLiuEICSHUdD7XeoPGyZ_HrZN0WP3-2C0W5vlkCTqmwgABd_552PL9GLdVX4CoFIPxLW4IMMy-CMNgRVDK8eToMYaMKTtERGp24nbZVd4ctOFNqv8v2KpjIp19UIMUBDaENhsZZNXHbGkWedAQycCDo-DtedCJuQKtsVPreeVTvXm1py8l6uIQM4dc0yH1kYza1gzjsXUA2frAYIswLZumqdJz7K4lx6IKIOkjO0KfV0JQklKegEQ_MDjzeMuem38S2SuNikRfM767FFxnfUX_UZL9B_EuUBij25jVZk2mLnOPvgIWb3KbcNpEOAYcHLWDVKLDvYXSe996_csGcj1wfmEwFZeHQBQmQPC2T-no_llDyvCqpNJnvrdxaSPyaaXu6PQMMvlNwmk4lNdgUtZPnTYoOJSsCP0HF7DWixjo7dcDPL5DAHCma9mewtUEeYVUS5KZd2C9DWpp5PRZqgOQalpZLSptQVTjsVN1PmCtVlEamyirRNhMo0wZN84pZ1bMPE9Flt12kNPkkY7zicYzToVrkjbGXSlxz68_V1Es_GzN4ktUV2xEjNzYcZW-WNG8ZN6ouRe29jz6y5d-beTD-HzDHjNYz0h-7T0cpiAxcNtmt89kaAMMTWQNJRxQc-4GmjEUwAMPtOt9SWJvbcshfei8LWBUEEj3KOlvB8VBpHSnzMM-gEdJnRh9G5TrE0Y_BehJtdgl-LeMotcrxdgtGH__D4pZt-97sRXCDXgxT10PjXU7RzhkXzGi1l1MrzmwiXmsEIi_tdblNJyqhc3ZwIoBkLV "Container diagram for Internet Banking System")
 
 C4-PlantUML combines the benefits of [PlantUML](https://plantuml.com/) and the [C4 model](https://c4model.com/) for providing a simple way of describing and communicate software architectures – especially during up-front design sessions – with an intuitive language using open source and platform independent tools.
 
 C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippets) for creating C4 diagrams with PlantUML.
 
-- [:page_facing_up: C4-PlantUML](#c4-plantuml)
+- [📄 C4-PlantUML](#c4-plantuml)
   - [Getting Started](#getting-started)
     - [Including the C4-PlantUML library](#including-the-c4-plantuml-library)
     - [Now let's create a C4 Container diagram](#now-lets-create-a-c4-container-diagram)
@@ -61,9 +60,9 @@ C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippet
     - [Message Bus and Microservices](#message-bus-and-microservices)
   - [Background](#background)
   - [License](#license)
-- [:page_facing_up: Layout Options](LayoutOptions.md#layout-options)
+- [📄 Layout Options](LayoutOptions.md#layout-options)
 - samples
-  - [:page_facing_up: Core Diagrams](samples/C4CoreDiagrams.md#c4-model-diagrams)
+  - [📄 Core Diagrams](samples/C4CoreDiagrams.md#c4-model-diagrams)
 
 ## Getting Started
 
@@ -85,10 +84,19 @@ java -jar plantuml.jar -DRELATIVE_INCLUDE="."  ...
 > ]
 > ```
 
-If you want to use the always up-to-date version of the C4-PlantUML library in this repo (which obviously requires an Internet connection every time you render a document), use the following:
+If you want to use the always up-to-date version of **my extended** C4-PlantUML library in this repository
+(which obviously requires an Internet connection every time you render a document), use following:
 
+[comment]: # ("!include followed with 2 spaces that it is not replaced during release based branch updates")
 ```plantuml
-!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
+!include  https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
+```
+
+If you want to use the always up-to-date version of the **original** C4-PlantUML library repository (**is not this repository**), use following:
+
+[comment]: # ("!include followed with 2 spaces that it is not replaced during release based branch updates")
+```plantuml
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 ```
 
 If you don't need the up-to-date version, PlantUML includes the last released `C4_...` files as [standard library C4](https://plantuml.com/stdlib#062f75176513a666) \(no additional files or Internet is required). You can use it with following:
