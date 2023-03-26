@@ -1,57 +1,95 @@
 # Themes
 
-WIP: C4-PlantUML offers no finished themes (atm).
-It is possible to define/use custom themes.
+Similar to PlantUML themes supports C4-PlantUML `C4_...` specific themes (based on existing PlantUML themes).
+
+![](https://www.plantuml.com/plantuml/png/hLRHRzks4txtNt5r-qCTG8dnGzkN0G7gsDgQmauyosttCC2WfBD4b28ryXJ76FQ_xqXPLknqw83k9J6FlE_x-F5uudj7mb9JgS4BAh52cBxTD5eIvh2rfeAIg7O_ZSTMxAuAIMMJDWvjPZIXfglCLEElqcQbet8yVNkvL4BJfyLyZ8yydsC-3g1ky4BgJ3Kv_Z0UovloOY4rsglQwnua7-w_R9RnAhc_szn_Mizlx-BHnU0rh4NXm3LrRIo1Dk1gaQ43gO55WHOLmYWL3dCmRQXX1gkabhe0HsZHqBv65y6kb5a9kT6lgGFiq8JULyRYnHKmu-ts6BO85lzea77oZb9XWJgF3l-1U5EmOm_Q92Y50pAG8kIubHhpmIJFOuKLQkAzZ8QfoBvoud7_mmXURNamDShOwrVnF5x4T-lDp_VyPte_lr_nV5gqiyENRzwycqtU-HnNYXglOrcKb4WsDV7ZqGNFjChMBEowOuEie_jTeqy1vtE65rxT2bLG9jnUPnwQzzJ9cQnMV2wT3iK8_pYHq5xXzKou4lEvrApb1Ds3Z_yR2aFKKmn8aa8u-Wcv58KL5MoDXLjDQ3KIt0ZzrLT4idU4rM2mHEkC7cMD8rEXZM1w_3MSG1S6imrddd9sr9vo7HA52Z4GMMOQJMx8EbhepGq7Sc7te-p_Z7KkO7W1Vmu0eDSxsc6w4NNDYxzW2fEwLZ8J98qUSkYZU10H9BNruXUVfpusGoKVM4QGveZNPd2uUo1q7i97thJR-7B28a-PNIqOBk5fXPTBKQ1dxrYJpCgQ8fZeeb72-l3IcWUPemEXrBTPjetEl7IX9Es133iPZ7Jm88LFaHPulv1QitDedocgJ2eL7knOX46dQVeoWjz49TY9KosWP1LQdMjIXmHc-w-rkMVYMW6GuuFCy5pUB1tbWeHlD_uO3Z-zckJNEPoCoLXquBiYM2oa8nkE5AJcigp2xmZAS5T0D5H2PZ57JL8e5_coGkT0cO87IDdLCwCEzvgTahvYbxVVBfoPuMMsppjnxZiEULCOEDnMKRZhPvsBHVrrBFluaKPO2QasBWIOABvSy1ZQ1PvvNIB8G2eKB6HcZJDRWlWnAuKk4DfCXds2UT3MepActbfHuTcTxcttvTbLGSQ1RdzFpGUHceRw4eYELpa2ia8x4PpexH-iK3rf5_sb_UJGUUuFw_KouOMdwrmjlhkcA_eUhgNRtFbMdPg-HGIulW4Sa4Bmj20wmj1l8_Z8NzLn8EzFCqmT47e5FmQqkU7aNdP_MKv1LoXo5ruceL_jh2HqGCOJ7NXcDrE6F68-SUkio1A6TO2NFXemUY4dzNYkuJIlSLmVFNsoM2zRe7up9-bdLTdxr7_bk5ijvkTUzTCCtxvvvl4lyTsCtpfROmWjv5RiTFkjwHvEy705__C7BeqUNGJF_BEgd-NXvsvwy9vLDfNw6m00)
 
 - [📄 C4-PlantUML](README.md#c4-plantuml)
 - [📄 Layout Options](LayoutOptions.md#layout-options)
 - [📄 Themes](#themes)
-  - [Overall Guidance](#overall-guidance)
+  - [Use theme](#use-theme)
   - [List of available C4-themes](#list-of-available-c4-themes)
   - [How to write custom theme](#how-to-write-custom-theme)
     - [Following variables could be set in theme definitions too](#following-variables-could-be-set-in-theme-definitions-too)
 - samples
   - [📄 Core Diagrams](samples/C4CoreDiagrams.md#c4-model-diagrams)
 
-## Overall Guidance
+## Use theme
 
 WIP ...
 
 ```plantuml
 @startuml
-!theme C4_FirstTest from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
-!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Component.puml
 
-Person_Ext(customer, "Customer", "A customer of Widgets Limited.")
+!theme C4_united from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
 
-Enterprise_Boundary(c0, "Widgets Limited") {
-    Person(csa, "Customer Service Agent", "Deals with customer enquiries.")
-    System(ecommerce, "E-commerce System", "Allows customers to buy widgts online via the widgets.com website.")
-    System(fulfilment, "Fulfilment System", "Responsible for processing and shipping of customer orders.")
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
+
+Person(admin, "Administrator")
+System_Boundary(c1, "Sample System") {
+    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
 }
+System(twitter, "Twitter")
 
-System_Ext(taxamo, "Taxamo", "Calculates local tax (for EU B2B customers) and acts as a front-end for Braintree Payments.")
-System_Ext(braintree, "Braintree Payments", "Processes credit card payments on behalf of Widgets Limited.")
-System_Ext(post, "Jersey Post", "Calculates worldwide shipping costs for packages.")
+Rel(admin, web_app, "Uses", "HTTPS")
+Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
-Rel_R(customer, csa, "Asks questions to", "Telephone")
-Rel_R(customer, ecommerce, "Places orders for widgets using")
-Rel(csa, ecommerce, "Looks up order information using")
-Rel_R(ecommerce, fulfilment, "Sends order information to")
-Rel_D(fulfilment, post, "Gets shipping charges from")
-Rel_D(ecommerce, taxamo, "Delegates credit card processing to")
-Rel_L(taxamo, braintree, "Uses for credit card processing")
-Lay_D(customer, braintree)
-
-SHOW_LEGEND()
+SHOW_FLOATING_LEGEND()
 @enduml
 ```
 
-![Theme sample](https://www.plantuml.com/plantuml/png/fL9DRziw4BphLsnyie6N-E4XftTA_94KXTiQ-K2E1ask928KgN2NSOoY_xsavCYCcri57KXmPsPtTgw8XUVGcEACQsmGvfUR6-s97v0OIkyQg9bR-dywzM9tKMckmpOGUkaie-KBwPhfi_Qo9gwdyylpjH6M7x-jflWMtnMgQSTBnPcsqWI5VyqNEvoxfdKsbRUfzMADdfpTBDzuB0EnQz3_0wFvuJYAvsjuVm1NmfDM5JB1IZUQKLsC9aMnZFg-zPfmCtF1Ak7tO_blX9uKZoRmiu3uzQ9ZIIBJWdlqhreYN5TeEIalK1Y2NHpqs0BQbw2zHahAYUj-JupD6EFqyLrYn2tFto-7rsuCOzoE1Y82Th0D-qYlAYPmrcYByAe5S8smwpjFdi8EjwGPJmJBO4fj6hGSoM-6IwPuXnIj9hqr2ANpq7edaKZR2eHLGBLkstHnPUQmL-YxsNuLHK_LxOR5csXS97te3eb-BemCHZ0I62U5WLW3uoIqV8JPVxFZg9DEJqWc4F5FsRHyZbPrRSsyq9Oz8gp5FesGv7FjxNj15FspEBMoxYT30kbHQGOfl8BsK07EmXPhOShF0vHhjOwIdr_H4-vX7Myde-wSDofk1u_-oLX5lSD2FekgpqPnXsPpbuMwJzirFHEy12JMpX9mP-K36cnhPp7YJc5viDP6IAH-IRtY8ISGqbfxT1_h7BPoBeg6jWU2jX7PYDH0Zekg6UX3lExHAle4pUu0NNo8uy74MsJANAg5hv3Iyfi1bGaE2LkWmKhmoJApy0wggo6MUKGU2NjlFeT7x4hie_PWyH4zYPd_ykDfirhUBhylnfFY2gqAZVaD "Theme sample")
+![Theme sample](https://www.plantuml.com/plantuml/png/fP7BpjCm48NtVWh_OPDA9L5HLwmQGccHUeb8IfUHcmp4mXVBdYXKY7TdJ4lB_izc59zlpfonLm65nr4hze83QE3biXsDHEZvDsyr7n1TU9_dNapPTud3U1a3-CuQ18DPPtN-G_fk23ZavV9jfOJ1qtwNmq_IU-ZplwQ1iHTfEZNsy6f3obSIBAG1dxaOd5NWWpMfwBKqSvuKiSg0Ng3roOpLru2WsmzsDBtmrxHR45GBxHJmcvRC-2_6wNiufnDSMk4SaMUuyC8v9Jk1qfg4ZietSrxKLNPODzJYWR_B5dp_jOnQePIT0ezB1OwMqqPE4A97XJAER2Q929wZrA1eLg28l-yXKxo9v7F7I6HVGFrRxXdh5AYJwhPfgfge23tKfyq6CD0ln18VzFyMLc-Fv_RJxbWqdm-RThVUh0yVqnbRWUdfOly0 "Theme sample")
 
 ## List of available C4-themes
 
-Atm we have no finished C4-themes....
+### C4_blue
+
+C4_blue theme is the original theme and need no activation, but it could be used as starting point of another theme.
+
+It can be activated with  
+```plantuml
+!theme C4_blue from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
+```
+
+![](https://www.plantuml.com/plantuml/png/fO-npe9048HxdW8Uu6SRgh_243jCB3IM1ewL8-uTv7Okwjkx-WfMCyby-P9f5KD23b9Ky1oux9hhA9dBMrf3wO5D_udIyAZd1JwFMJcvDO8ZQhS6kY_9UOMdhlaxoX1nFlJ4JziddkYhrA9QefCyyS--pU0NdLYn4zaB1uxGYubwdesejy-Hrfhb6m00)
+
+### C4_brown
+
+It can be activated with  
+```plantuml
+!theme C4_brown from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
+```
+
+![](https://www.plantuml.com/plantuml/png/fOyz3e9058HxJW47aDTGMM687IOM6ai3ovCbxW_PDnlqzZwzWjLCCb--P5h1a92zAofOzbnspNrCSGlb8qLVMc2LFL4QjdfUOFEOXPE90HnGc-ZfkIHZ1PQwPdTsGy3rr1E_T9zuefzJYce9nkM9__Qj2h_fmeA3SqV7dWFafgAUPoNgzVkarQRv0G00)
+
+
+### C4_green
+
+It can be activated with  
+```plantuml
+!theme C4_green from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
+```
+
+![](https://www.plantuml.com/plantuml/png/fS-n3e903CRndQU01v0kJ4uOueQ9WyRHu54vujr1sk-YlhtLLt1ga_xpIzeg1a6EeQZWENBPDTT9c5DvboMM7bXrIoJ3ivvc-7pBokAM14wetHBfCOlp2azTipc68U5yw8bVTXzvf9-fHJKd5_B8VtkhnMywiM8NmZuOdg0NWtgUhAZNxoUjRJO_)
+
+### C4_united
+
+It can be activated with  
+```plantuml
+!theme C4_united from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
+```
+
+![](https://www.plantuml.com/plantuml/png/fOyn3i8m34Ntdg8z0FNIYQceOYiI0uWHbSGq4KbQnJy2Re_X2aoszDz_qky5KqQ9eMhWE78zTDUIFDZMzxp4sW6hR8doz6nd3rTkHJYR9O4JMhD4UlXidC3Hq6sEOKeu7qRYb-QMBVsaKZK-cL0i_-rR5NxJYGMx4FQ1ezRaegAHPoNQzJkbrq_l1m00)
+
+
+### C4_violet
+
+It can be activated with  
+```plantuml
+!theme C4_violet from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
+```
+
+![](https://www.plantuml.com/plantuml/png/fOyxhi9034Nxh29Pm8kRLAyAYkY2H06YH676P4PuFXfx-EmUmnQeREcUUwGxiYn5Qg2c4uS1ssauttqYbFPQKcYTIEP_WB8y-jMBgvVAM4oAWb5wamBSV36EnS4q_ErfYNBSpO1FpIrQ-4gvwNmqL2t-xCiAl-20B1kYBM7G6fzKDEEgH9y_KqRzzBu1)
 
 ## How to write custom theme
 
