@@ -63,7 +63,7 @@ C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippet
 - [📄 Layout Options](LayoutOptions.md#layout-options)
 - [📄 Themes](Themes.md#themes)
 - samples
-  - [📄 Core Diagrams](samples/C4CoreDiagrams.md#c4-model-diagrams)
+  - [📄 C4 Model Diagrams](samples/C4CoreDiagrams.md#c4-model-diagrams)
 
 ## Getting Started
 
