@@ -14,6 +14,7 @@ The following samples are reproductions with C4-PlantUML from [C4 model core dia
     - [Supplementary Diagrams](#supplementary-diagrams)
       - [System Landscape Diagram](#system-landscape-diagram)
       - [Dynamic Diagram](#dynamic-diagram)
+      - [Sequence Diagram](#sequence-diagram)
       - [Deployment Diagram](#deployment-diagram)
     - [Styles](#styles)
     - [Icons](#icons)
@@ -52,6 +53,12 @@ Source: [C4_Context Diagram Sample - bigbankplc-landscape.puml](C4_Context%20Dia
 Source: [C4_Dynamic Diagram Sample - bigbankplc.puml](C4_Dynamic%20Diagram%20Sample%20-%20bigbankplc.puml)
 
 ![C4_Dynamic Diagram Sample - bigbankplc](https://www.plantuml.com/plantuml/png/NP9BRnCn4CVl-HH3Jmbg4m4z8I6QHqMB-eYQ5CGfclLETgrwxTLut10XlZlZJQjqkOqzZ__F__5556H9ZHkyizwuL1BK8ctyF9amxiQLbJeLAHARu8MyZ4re9a-MJHsbdipFpvOElJpUtapej-PBAlLoizXxRAmPjtdmu6Rww_vnlVbvlRxQt5n-kxnR34U3mLm7elN4Ys9epa_XP8621KOwqVY178eD7XsyNiFArDHWpguaC4N8MC1KsIZSLOFrsy1D5vz2ZR6c4Z19hU3M74eCKvcFwE8fe34K8xXGwO74Z4z6HwwX-P2rhAySdIsn8fYshNkPap6-upEk3DjM07q9KrybXvmpImxFjbH4T0x25fG0hhqGUn8eq3_fKDWcRmvljB872M1IbD0GHtYsc7iimuuAA3Zi8d4FRZCBoPV8-s6XUjFbTGzk17y60FFGjC6Jbw7vb5z29h5A7UyxBrlEC3D2toFlqtNxe39JHblvt67LObEZh_AXnHXtWSkZZJtvZrb8-zG4o4_Wu1pn6_dR7tFLYF9VTkfSs1qM7L-rLLZ3lgMp5qjN-oZKPFc_0qNUF7GxFCYdeh4It-vVntHhNDtVJQxMw-LA-xIhm-qScwFJAXkdnoz4vN04sU7N-LhN_Tv8Zep0UzXoQ5w8TpKnTR77Xk0BVEtq5hEvzb-GBrFZ_W40 "C4_Dynamic Diagram Sample - bigbankplc")
+
+### Sequence Diagram
+
+Source: [C4_Sequence Diagram Sample - bigbankplc.puml](C4_Sequence%20Diagram%20Sample%20-%20bigbankplc.puml)
+
+![C4_Sequence Diagram Sample - bigbankplc](https://www.plantuml.com/plantuml/png/NP9BRnCn4CVl_HH3Jm6bYO2Ua13Dew95VKJT0iTerZlPjUeTB-DnGxyzjjkeIs-sv_7_pNzy5XH5O--EtbasBZO4dUeGlipdWljPQxMBTGmanhCIwypuVlvWnNH1k_dgz6JZaFNdzTMS_gPuGqrwt5Rq9n8RcWsvyz4grQ9baedvE8NZodBhw6I3BS5Y69mrgDRpSGhzm4UiZDX10Rc11RVHeUJ8HloZRIW0EWT-1zeHNBAIC2dKo0-fAUmYczmAdTKdK0yc1lKzIO17Yxd62kofXbhyFf3CZj-FwBPB7xb1UPhKIN2nkHpJfKo0bUy7pyGwCP_A82qd2CWTn3j7XRGQ9BDS_rh17GLz4rqubwGXMneoOSWzBAVZ_oCjNqQgde9IFtih_paBaOcI1drz7yal2NdisnjlxiYXKdCWo1MMfs0wv3PV1WnXxwK9Ko0rMVvWplQScydOjdKzCQT9QOsADGRAggLz4OF3CrIcenuBedgXPmz0gBL1fMGdX9sNlfodq67e4Y56xOZrPGrWX9fyHPVGq1WA0PnlNpcFadRvPyyhYdLlDOpBG7tvQjNjpVpY_dvJfQ9Ia_ABhojqASk6nQiofP71yo4pPPMH0pao2XzW9xv_sUc-8w5oPkm9liAtehPUhZ9STN7xUtjr_ltyPfrCF2DkOk_-0G00 "C4_Sequence Diagram Sample - bigbankplc")
 
 ### Deployment Diagram
 
