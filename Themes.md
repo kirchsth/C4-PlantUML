@@ -332,3 +332,67 @@ If you have any interesting theme, you can also propose a pull request so that w
 !$EIGHT_SIDED_SIZE ?= 18
 ```
 
+### (C4 styled) Sequence diagram and themes
+
+All sequence diagram specific renderings (like sequence-lifeline-color...) can be directly defined via skinparams and styles.
+The advantage is that no separate variable definitions are required anymore.
+(But the disadvantage is that all themes have to define there own skinparams and styles.)
+
+A theme could contain e.g. following definitions, skinparams and styles
+
+```plantuml
+' $BOUNDARY_BG_COLOR... have to be defined in theme itself that it can be used in styles,...
+' (no default values which are defined in C4.puml) 
+' If skinparams and styles are defined with concrete values no variables are required 
+!$BOUNDARY_BG_COLOR ?= "transparent"
+!$BOUNDARY_COLOR ?= "#444444"
+!$ARROW_COLOR ?= "#666666"
+
+' replace transparent with concrete background that it can be used as font color too
+!if ($BOUNDARY_BG_COLOR == "transparent")
+  !$SEQUENCE_BG_COLOR = white
+!else
+  !$SEQUENCE_BG_COLOR = $BOUNDARY_BG_COLOR
+!endif
+
+' "C4 styled" default is no foot boxes
+hide footbox
+' "C4 styled" default is that lifeline is arrow color
+skinparam SequenceLifelineBorderColor $ARROW_COLOR
+
+skinparam SequenceGroupBodyBackgroundColor $SEQUENCE_BG_COLOR
+skinparam SequenceGroupFontColor $BOUNDARY_COLOR
+skinparam SequenceGroupBackgroundColor $BOUNDARY_COLOR
+skinparam SequenceGroupHeaderFontColor $SEQUENCE_BG_COLOR
+skinparam SequenceGroupBorderColor $BOUNDARY_COLOR
+
+skinparam SequenceReferenceBackgroundColor $SEQUENCE_BG_COLOR
+skinparam SequenceReferenceFontColor $BOUNDARY_COLOR
+skinparam SequenceReferenceHeaderBackgroundColor $BOUNDARY_COLOR
+' VIA STYLE
+' skinparam SequenceReferenceHeaderFontColor $SEQUENCE_BG_COLOR
+<style>
+referenceHeader {
+  fontcolor $SEQUENCE_BG_COLOR
+}
+</style>
+skinparam SequenceReferenceBorderColor $BOUNDARY_COLOR
+
+skinparam SequenceDividerBackgroundColor $SEQUENCE_BG_COLOR
+skinparam SequenceDividerFontColor $BOUNDARY_COLOR
+skinparam SequenceDividerBorderColor $BOUNDARY_COLOR
+
+' VIA STYLE
+' skinparam SequenceDelayFontColor green
+<style>
+sequenceDiagram {
+  delay {
+    FontColor $BOUNDARY_COLOR
+  }
+}
+</style>
+```
+
+Following sample could be used as starting point for custom themes with sequence diagram support:
+
+[![](https://www.plantuml.com/plantuml/svg/fLPjRzis4FxENt7sMYG1MZi3idqeagv-KLu0DyaKfqC_6RHqieZGf4UUd6H3__jEL2qxbPFK684s4ddFStVF7Ntwv4awAkPQYDQRMu_Z7ES89z0U74rc3j6qXTY3n9ebEW95SAye1vccYfGrKlFHV2vD2beP1EbcnHmDmVjX78rwuuilqUJYSZ2w7KOdxKwtqsa3MIWyWhQ9rFfHj5G6RvVIAJdLEC47vSdljty4jmy4m1wqA4J7ePqgvscCdY1pTWvlPqYJccKfTO7RIBe1xmMicDOP1veomfLD2xN7PorpeeN_qEqwUT-PiIB5b9DoB1EXeGvhqhrJBiazvTt1qVjhBGtTVXvryO7FKqpNJaogibBXuyQ2wruyXgjJ69z7doCeZTxqhsulXxtuwwH_DXbSZQxYJgS3kLnYAUiK8SLC6Kn16QZ2LkHHP_mYG_4IQKgpmbSsdXur-dTCmkJxnfPuMMY2eA27-rmbEKYtISpgTnRSBmV0c8iC_9qo2-dat8CqwNVA9vZGCInDuf1mHStELlMgh1t-NIZ7vgBLJ1F-u8ua9urdLsYelMcqjlZbAApoj1V7Ltzj7lqULkXcXmij4uGDmX-2dChaRkPiOTAjqaaFcJN4zjew86j36-zlYVlaQToXZrjlRg8_RwFBGRHXLsfDM7VTTfkcWtK7bJUsKZzjrtLKGUZCMeAfVK0lSfLYUEVNvp4XPwqo39TQbGLozhvALzG5Xnik6Pe4Hzyj-zQbw0P1bCq2Y2sOCrPtqRVfOx-MkW8s4tyEVMeD1SnQbvS1QrSxmSvHSbh1suuHhWLfEjk2YJ53Lpxif4a3lOikDQXAyZM5zk3BHGzknbz74J-_HlUoPiUXyJuAznG3_me8jojv3lXD77Shx8iQxgRzK2qLs--k_1gxW-uho8j1lYRs4BLyN3iDqxfMrTUEv8n1GTMq18GdWEU31VYsAJ6x_jXOZTcqmnXlAPFe8iMV7jeyxbSfXybJ_qZMJFzp6ZSyrB-gr-YyDVizhH9y1-tmjtsmskxRAM_o_xmbP49gAGc1tuM8KQzGbLMle1mDgKIIiWRYqfsd0DG4laWIz3uhD2Gov0PGKWHiu6bIz1Yo84oPezG3l9qZS9EaO3F8fDA5guYqjGluzV3m44XLNp_LQiGulBo17X5VWL0e05P1bF_AEmfsYGxMzl01b56q9TKSjRRCKAE2903ZNFdL6BM6DppoeTJXqz6NZe0HGl3Cl61c9RNwfqhrv6GNHLyJBaQ_iCPp8OEl61T8wWK_nZBSWVnfVxA1QFWjlzj-Wxao1Q47BOdDUM-B-qHgxM6f92noQm9Ot9ppQ1r5Pz7bSFz0V6Bbk6d_0m00)](https://www.plantuml.com/plantuml/uml/fLPjRzis4FxENt7sMYG1MZi3idqeagv-KLu0DyaKfqC_6RHqieZGf4UUd6H3__jEL2qxbPFK684s4ddFStVF7Ntwv4awAkPQYDQRMu_Z7ES89z0U74rc3j6qXTY3n9ebEW95SAye1vccYfGrKlFHV2vD2beP1EbcnHmDmVjX78rwuuilqUJYSZ2w7KOdxKwtqsa3MIWyWhQ9rFfHj5G6RvVIAJdLEC47vSdljty4jmy4m1wqA4J7ePqgvscCdY1pTWvlPqYJccKfTO7RIBe1xmMicDOP1veomfLD2xN7PorpeeN_qEqwUT-PiIB5b9DoB1EXeGvhqhrJBiazvTt1qVjhBGtTVXvryO7FKqpNJaogibBXuyQ2wruyXgjJ69z7doCeZTxqhsulXxtuwwH_DXbSZQxYJgS3kLnYAUiK8SLC6Kn16QZ2LkHHP_mYG_4IQKgpmbSsdXur-dTCmkJxnfPuMMY2eA27-rmbEKYtISpgTnRSBmV0c8iC_9qo2-dat8CqwNVA9vZGCInDuf1mHStELlMgh1t-NIZ7vgBLJ1F-u8ua9urdLsYelMcqjlZbAApoj1V7Ltzj7lqULkXcXmij4uGDmX-2dChaRkPiOTAjqaaFcJN4zjew86j36-zlYVlaQToXZrjlRg8_RwFBGRHXLsfDM7VTTfkcWtK7bJUsKZzjrtLKGUZCMeAfVK0lSfLYUEVNvp4XPwqo39TQbGLozhvALzG5Xnik6Pe4Hzyj-zQbw0P1bCq2Y2sOCrPtqRVfOx-MkW8s4tyEVMeD1SnQbvS1QrSxmSvHSbh1suuHhWLfEjk2YJ53Lpxif4a3lOikDQXAyZM5zk3BHGzknbz74J-_HlUoPiUXyJuAznG3_me8jojv3lXD77Shx8iQxgRzK2qLs--k_1gxW-uho8j1lYRs4BLyN3iDqxfMrTUEv8n1GTMq18GdWEU31VYsAJ6x_jXOZTcqmnXlAPFe8iMV7jeyxbSfXybJ_qZMJFzp6ZSyrB-gr-YyDVizhH9y1-tmjtsmskxRAM_o_xmbP49gAGc1tuM8KQzGbLMle1mDgKIIiWRYqfsd0DG4laWIz3uhD2Gov0PGKWHiu6bIz1Yo84oPezG3l9qZS9EaO3F8fDA5guYqjGluzV3m44XLNp_LQiGulBo17X5VWL0e05P1bF_AEmfsYGxMzl01b56q9TKSjRRCKAE2903ZNFdL6BM6DppoeTJXqz6NZe0HGl3Cl61c9RNwfqhrv6GNHLyJBaQ_iCPp8OEl61T8wWK_nZBSWVnfVxA1QFWjlzj-Wxao1Q47BOdDUM-B-qHgxM6f92noQm9Ot9ppQ1r5Pz7bSFz0V6Bbk6d_0m00)

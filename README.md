@@ -40,8 +40,8 @@ C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippet
     - [Container diagram](#container-diagram)
     - [Component diagram](#component-diagram)
     - [Dynamic diagram](#dynamic-diagram)
-    - [(C4 styled) Sequence diagram](#c4-styled-sequence-diagram)
     - [Deployment diagram](#deployment-diagram)
+    - [(C4 styled) Sequence diagram](#c4-styled-sequence-diagram)
     - [Samples](#samples)
   - [Relationship Types](#relationship-types)
   - [Layout (arrange) elements (without relationships)](#layout-arrange-elements-without-relationships)
@@ -313,19 +313,20 @@ SHOW_LEGEND()
 
 ### (C4 styled) Sequence diagram
 
-C4-PlantUML **does not offer** a full sequence diagram support.
-It only enables the reuse of existing element as participants and relationships as calls in the corresponding styles
+C4-PlantUML **does not offer** a full sequence diagram support,
+but existing elements and relationships can be reused as participants and calls in the corresponding styles.
 
 > **!!! Contrary to all other diagrams, please define boundaries without `{` and `}` and mark a boundary end with `Boundary_End()` !!!**
 
   - Import: `!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Sequence.puml`
   - Additional Macros (based on **component** diagram macros):
     - Basically all element specific macros (Person, System, Container...) can be reused with following differences:
-      - element descriptions are not displayed (?descr argument is ignored); size would be too big
-      - element technology/type (?techn/?type) supports no line breaks
+      - element descriptions are typically not displayed (can be activated via SHOW_ELEMENT_DESCRIPTIONS())
       - **boundaries have to be defined without `{` and `}`** and instead of `}` the **`Boundary_End()`** macro has to be called
     - Additional (element specific) Macros:
       - `Boundary_End()`
+      - `SHOW_ELEMENT_DESCRIPTIONS(?show)`
+      - `SHOW_FOOT_BOXES(?show)`
     - Only following 3 relationship specific macros are supported:
       - `Rel($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")`
       - `RelIndex($e_index, $from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")`
@@ -337,8 +338,6 @@ It only enables the reuse of existing element as participants and relationships 
       - (lowercase) `increment($offset=1)`: increase current index (procedure which has no direct output)
       - (lowercase) `setIndex($new_index)`: set the new index (procedure which has no direct output)
       - `LastIndex()`: return the last used index (function which can be used as argument)
-
-      following 2 macros requires V1.2020.24Beta4 (can be already tested with <https://www.plantuml.com/plantuml/>)
       - `Index($offset=1)`: returns current index and calculates next index (function which can be used as argument)
       - `SetIndex($new_index)`: returns new set index and calculates next index (function which can be used as argument)
 
@@ -1007,6 +1006,14 @@ Source: [C4_Container Diagram Sample - techtribesjs.puml](samples/C4_Container%2
 Source: [C4_Container Diagram Sample - message bus.puml](samples/C4_Container%20Diagram%20Sample%20-%20message%20bus.puml)
 
 ![messagebus](https://www.plantuml.com/plantuml/png/ZLLVRzis47_tfxXv0-O0RemEUneGeFvZh2sSnBLizD4uKMU924KA9ENK6_RTTvHibMuKD7c8oUFnz-UEf3uuZzRNfHhy8hLGTKPGU5-vloOJYy-tkVH5dTQEh33Qa_QtmfIJ9sb5uNmncV_vRgrG-ztzQaBVU3sZZ8FxEIUZr6Hlgm3zEzIQzvMy7tn1S31AcMUfSr2S1AWpk5gMrl780FE2CWALEZ569_0bmM2QPKj50M6B-MXOIc5DGlOe1Gt7y9ihiAAxfSmBdqZMc8Jvw8PNqdnkbB5tmxcn-i2goCvKtMmwCCTvyRcGleafojdabhtUjIJWMXOOKK075-1lXZS_AdBUMCmZCHjJXshDpBSUCQfH-dHwJGhZ3vAFZr_tw-KcUNpOF-wsgqyFon67rsITqIDHCsD9TWppRZISmYNS09oSft8_2qBGdaRYFQTSik6JFXXRefT63s_Wtm7mNrVr4LPLd3ojAYL5cypnptX49woi_1YcEgyLsX2UXgwxJeCBBIvHSrb2swM5ofg3LEpkcgqpipyNEwRkkjpIZY6fR3XPCsDy26uBWif8xS4S08KWvu2TTIf0HaQvr1vp1tSG7w6NWaf6OTdxj7PCST_EO5QxmBZ1D9N-_al3Rb6xobZVS7Awr4407KbxzmBMKaXbzP7HpIKMEztKwIdypYsX9mSwE53IKGOPUcp8EZ2eQbiPH-xDzh3Ef8yqJCCyvf__EhbzM6x3S6tDKMQimTWSjNHD8TyzSmW2J2FWW48g7hvTmYBztlGiZVkzO7yfkaR6eqMX2Dx_8S8iySQI-sbZsvlOmnYLdodZoiUSzwVaoogYmqln_w4CZcGTqpL7JQcktz-RWXaKHlJsfaTXVrjuDMeApnfTIpvItRHJ5zK0C3MrFnyzy0LwAF18_A-gI5FMh-2_mM13Qh-87fJsxkzQqSEFs-qwuSHpMhFOSrzt5TVWbUv0A5CUmD2Tj1Z3PtxJ9bV0kvuteDMHaCvSvye4bA-K9aOyaUVThssERd07qcch6x4HQ8FJWnAVqQxcJRDb-n0kPlEpXUite--clqr43DFUiBT3NAJqi7UXNYijzGziyN7iThHSxPx12a_xJH_R5TBbMxPQ_hryMF0tx0Exg4lrFm00 "messagebus")
+
+### (C4 styled) Sequence diagram
+
+TODO: better sample is missing ...
+
+Source: [C4_Sequence Diagram Sample - complex.puml](samples/C4_Sequence%20Diagram%20Sample%20-%20complex.puml)
+
+![C4 styled sequence diagram](http://www.plantuml.com/plantuml/uml/fL1DRnCn4BtxLqnxQYNO3LAvL8hKq5Q0L4gLW3XMZZEBHvcr5yyu87uzinkg75e-42FjMlCyxxtnkn3rHMlFxaWZzWYNP_SraU86kf9xYAg3dBTjyL-RpwInhgjW2Jaf9cr2xjijbH15OtjvzloEVTAFxsvQ_6Rt6zoqawYu8qg1wmR_My_MM-6NYYbWCunhkpiiajF9WYdWCpYUpkFJ1_XLNXjeVuES3qexhmZMExT4Vc1PFrAhHanAmIlb1ClHHtGYieBK452agmp12pgmCeczmwJpM69XbC6oD0raGP3S8smfRI1tq7dYMlP2dFC0BsQp6IYDUS7FUhJZrUqA5ge-R4qJh2mMDtwkO0TvXmKEyt0Eb4YVU6f4vcmA1vRXflSXaa3m2TO8EHaWQ9UUWIcXZ4PW3EVcStXhokIPlk-VEf__Iw9_2cw9CkGaQAFcPUs0Ih_nITde1VnV-_bVCGw-JTF0I-WfLKK1zchZXZrX7popm8uy336dYRnwy_xJ_Strw-lRgvDJTs71rPv_0000 "C4 styled sequence diagram")
 
 ## Background
 
