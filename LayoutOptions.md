@@ -18,6 +18,10 @@ C4-PlantUML comes with some layout options.
     - [Using SHOW_PERSON_SPRITE(sprite)](#using-show_person_spritesprite)
     - [Using SHOW_PERSON_PORTRAIT()](#using-show_person_portrait)
     - [Using SHOW_PERSON_OUTLINE()](#using-show_person_outline)
+  - [(C4 styled) Sequence diagram specific layout options](#c4-styled-sequence-diagram-specific-layout-options)
+    - [`SHOW_ELEMENT_DESCRIPTIONS(?show)`](#show_element_descriptionsshow)
+    - [`SHOW_FOOT_BOXES(?show)`](#show_foot_boxesshow)
+    - [`SHOW_INDEX(?show)`](#show_indexshow)
 - [📄 Themes](Themes.md#themes)
 - samples
   - [📄 C4 Model Diagrams](samples/C4CoreDiagrams.md#c4-model-diagrams)
@@ -556,4 +560,79 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 @enduml
 ```
 
-![SHOW_PERSON_OUTLINE() Sample](https://www.plantuml.com/plantuml/png/RL1DQzj04BthLqpTWcLm9H9wAXJY6jCK4bj4SdCKQsbYBTsFPNSMrvJ-zyvsaxY7wA3PtVVclNbp4qXuYbf1Uxjxx9lDGxlRzhjzT_TzkoaNq0hj51Rlf1bK714c8XS-rxKNf-eeQOg76D0FrX0QgWQhwv_I3rEWgLv_-jWeOMX_VrVZByP77FcnNpDPI8E-SknR56yQ5qM3FbXJYb5BiuJPAbKPo0koVhOesdCWrFrN6yqe_BaShfOmpzFE5_2x0FvUdSeJ7dhX7EiyuW5MpYav29BMpFXf_Nu9gxQfjfkEMpp2TNK5zp_M2LifPKy1KiW0P84JEi4K7HL9zeBk98dG0qcDYhq2p_RdURgICiWwppG6Ypd89n3W_kK36PBcWJj7OCx4I71U4W9DQD8FF0uap97Db3ZRIAad1kQB8wTxMLJMOwjyps9PYeDyoASliqoxJeCye7fPxsK_-y0HkDvsNTCoAv5UqKkURqY1hvZAaxVw_vORD6FKwYy0 "SHOW_PERSON_OUTLINE()")
+![SHOW_PERSON_OUTLINE() Sample](https://www.plantuml.com/plantuml/png/RL5BQzj04BxhLqpTWcLm919wAXJY6jCK4bj4SdCK8sbYB-nZsHqXJEb_xopAeuVeeDNEV8_vHhUHCV1eDDHtXwUssZtMXtrxE3Rtl_QxV0Kr6gyf-wHihyU1uCpiuxUo33WL9yNdiHiZXTvP9ij5xqpfDTeaU1LvqAehjr-lgbGwFjoN1YDJa5Ax5GOgIw7mWiso3zsphA8GdSrnCCgkOR59fueSa5rOhBBw8dgc_U56Es2uvFtr6fRpoCiL_Cb0dZUdVAAkHUz5vuaws7YlLO-id5r8QVjv3PkwAlQxHYY1uAQuXeVVszJRQEsc22bf17OWCJqAn8oQbNX1CocMOC3Aa1QlABFzVPakvxafEYymQMPBKC-0u2db0nMJPYVC0GHpbaxqGJ41dycc5mJg6Ur9p3HUtCY9CqR1uqdIlIvgrXEh-JwBpL8IvClyzNqnmsxI88-aNzVxlfzZb0XotZLDLGigWTwwxtb-4aUvKZgUWpF_Ksx93kdF_WC0 "SHOW_PERSON_OUTLINE()")
+
+## (C4 styled) Sequence diagram specific layout options
+
+- **SHOW_ELEMENT_DESCRIPTIONS(?show)**: show or hide (hidden is default) all element/participant related descriptions
+- **SHOW_FOOT_BOXES(?show)**: show or hide (hidden is default) all element/participant related foot boxes
+- **SHOW_INDEX(?show)**: show or hide (hidden is default) the relationship (call) related index (sequence number)
+
+show is defined with `$show=true` and hide is defined with `$show=false`
+
+### `SHOW_ELEMENT_DESCRIPTIONS(?show)`
+
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Sequence.puml
+
+SHOW_ELEMENT_DESCRIPTIONS()
+
+Person(admin, "Administrator", "People that administrates the products")
+System_Boundary(c1, 'Sample')
+    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+' in a sequence diagram Boundary_End() has to be used instead of  { }
+Boundary_End()
+System(twitter, "Twitter")
+
+Rel(admin, web_app, "Uses", "HTTPS")
+Rel(web_app, twitter, "Gets tweets from", "HTTPS")
+@enduml
+```
+
+![SHOW_ELEMENT_DESCRIPTIONS() Sample](https://www.plantuml.com/plantuml/png/LL7DRjD04BxxAOPmY2E5M4MSE3KOYrPgKgjswT6QUAVrYlrPTiSA5UBTcOMKK5z6dfdlPxwzJ8oHPskADzgDPbO44tD87wigud7pf7cQ3tEYE7h7v7WpUbjzqt6S4azL_U5TQz3n_UwceXyoLwIaENJqVIOtqYPavgAxkdqOcfjcr-pxuNFJrNVNRNzzk-_ALL6q59Dt9IghtHeMsrnrueZiuq8QBVbW27X21ZmFAKcB84Ilvf7JObLqpud93f_yx1J6vtAyMCEoGolevQe0-Mgv0RMZM1xfC608Glz01zY6OFI8hBtBYlNRDMoxThDlUe54WlUR2zXzhVDiQum_9iY9Y04F4aT0MR6pOPrzzaVDJ15OMpAYbPqjGJj0IATKG6byYcZXnUhGE5MkOC8_b0VAz4emYGaL-4U0d_2hUBrzEhValtfYxQGiUiKTcPT0pvVU9p4ZzQhlsqwsyjA_wPdc2t6INyhbCNhxF-IId98N_Gq0 "SHOW_ELEMENT_DESCRIPTIONS() Sample")
+
+### `SHOW_FOOT_BOXES(?show)`
+
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Sequence.puml
+
+SHOW_FOOT_BOXES()
+
+Person(admin, "Administrator")
+System_Boundary(c1, 'Sample')
+    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+' in a sequence diagram Boundary_End() has to be used instead of  { }
+Boundary_End()
+System(twitter, "Twitter")
+
+Rel(admin, web_app, "Uses", "HTTPS")
+Rel(web_app, twitter, "Gets tweets from", "HTTPS")
+@enduml
+```
+
+![SHOW_FOOT_BOXES() Sample](https://www.plantuml.com/plantuml/png/LL1DRzD04BtlhnZ28OuKR1LnujGq2lH0IOHToiqQUwVrYlrOTcTbAiH_Pmmf1Lz6ddaVx-rbPanSd5KlZ1zjqGGJSynlcoRXN3yOdifGCgKnU2RFzHXSyzMaSSeyDVithquMFT_UV6ZekzmrQLdsBNqhv4UguwAisklZNV_kUEpwg-ENGrjjb3fHoi5Ng9tnMrZjbcao9-IGLXlLFcOcrr-5uZMcnsgysCAwHHSjhJSAvDjB7ZIUKZNJq6ECed970-nYj6P4Di6lPBL_kOLTUwe_7ZgX98BNzGNSVDuljvsrOSwmjCl00QHQH86uOjc84tIpOQO4R1nPySgIR0t60q8-DmHjy26XWwUe_S7hQWCJ_fOSQ97Nmf4-g27S0_o0d-f_zBbknN_y9DhPMVpK9x9Fp_JSz3PB69dNNNTg1RM0_bwVPTuJP_cbPToduFwbN9BNnTbV "SHOW_FOOT_BOXES() Sample")
+
+### `SHOW_INDEX(?show)`
+
+```plantuml
+@startuml
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Sequence.puml
+
+SHOW_INDEX()
+
+Person(admin, "Administrator")
+System_Boundary(c1, 'Sample')
+    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+' in a sequence diagram Boundary_End() has to be used instead of  { }
+Boundary_End()
+System(twitter, "Twitter")
+
+Rel(admin, web_app, "Uses", "HTTPS")
+Rel(web_app, twitter, "Gets tweets from", "HTTPS")
+@enduml
+```
+
+![SHOW_INDEX() Sample](https://www.plantuml.com/plantuml/png/LL1DRzD04BtlhnZ28OuKR1LnujGG8ef4IuHToiqQUwVrYlrOTcTbAiH_Pmmf0Lz6ddaVx-rbPanSd5NFZ1zjqGGJSyolcoRXN3yOdifGCgKnU2RFzHXSyzMaSSeyDVjNBuuMFTzUVsZekzmrQLdsBNqhv4UguwAisgkFT_txcxU7BzL6gIEb77o5sXc_XTLkcIPpGWvfjL7jOsPo_PjGlCRqM8qNMrYtwAAbzKQ1V7k9WiPJgcOQUenHLEveW5sCrep89lYLhFRFjx1hZ_NDeHDA8dXPNy3rv_rosraRvWnBiGmSG5f558WhbequGJSRPah0nf4Lhop9rc0y8EHJET067n8wU8hQ7xokDZ3XRyc15daj7Ec36i8zm0_ugVv7d-fM_CTFefsSnKzz8llqJEUcjrd2oBpgkcChg0NqztgMUKUSvPUMSP-2-vToILuNPty1 "SHOW_INDEX() Sample")
+
