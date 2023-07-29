@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="988px" preserveAspectRatio="none" style="width:633px;height:988px;background:#FFFFFF;" version="1.1" viewBox="0 0 633 988" width="633px" zoomAndPan="magnify">
+	<defs>
+		<style type="text/css">
+			<![CDATA[.elem {
+				cursor: pointer;
+			}
+
+			.elem, .link {
+				opacity: 0.5;
+			}
+
+				.elem.selected, .link.selected {
+					opacity: 1;
+				}
+
+			]]>
+		</style>
+		<script>
+	function addItemToMapOfLists(mapOfLists, name, item) {
+				// mapOfLists = {
+				//   'key1': [item1, item2, ...],
+				//   'key2': [item3, item4, ...],
+				// }
+				if (mapOfLists[name].length &gt; 0) {
+					if (!mapOfLists[name].includes(item)) {
+						mapOfLists[name].push(item);
+					}
+				} else {
+					mapOfLists[name] = [item];
+				}
+			}
+
+			function main() {
+				let elems = Array.from(document.getElementsByClassName('elem'));
+				let links = Array.from(document.getElementsByClassName('link'));
+
+				let elemsMap = {};
+				let linkedElems = {};
+				let linkedLinks = {};
+
+				elems.forEach(elem =&gt; {
+					let name = elem.classList[1];
+					elemsMap[name] = elem;
+					linkedElems[name] = [];
+					linkedLinks[name] = [];
+				});
+
+				links.forEach(link =&gt; {
+					let name1 = link.classList[1];
+					let name2 = link.classList[2];
+
+					if (elemsMap[name1]) {
+						if (elemsMap[name2]) {
+							let elem1 = elemsMap[name1];
+							let elem2 = elemsMap[name2];
+
+							addItemToMapOfLists(linkedElems, name1, elem2);
+							addItemToMapOfLists(linkedElems, name2, elem1);
+
+							addItemToMapOfLists(linkedLinks, name1, link);
+							addItemToMapOfLists(linkedLinks, name2, link);
+						}
+					}
+				});
+
+				let selectedElems = [];
+				let selectedLinks = [];
+				let selectedElemName = null;
+
+				function clearSelected() {
+					selectedElems.forEach(item =&gt; {
+						item.classList.remove('selected');
+					});
+					selectedElems = [];
+
+					selectedLinks.forEach(item =&gt; {
+						item.classList.remove('selected');
+					});
+					selectedLinks = [];
+				}
+
+				function selectAll() {
+					selectedElemName = null;
+
+					selectedElems = Array.from(elems);
+					selectedElems.forEach(item =&gt; {
+						item.classList.add('selected');
+					});
+
+					selectedLinks = Array.from(links);
+					selectedLinks.forEach(item =&gt; {
+						item.classList.add('selected');
+					});
+				}
+
+				function selectElem(elemName) {
+					if (elemName === selectedElemName) {
+						selectAll();
+
+					} else {
+						clearSelected();
+						selectedElemName = elemName;
+
+						elemsMap[elemName].classList.add('selected');
+						selectedElems.push(elemsMap[elemName]);
+
+						linkedElems[elemName].forEach(linkedElem =&gt; {
+							selectedElems.push(linkedElem);
+							linkedElem.classList.add('selected');
+						});
+
+						linkedLinks[elemName].forEach(linkedLink =&gt; {
+							selectedLinks.push(linkedLink);
+							linkedLink.classList.add('selected');
+						});
+					}
+				}
+
+				Object.keys(elemsMap).forEach(name =&gt; {
+					elemsMap[name].onclick = () =&gt; { selectElem(name); };
+				});
+
+				selectAll();
+			}
+
+			document.addEventListener('DOMContentLoaded', (event) =&gt; {
+				main();
+			});
+		</script>
+	</defs>
+	<g>
+		<!--cluster c1-->
+		<g id="cluster_c1">
+			<rect fill="none" height="590" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="620" x="7" y="185" />
+			<text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="118" x="258" y="201.8516">techtribes.js</text>
+			<text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="64" x="285" y="216.7637">[System]</text>
+		</g>
+		<!--entity web_app-->
+		<g class="elem web_app selected" id="elem_web_app">
+			<rect fill="#438DD5" height="100.5938" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="209" x="221.5" y="236" />
+			<image height="48" width="40" x="306" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAwCAYAAABjezibAAABnklEQVR4Xu2YMUoDYRSEvZsH8ALW4gU8gAfQykrsLCws01mJnWBjIaIgCCIIguAJIq/YYf2S7CaTwV0hxcdO3vLPTPZPSHa3to8etsbMzGBsSOyePd9d3H5Or5++12Zy/zXdP3+ZMsxBIlWuoUoyzEGCAQkY5iBB8wQMc5CgeQKGOUjQvL40q0IPhjlIJMwTHkSC5gkY5iBB8wQMc5CgeQKGOUjQPAHDHCRonoBhDhI0T8AwBwmaJ2CYgwTNEzDMQYLmCRjmIEHzBAxzkKB5AoY5SNA8AcMcJGiegGEOEjRPwDAHCZonYJiDBM0TMMxBguYJGOYgQfNlOJy8TXdOHvcWwTAHCYb3kbox70OCBfqoNfNulFKUt12weWpQW8xzq1C7cHD5Kr+a1bFe13zwgvW4pXnkcnz1/uvYW/D05mMhZdIuyPPrslTBZt5FFawrwPm6LLXFfFdt2ldwsIJdtD+Dm4LNkCW6GEVBLprHoAX5u0pqzaAFuxjFFnexKfgvC9ZgFWrNnxZ0GH3BMuH2p4gULJo/nUnatxMzgWPjBxPclHJtTjxAAAAAAElFTkSuQmCC" y="246" />
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="40" x="252" y="308.8516">Web</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="6" x="292" y="308.8516"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="102" x="298" y="308.8516">Application</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="34" x="231.5" y="323.7637">[Java,</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="265.5" y="323.7637"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="40" x="269.5" y="323.7637">Spring</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="309.5" y="323.7637"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="30" x="313.5" y="323.7637">MVC,</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="343.5" y="323.7637"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="45" x="347.5" y="323.7637">Tomcat</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="392.5" y="323.7637"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="24" x="396.5" y="323.7637">7.x]</text>
+		</g>
+		<!--entity rel_db-->
+		<g class="elem rel_db selected" id="elem_rel_db">
+			<path d="M23.5,450 C23.5,440 126,440 126,440 C126,440 228.5,440 228.5,450 L228.5,539.5938 C228.5,549.5938 126,549.5938 126,549.5938 C126,549.5938 23.5,549.5938 23.5,539.5938 L23.5,450 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;" />
+			<path d="M23.5,450 C23.5,460 126,460 126,460 C126,460 228.5,460 228.5,450 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;" />
+			<image height="48" width="37" x="107.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAwCAYAAACWhbMrAAABhElEQVR4Xu2ZMUpEMRCG924ewAtYixfwAHsArazEzsLCcjsrsRNsLEQUBEGEBUHwBG/5hHnEieH9bzM+HpjiY7OTZObPJG93srvYOXpYzI3MMAf6xt7Z893F7Ud3/fRVzer+s8OfD6bSN3DkndeAPx9MpW94pxH4YCpNlEpRFAd1LN6HD6ZSFOUHKkT4gKLDCHwwlSZKpYlSaaJUmiiVJkqliVL5H6KWq7du9+RxH3wwlTBRh5evPzJD0Xdw/vJtR2gKNvpKN54QUeac7BxfvWf9QzAnzWy1KO6KzGflvm8strgwUWyJ7xsLCwsVBZyXbS61zEnPZJgoe+po80qQ05v1ryKx0ceYdE749tkB5z1tApaeLqCPMYy13zAsW0VRrESBDKWiahgU5Vc2xCSifEZKTJopFX+mamiiVAZFmV1lElFWfihMJkpl0u1TaaJU/lQUhm2wGohPdh9kLFk9FUHNPxZ8ZZmfzHEtlCRjxDHWlziZ00jsp2y2JQVbelHwZIY5sAHzfDT6XoLxUwAAAABJRU5ErkJggg==" y="464" />
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="92" x="33.5" y="526.8516">Relational</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="6" x="125.5" y="526.8516"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="87" x="131.5" y="526.8516">Database</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="83" y="541.7637">[MySQL</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="129" y="541.7637"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="36" x="133" y="541.7637">5.5.x]</text>
+		</g>
+		<!--entity filesystem-->
+		<g class="elem filesystem selected" id="elem_filesystem">
+			<rect fill="#438DD5" height="100.5938" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="125" x="263.5" y="444.5" />
+			<image height="48" width="39" x="306.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAwCAYAAACScGMWAAABiklEQVR4Xu2ZMUoDQRiFczcP4AWsxQt4AA+glZXYWVhYprMSO8HGQkRBEEQICIInWPmFeYRvs2b/zYs7gRQfPCaz773MbAg7O9k5fpzUSmugJiT2zl/uL+8+m5vn75WZPnw1BxevDcOySLiKzcOwLBI0dsCwLBI0dsCwLBI0dsCwLBI0jh9IFnowLIuEw9jhMY8EjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wrHA0fW/NLcRT4O7p0/4o5c5uZ6155PDq7ffaweXiG8YK/MWQYsFK5U6uP1rB60CCBbqIo4ZyzTpOCYLBKxdbE/Nj9fiZi6XlosQiyr3U9/4ZwtJyZbyLUctxxapauS7KPbctt5HlyngXo5aLP99FVFGuiyq2tYttuY0qFwN9KC8//rVclm05hvYljva55S5aDzg18gO/LkqaJMkq9wAAAABJRU5ErkJggg==" y="454.5" />
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="31" x="273.5" y="517.3516">File</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="6" x="304.5" y="517.3516"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="68" x="310.5" y="517.3516">System</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="48" x="302" y="532.2637">[FAT32]</text>
+		</g>
+		<!--entity nosql-->
+		<g class="elem nosql selected" id="elem_nosql">
+			<path d="M423.5,450 C423.5,440 517,440 517,440 C517,440 610.5,440 610.5,450 L610.5,539.5938 C610.5,549.5938 517,549.5938 517,549.5938 C517,549.5938 423.5,549.5938 423.5,539.5938 L423.5,450 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;" />
+			<path d="M423.5,450 C423.5,460 517,460 517,460 C517,460 610.5,460 610.5,450 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;" />
+			<image height="48" width="37" x="498.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAwCAYAAACWhbMrAAABhElEQVR4Xu2ZMUpEMRCG924ewAtYixfwAHsArazEzsLCcjsrsRNsLEQUBEGEBUHwBG/5hHnEieH9bzM+HpjiY7OTZObPJG93srvYOXpYzI3MMAf6xt7Z893F7Ud3/fRVzer+s8OfD6bSN3DkndeAPx9MpW94pxH4YCpNlEpRFAd1LN6HD6ZSFOUHKkT4gKLDCHwwlSZKpYlSaaJUmiiVJkqliVL5H6KWq7du9+RxH3wwlTBRh5evPzJD0Xdw/vJtR2gKNvpKN54QUeac7BxfvWf9QzAnzWy1KO6KzGflvm8strgwUWyJ7xsLCwsVBZyXbS61zEnPZJgoe+po80qQ05v1ryKx0ceYdE749tkB5z1tApaeLqCPMYy13zAsW0VRrESBDKWiahgU5Vc2xCSifEZKTJopFX+mamiiVAZFmV1lElFWfihMJkpl0u1TaaJU/lQUhm2wGohPdh9kLFk9FUHNPxZ8ZZmfzHEtlCRjxDHWlziZ00jsp2y2JQVbelHwZIY5sAHzfDT6XoLxUwAAAABJRU5ErkJggg==" y="464" />
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="60" x="433.5" y="526.8516">NoSQL</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="6" x="493.5" y="526.8516"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="44" x="499.5" y="526.8516">Data</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="6" x="543.5" y="526.8516"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="51" x="549.5" y="526.8516">Store</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="62" x="466" y="541.7637">[MongoDB</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="528" y="541.7637"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="36" x="532" y="541.7637">2.2.x]</text>
+		</g>
+		<!--entity updater-->
+		<g class="elem updater selected" id="elem_updater">
+			<rect fill="#438DD5" height="91.5938" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="145" x="253.5" y="667" />
+			<image height="39" width="48" x="302" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAwCAYAAACScGMWAAABiklEQVR4Xu2ZMUoDQRiFczcP4AWsxQt4AA+glZXYWVhYprMSO8HGQkRBEEQICIInWPmFeYRvs2b/zYs7gRQfPCaz773MbAg7O9k5fpzUSmugJiT2zl/uL+8+m5vn75WZPnw1BxevDcOySLiKzcOwLBI0dsCwLBI0dsCwLBI0dsCwLBI0jh9IFnowLIuEw9jhMY8EjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wLIsEjR0wrHA0fW/NLcRT4O7p0/4o5c5uZ6155PDq7ffaweXiG8YK/MWQYsFK5U6uP1rB60CCBbqIo4ZyzTpOCYLBKxdbE/Nj9fiZi6XlosQiyr3U9/4ZwtJyZbyLUctxxapauS7KPbctt5HlyngXo5aLP99FVFGuiyq2tYttuY0qFwN9KC8//rVclm05hvYljva55S5aDzg18gO/LkqaJMkq9wAAAABJRU5ErkJggg==" y="677" />
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="73" x="289.5" y="730.8516">Updater</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="30" x="263.5" y="745.7637">[Java</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="293.5" y="745.7637"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="8" x="297.5" y="745.7637">7</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="305.5" y="745.7637"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="309.5" y="745.7637">Console</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="355.5" y="745.7637"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="29" x="359.5" y="745.7637">App]</text>
+		</g>
+		<!--entity anonymous_user-->
+		<g class="elem anonymous_user selected" id="elem_anonymous_user">
+			<a href="https://www.plantuml.com" target="_top" title="https://www.plantuml.com" xlink:actuate="onRequest" xlink:href="https://www.plantuml.com" xlink:show="new" xlink:title="https://www.plantuml.com" xlink:type="simple">
+				<rect fill="#686868" height="102.625" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="84" x="146" y="7" />
+				<image height="64" width="64" x="156" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEwUlEQVR4XuWasU7sMBBF+bj3MdTU1OiV1NTU1NTU1NTU1PT7dFa60tWMkzj2bOBpLR2RnWTtmevxxAl7c3t7e3PNJMO1kQzXRjIcxd3d3Z+np6fT/f3933juSJLh0jw8PLy/vb2dvr+/TzSO4zVHkgwVvLy8nN7f3898fHycPj8/z8fM9tfX1zlwb4gS+ziKZKiAgFtNsx4b4sQ+jiIZKlgSYK39VBYkQwWkfW8jK15fX08UxNjPESRDBb0CkCnPz8/n4H/qjpAMFbCmW40CiDhUfg8cHh8fu7OAWyhE+wjJUAEpTZDAMXeFGHCE6xCI66gH2DhWXwjHeZaM4DNZxPnRGpIMFTCbmtE1FOBI0YwNQUaWUDJUsCaAgmZGl26Lo20kC5KhAgVK6hOsNkStTVBVY5zoRw/JUAFr8qhGFiF09KGXZBhFDze9t8CKRmaNpL2TDHvBAVXwo1pF4CIZeqHIHTnbCFwZuEiGLY4OnLG0N2DskVvdGsmwBql+6UZRI2gKmwIWEiH6NUMyLLG0va1oSm/NNMEq0xDdBaDQVm2DIRla4ExlU8B6ClTQBKY3Rn6tzsN/J0Brt8fWl+A9MMbwV2Xe4nWVdSAZlpCDOO8PJICNdNWTnh5+tB2OTeucxnUQm/ri2l8hQKSVhjiHs5yTwxAfdpQBCg7iNf6k5339GgFaSAB3WE63Nkpkil/jhRZxYvDwIzWgF79XR1TcSG0CJZB4jYTwwhj74Fwcd4ZkmMH/2XEJEAfiuDMkwyxLs1dB9fqHZJhlbRnMcInZh2SYRcugUgStfY7jeLMkwyw4SrGrEkHBa5scx5slGWbASSq8NkOzInjw6rdahGQYhYD9NbiOJcLewqjboV6i6vV49TuBZBghBq8XoXrg0f8EtoRQAeVaUL/KKP9cJUIy7IXgYvBy0nEhhCq7B623yfH7lxIhGfaA45rlteBBGaHaoIegiK6VaLGfKMLstjgZeiFl3amWsxF/B+Ai+GdfOq0+4zLjO9G3PSRDL5qFnuB1XsHF9Bf0tSVAS4SZpZAMPTD7nvrRwTU0azgd8YCXgvfzGpvj6GMvydCD1mrP7LfgO7ob+N+9fVVkQTL0oCD2zr4TN0h8jtds4T7wN/rZQzJsMZP+DnXAM0BZtZfZO0IybKGZGk1/wfeX1v8eZpdBMmzBzPnA0aFe+K52hiPp7/0oC/At+rtFMmwxWwAdHEYAiTqCCzCyJ0iGLSoF0O1w7/rXThEOF6CqBqgPbYDiuTW0WeL4cAGYsYq7gJxHgL1CSoDoxyE1AOS8BvaU3Mvo+pcAh98FoLIOjGaRZ4Bsh+wDQE+CyoIZEUa/61nH8cj6h2ToRY+uFSLshbHieExK9LGHZNhCv9NlQK09iSAhWg7O4H1qHD9PIR39/XAyrOHBawcnEeSoHLwUElZj6pkCRkRIhjWiABIBx+RUvCP47I0Qs8HF1k5SD1QSIfq9RjKssSQAUBN8hlyQCjzDGMvfKkmAi2cALIng7/U8XVuC6NckkRiwB+2Bt4IfmX1Ihh6WRIhCtMSIojh+3oNeCnxm5kUy7MGF6BHDicUtnt8KejZwkQyjRDFcEBdlDzHgqqCdZKhCjraE6SF+P/ZfRTJcG/8A3dYJ9dS/l5sAAAAASUVORK5CYII=" y="17" />
+				<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="35" x="170.5" y="95.8516">Bob</text>
+			</a>
+		</g>
+		<!--entity aggregated_user-->
+		<g class="elem aggregated_user selected" id="elem_aggregated_user">
+			<rect fill="#08427B" height="102.625" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="121" x="265.5" y="7" />
+			<image height="64" width="64" x="294" xlink:href="data:image/png;base64,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" y="17" />
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="46" x="275.5" y="95.8516">Sam,</text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="6" x="321.5" y="95.8516"> </text>
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="49" x="327.5" y="95.8516">Ivone</text>
+		</g>
+		<!--entity administration_user-->
+		<g class="elem administration_user selected" id="elem_administration_user">
+			<rect fill="#08427B" height="102.625" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="84" x="422" y="7" />
+			<image height="64" width="64" x="432" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFOklEQVR4XuWYPa4dRRCFHUKCBAEycoCQCIxEAhIBDgicQUBACCEZDgm9BLbgJXgLLIEteANeBNa50oeOTlXP9J2f5/e4wad5UzPTXedUdc/c9+iD5y8f3TIlcGuUwK1RArdGCbxPnj578erHb37799evf7nwx9OfLkfFvv/u97ePf/jz53xmLyXwPpA4iX355fOL6A5dEzLkSCNK4C5RxV041e6gI7hfsRxvCyVwV0gAwmlxkcI73LS93VACdwHiVdUZ4ewJQOwIE0rgbCT2GvEzJuiY88xSAmeiSlG1FM95MmuC7s35ZiiBM1HCbGAz4mdNYE/YshRK4CyoPq0/Eq83Q8aWDICtb4YSOAsJIUknxTudCS7aX528InPeNUrgLEh4ZECKnzEAiG9ZBiVwFlRoZEBnwqwBIAP0XM69RAmcBet/1oBOfGcAywADdH/OvUQJnMXIgDSh439jAEsgjUjBs+IflAG+B5BwdoKbkfGRAc693gOoVgpJkSNSbI6BAff2LaDK+D6QAkakWOdBfQf474A1YTO4eB23rH9RAmeiZEddcC1HVF+UwJkc1QVHVV+UwJko2deffvXfPzLcBKqYYjvhKf6vz59dvftDCZyFEv37ky8uBihhTHAxbkTiRqR4xt3SBSVwBiT56sm3l4Q5SoDvCUvLwq/LEJ5lPI0vrjWhBI4G8QhWsqoWJng3eEc43h0u3M0UGvdaE0rgSGh7F98Z4Easkc/kWCyH2T2hBI5CFaPtXbzjQnSe6z47w5/DDIntTND5zFdhCRyB3KcSJJriOyE6dr8DFJMBiKUbNAYxN0FHza97MrekBI7ABY3Egxug8/w1KGSouiANcPFpgv6e2Q9KYC9UH3EpOHGTlLQqrdb1f47wAYVIv7/Dl4KOmaNTAntRokzslZ1Fz0uwIxMQjGn+TBrgJq11QQnshSR9jabINdjB2cQkwMfinQ9ccxSjC5b2ghJYgs0oIWFdz+p7QrNo4/MOYP13QtlsOzyH0RuhBDpoQyWS1xTHBF3HgC5ZkWIT3ePLQOP6UnLB+vufjz670M03swxKQDd272I2o7xfKE6bCjqgS2rNCK4xn48rJDbFE0vIRfeqSJl3a4CL93dx3pfQqtzvr7drUeIag+7yeAoXdEUuBzeg615RAppQybtjrMm811GybtQeA4QvK4/TBSke/NwNGG2EJdAZ0H2ddfjuvdcAPa95cwyWyehcYuEQA6i878ojGOMIA/Ssv/5GsFw5TwNYNpuXQIqcZa8BStzXfwcVdpPYI3Tc9BZIA4R/lq5xlAFCY2QMcu17HAPcGOWUWqcNyOo6nfijDFhr/w7a389H7T9tQFZ5RGcA6zATPQufDyNG1Z82YFTxkfg0QMdcq0fj8+icTlj7himBzoAU25EGeDKZ4Flk5aXB80utUwasVT5JAzyp0cZ1BIzP7q/8/R8q5JV6pwxIkQ6T5EQYoLG0CXVmOPl5OyKfc1M1h+ZS7nyckRe5pd4pA5ZM8LZngjRAY/HDKjsDQxD45sOPW7pPX19WGD0yYHcHeKW7ivsYbgA/kEhOY6cRaUaHt3sKXxM/qv6iAbw7s8IjmERHjeEGKBElRCeMzHBDEr+H55aELxVo2oAUmfCMO021SVbjeQeRpOJpiJuS5H0834meEb7LgHxGEyuuIwliAO9hXSc5X0YISFJg4mNcK9opAdp3ZEDeL0jYK5QGODkmAq5hLadZSsDbMNtuRLarWDLgPlECXr0jeHAGsJZzzW1B4+T4940SuDVK4NYogVujBG6Nd1Xo/LyIY+x+AAAAAElFTkSuQmCC" y="17" />
+			<text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="53" x="437.5" y="95.8516">Bernd</text>
+		</g>
+		<!--link anonymous_user to web_app-->
+		<g class="link anonymous_user web_app selected" id="link_anonymous_user_web_app">
+			<path d="M218.97,110.219 C240.426,145.357 269.017,192.18 291.251,228.591 " fill="none" id="anonymous_user-to-web_app" style="stroke:#666666;stroke-width:1.0;" />
+			<polygon fill="#666666" points="295.609,235.729,294.0004,227.3378,288.8796,230.4645,295.609,235.729" style="stroke:#666666;stroke-width:1.0;" />
+			<image height="13" width="14" x="254" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAhklEQVR4XqWQsQ5AMBRFOzEbjCIx9n869WP8i9Hol0hHMVZaLhrhFYO0wxnOy7u5L4/BmBR9zx3DwDFNxeUUY3LqDEpxCAGHlEDTdJdTlKqpRwSXJcU48k+0zl+zE7/xSdt6LX5jcHBdE8xzdVLC2oz4DfZd4hHPCQ4eJwQQ8Zzg4McZf9gADt0CpJ+KH1gAAAAASUVORK5CYII=" y="142.0688" />
+			<text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="4" x="268.4" y="152.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="34" x="272.4" y="152.1387">Uses</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="48" x="256.2" y="166.1074">[HTTPS]</text>
+		</g>
+		<!--link aggregated_user to web_app-->
+		<g class="link aggregated_user web_app selected" id="link_aggregated_user_web_app">
+			<path d="M326,110.219 C326,145.064 326,191.4 326,227.679 " fill="none" id="aggregated_user-to-web_app" style="stroke:#666666;stroke-width:1.0;" />
+			<polygon fill="#666666" points="326,235.729,329,227.729,323,227.729,326,235.729" style="stroke:#666666;stroke-width:1.0;" />
+			<image height="13" width="14" x="327" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAhklEQVR4XqWQsQ5AMBRFOzEbjCIx9n869WP8i9Hol0hHMVZaLhrhFYO0wxnOy7u5L4/BmBR9zx3DwDFNxeUUY3LqDEpxCAGHlEDTdJdTlKqpRwSXJcU48k+0zl+zE7/xSdt6LX5jcHBdE8xzdVLC2oz4DfZd4hHPCQ4eJwQQ8Zzg4McZf9gADt0CpJ+KH1gAAAAASUVORK5CYII=" y="142.0688" />
+			<text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="4" x="341.4" y="152.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="34" x="345.4" y="152.1387">Uses</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="48" x="329.2" y="166.1074">[HTTPS]</text>
+		</g>
+		<!--link administration_user to web_app-->
+		<g class="link administration_user web_app selected" id="link_administration_user_web_app">
+			<path d="M433.03,110.219 C411.574,145.357 382.983,192.18 360.749,228.591 " fill="none" id="administration_user-to-web_app" style="stroke:#666666;stroke-width:1.0;" />
+			<polygon fill="#666666" points="356.391,235.729,363.1204,230.4645,357.9996,227.3378,356.391,235.729" style="stroke:#666666;stroke-width:1.0;" />
+			<image height="13" width="14" x="412" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAhklEQVR4XqWQsQ5AMBRFOzEbjCIx9n869WP8i9Hol0hHMVZaLhrhFYO0wxnOy7u5L4/BmBR9zx3DwDFNxeUUY3LqDEpxCAGHlEDTdJdTlKqpRwSXJcU48k+0zl+zE7/xSdt6LX5jcHBdE8xzdVLC2oz4DfZd4hHPCQ4eJwQQ8Zzg4McZf9gADt0CpJ+KH1gAAAAASUVORK5CYII=" y="142.0688" />
+			<text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="4" x="426.4" y="152.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="34" x="430.4" y="152.1387">Uses</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="48" x="414.2" y="166.1074">[HTTPS]</text>
+		</g>
+		<!--link web_app to rel_db-->
+		<g class="link web_app rel_db selected" id="link_web_app_rel_db">
+			<path d="M221.142,333.159 C206.08,342.814 191.736,354.071 180,367 C163.289,385.408 151.253,409.76 142.848,432.213 " fill="none" id="web_app-to-rel_db" style="stroke:#666666;stroke-width:1.0;" />
+			<polygon fill="#666666" points="140.135,439.743,145.6687,433.2331,140.0238,431.1997,140.135,439.743" style="stroke:#666666;stroke-width:1.0;" />
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="44" x="192" y="379.1387">Reads</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="236" y="379.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="240" y="379.1387">from</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="275" y="379.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="27" x="279" y="379.1387">and</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="46" x="216" y="393.1074">writes</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="262" y="393.1074"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="16" x="266" y="393.1074">to</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="66" x="181" y="407.0762">[SQL/JDBC,</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="247" y="407.0762"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="25" x="251" y="407.0762">port</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="276" y="407.0762"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="37" x="280" y="407.0762">3306]</text>
+		</g>
+		<!--link web_app to filesystem-->
+		<g class="link web_app filesystem selected" id="link_web_app_filesystem">
+			<path d="M326,337.225 C326,367.023 326,405.042 326,436.178 " fill="none" id="web_app-to-filesystem" style="stroke:#666666;stroke-width:1.0;" />
+			<polygon fill="#666666" points="326,444.349,329,436.349,323,436.349,326,444.349" style="stroke:#666666;stroke-width:1.0;" />
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="44" x="327" y="393.1387">Reads</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="371" y="393.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="375" y="393.1387">from</text>
+		</g>
+		<!--link web_app to nosql-->
+		<g class="link web_app nosql selected" id="link_web_app_nosql">
+			<path d="M386.212,337.286 C396.794,346.817 407.463,356.963 417,367 C436.618,387.645 456.396,411.88 473.125,433.614 " fill="none" id="web_app-to-nosql" style="stroke:#666666;stroke-width:1.0;" />
+			<polygon fill="#666666" points="477.987,439.971,475.5107,431.7937,470.7444,435.4383,477.987,439.971" style="stroke:#666666;stroke-width:1.0;" />
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="44" x="485.5" y="379.1387">Reads</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="529.5" y="379.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="533.5" y="379.1387">from</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="62" x="453" y="393.1074">[MongoDB</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="515" y="393.1074"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="25" x="519" y="393.1074">wire</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="544" y="393.1074"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="53" x="548" y="393.1074">protocol,</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="25" x="490" y="407.0762">port</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="515" y="407.0762"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="45" x="519" y="407.0762">27017]</text>
+		</g>
+		<!--reverse link rel_db to updater-->
+		<g class="link rel_db updater selected" id="link_rel_db_updater">
+			<path d="M139.145,557.97 C147.315,584.723 160.17,614.886 180,637 C199.69,658.958 227.324,675.42 253.259,687.241 " fill="none" id="rel_db-backto-updater" style="stroke:#666666;stroke-width:1.0;" />
+			<polygon fill="#666666" points="136.861,550.158,136.2273,558.6785,141.986,556.9942,136.861,550.158" style="stroke:#666666;stroke-width:1.0;" />
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="44" x="192" y="599.1387">Reads</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="236" y="599.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="240" y="599.1387">from</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="275" y="599.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="27" x="279" y="599.1387">and</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="46" x="197" y="613.1074">writes</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="243" y="613.1074"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="34" x="247" y="613.1074">data</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="281" y="613.1074"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="16" x="285" y="613.1074">to</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="66" x="181" y="627.0762">[SQL/JDBC,</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="247" y="627.0762"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="25" x="251" y="627.0762">port</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="276" y="627.0762"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="37" x="280" y="627.0762">3306]</text>
+		</g>
+		<!--reverse link filesystem to updater-->
+		<g class="link filesystem updater selected" id="link_filesystem_updater">
+			<path d="M326,553.88 C326,589.281 326,633.913 326,666.724 " fill="none" id="filesystem-backto-updater" style="stroke:#666666;stroke-width:1.0;" />
+			<polygon fill="#666666" points="326,545.555,323,553.555,329,553.555,326,545.555" style="stroke:#666666;stroke-width:1.0;" />
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="327" y="613.1387">Writes</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="375" y="613.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="16" x="379" y="613.1387">to</text>
+		</g>
+		<!--reverse link nosql to updater-->
+		<g class="link nosql updater selected" id="link_nosql_updater">
+			<path d="M471.211,556.621 C451.282,582.069 427.213,611.593 404,637 C394.877,646.986 384.715,657.287 374.821,666.937 " fill="none" id="nosql-backto-updater" style="stroke:#666666;stroke-width:1.0;" />
+			<polygon fill="#666666" points="476.185,550.244,468.8984,554.7056,473.6288,558.3966,476.185,550.244" style="stroke:#666666;stroke-width:1.0;" />
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="44" x="470" y="592.1387">Reads</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="514" y="592.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="518" y="592.1387">from</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="553" y="592.1387"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="27" x="557" y="592.1387">and</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="46" x="494" y="606.1074">writes</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="540" y="606.1074"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="16" x="544" y="606.1074">to</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="62" x="453" y="620.0762">[MongoDB</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="515" y="620.0762"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="25" x="519" y="620.0762">wire</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="544" y="620.0762"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="53" x="548" y="620.0762">protocol,</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="25" x="490" y="634.0449">port</text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="4" x="515" y="634.0449"> </text>
+			<text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="45" x="519" y="634.0449">27017]</text>
+		</g>
+		<!--link rel_db to filesystem-->
+		<rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="204" x="398" y="799" />
+
+		<text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="57" x="398" y="811.9951">Legend</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="455" y="811.9951"> </text>
+		<rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="204" x="398" y="815.2969" />
+		<text fill="#444444" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="402" y="828.292">&#9647;</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="410" y="828.292"> </text>
+		<text fill="#444444" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="418" y="828.292">system boundary</text>
+		<text fill="#444444" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="48" x="545" y="829.2354">(dashed)</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="593" y="828.292"> </text>
+		<rect fill="#686868" height="16.2969" style="stroke:none;stroke-width:1.0;" width="204" x="398" y="831.5938" />
+		<text fill="#8A8A8A" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="402" y="844.5889">&#9647;</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="410" y="844.5889"> </text>
+		<image height="16" width="16" x="414" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABWUlEQVR4XqVSQWqDUBDNFXqFXqEXyCV6h4AIwRAKIkhApO5cpkJwI11JICipIIKEBiG7LELAZRFRAtlkIWQz9QmGHxNjoR8eDs95b+bPn95gMOj9BzcEsN/v6XA4EI6maaPm/06DLMsqcRzHNJ1OqeZ5nn9u5t6IAYiWyyUlSVIZsed4PF4MbwwEQejned7UVOd8Pt+9ziVYLBZhU4Rq8/l857rujyzLH51X4DjuCV9RFN8wyDRNaTab7YqiIEmS3ofD4ctDgxqKonxBwGIymXw28+4alNX7nucRawIxuM4OcEfHcWi1WtF6vUb7ZJpmFYPDyzw0QBUk1rAs64ROWK4c9unPBmEYkm3bVxxyWg0gqNtlTep4s9lQEATtBuVbjzADJLEmADhU13XdaTXAxLHGSIyiiLbbbQVU9n2fDMMgLFSrAYBlGo/Hr3g6VVW/gXKQDrh60Vj8AmHrELs/j0JuAAAAAElFTkSuQmCC" y="831.8906" />
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="438" y="844.5889">anonymous user</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="557" y="844.5889"> </text>
+		<rect fill="#08427B" height="16.2969" style="stroke:none;stroke-width:1.0;" width="204" x="398" y="847.8906" />
+		<text fill="#073B6F" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="402" y="860.8857">&#9647;</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="410" y="860.8857"> </text>
+		<image height="16" width="16" x="414" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACDklEQVR4XnWSu0tjURDGb2lhIbJ/gMJaWFhYKFhYKAQUYQthLRQMGl9sUBEFF8SNwSwJvt8bQpQEE2PU+IzxxUXjikQ3vhHxgZWtbdrxfKPnEqNbDOfec2Z+8813jpJU2KHIyNIP1jqD/8izfUYVZp8n/ux/oX3oLf695uFVah0LUodjk4bmDsi9EaWU4q4Mg22BitumqOyXlyot/qdPAabJHfrRv4QEav8Tom6XypBvP92xfKP9Ka9+/A6QcrMPoUE0ALqiUNfijMlu+t9zAJB9OULOtWMeDSpx9gFg8+xyMTrl1IxGZDcUYyyEVIVGHwDdbpXnjAeYpnbYD4DQFZCxwCGreQfwqxfU59vnRBTKEZAIb+p6AlRtnWcYFAGiAUTiiH3ldUbMDBPfjGKpvTNhli7lI88rvPBunzJEWfl7TQt7VzQZPOZDaRJA+Ic6aSICEPXkgffSv9tKGbB+eKMlwOnsquFQfc/iPYydFQDkBEQTrFtHtzwuIBaXGlMM1vkQqCiUEEFuRIH8l2BpIBSjhgGZFf0jclOGGCOGZHzHQxBQhH2sIi+ipIluiQDXxgl3i9/7LKBC+VJizhWmPbtCUe2KEJgxsSCxmE1M1nWm4uHAdev0Ls8KU9XoPYXPH/k7MQA3DiwT1PNjAAReFDQ5nnGFeDS4TjyiPl+YZ4dCrLgZnOc1TFymFJm+vgACsXz5rdzh4QAAAABJRU5ErkJggg==" y="848.1875" />
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="438" y="860.8857">aggregated user</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="559" y="860.8857"> </text>
+		<rect fill="#08427B" height="16.2969" style="stroke:none;stroke-width:1.0;" width="204" x="398" y="864.1875" />
+		<text fill="#073B6F" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="402" y="877.1826">&#9647;</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="410" y="877.1826"> </text>
+		<image height="16" width="16" x="414" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABsUlEQVR4XmPgcKpmoARjCKDjJG3/X1G6wf+Ttf3/W5klT0GXx9CAjON1An+5GsX+cjSO/+pnEPk/TC/0v5tR7G6iDNC0yq72NIz+b2qeekPDKnsOyJAonSCwIUQZ4GQc3wCy1dI0+TUIgwwDGQDCRBkgYl9qHaQf/h+GQRrjtAPAYUGUAarWuQ7VKk7/QQGYpOUH1gwyqF3R5jlBA2RtCx06FG3+L5Ay+D9BzuJ/sZrb/3x1D5Dm/3Okjf73KFjBDcHQDMIrJXTACkF4hozJfxnbwiRg4O2aImv2f42Y5n8QLQr0ItwAYCA1AEN7EYgNpLeBbAUpBLkAZAhIM4jeKKr+f6eICliuRcnuF9yAbA2v/8Bo6ze0SF8Owl6G0ctBimAY5AoYG2TQXiFFsBiKAQo2+aUgDIpzkAErgN5ANgQZrxXX+g8M5BAUA1SscztBmoEuOAIM7eUgG7aKqP7fKawMthGEQXyQN0BRCVIPNwAUyhJ2xX4gDPTK3HJVl/+WZsl343QC/4OiEhjqID+DYwJo+C9dy8yNPI6VInADmoGSIIUgDGKDogs5VvBhDAFSMQAivELpWPHiigAAAABJRU5ErkJggg==" y="864.4844" />
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="438" y="877.1826">administration user</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="581" y="877.1826"> </text>
+		<rect fill="#438DD5" height="16.2969" style="stroke:none;stroke-width:1.0;" width="204" x="398" y="880.4844" />
+		<text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="402" y="893.4795">&#9647;</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="410" y="893.4795"> </text>
+		<image height="12" width="10" x="414" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAMCAYAAABbayygAAAAe0lEQVR4XmPwmnjduGnz4wZknLnkXoNz71UGZMwAkjhw8+N/dDwsFHZsf7IZhPEqrF7/CMP0SXufH5hx4MV/sMLtV97/X3vu7f+iVQ8a0E0C4Sn7nkMUtm59MtNz4jVjt/5rUuiKUBQiW42uCK4QXXD2oZf/0XHF2ocHALdWMrrzAUDgAAAAAElFTkSuQmCC" y="884.7813" />
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="432" y="893.4795">web app container</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="571" y="893.4795"> </text>
+		<rect fill="#438DD5" height="16.2969" style="stroke:none;stroke-width:1.0;" width="204" x="398" y="896.7813" />
+		<text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="402" y="909.7764">&#9647;</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="410" y="909.7764"> </text>
+		<image height="12" width="9" x="414" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAMCAYAAACwXJejAAAAfklEQVR4XmPwmnjduGnz4wZknLbobrFz71UGGGYACR64+fE/Oh5yioKn3yxG5s84+OImhiKg9xuKVt6/CRKvXv9oc/3GR7PAirZfef9/7bm3YJy55C6G9WBFrVufzPSceM0YhHEqQhbAqgjZFzBcs/5Rw5R9z/9373x6FhRtAE4LMNbcew9CAAAAAElFTkSuQmCC" y="901.0781" />
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="431.25" y="909.7764">database container</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="574.25" y="909.7764"> </text>
+		<rect fill="#438DD5" height="16.2969" style="stroke:none;stroke-width:1.0;" width="204" x="398" y="913.0781" />
+		<text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="402" y="926.0732">&#9647;</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="410" y="926.0732"> </text>
+		<image height="12" width="10" x="414" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAMCAYAAABbayygAAAAcUlEQVR4XmPwmnjduGnz4wZknLnkXoNz71UGZMwAkjhw8+N/dDzsFG688A7MDp5+MwpFYdjMmw7oGkA4Zs7tBrDC7Vfe/1977u3//BX3sZoOV9i69clMz4nXjAkqhAngVYjss/h5t4tnH3r5Hx2DPAMA36JRp/4Dr5MAAAAASUVORK5CYII=" y="917.375" />
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="431.75" y="926.0732">file server container</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="580.75" y="926.0732"> </text>
+		<rect fill="#438DD5" height="16.2969" style="stroke:none;stroke-width:1.0;" width="204" x="398" y="929.375" />
+		<text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="402" y="942.3701">&#9647;</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="410" y="942.3701"> </text>
+		<image height="10" width="12" x="414" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAYAAACALL/6AAAAlElEQVR4XmPwnXzdoWnz4wZCOGDqDQfn3qsMDCDOgZsf/xPCHdufbIZrADEIYdpoAMrN7N759MDac2//g/yKV8M6oKK91z/+B3o2KmH+neJVZ978b9365ABODSBcsfYhXA6kAWxD/cbHDdXrH2FgUMhsv/IerAiEQfwlJ17/xzAVGYfNuAkPcpgYhiJsOHj6TQcYGwDp+AkfzE5BFQAAAABJRU5ErkJggg==" y="935.9219" />
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="434" y="942.3701">console app container</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="598" y="942.3701"> </text>
+		<text fill="#666666" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="402" y="958.667">&#9472;</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="410" y="958.667"> </text>
+		<image height="13" width="14" x="414" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAhklEQVR4XqWQsQ5AMBRFOzEbjCIx9n869WP8i9Hol0hHMVZaLhrhFYO0wxnOy7u5L4/BmBR9zx3DwDFNxeUUY3LqDEpxCAGHlEDTdJdTlKqpRwSXJcU48k+0zl+zE7/xSdt6LX5jcHBdE8xzdVLC2oz4DfZd4hHPCQ4eJwQQ8Zzg4McZf9gADt0CpJ+KH1gAAAAASUVORK5CYII=" y="949.0688" />
+		<text fill="#666666" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="436.4" y="958.667">firewall</text>
+		<text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="492.4" y="958.667"> </text>
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="799" y2="799" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="815.2969" y2="815.2969" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="831.5938" y2="831.5938" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="847.8906" y2="847.8906" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="864.1875" y2="864.1875" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="880.4844" y2="880.4844" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="896.7813" y2="896.7813" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="913.0781" y2="913.0781" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="929.375" y2="929.375" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="945.6719" y2="945.6719" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="602" y1="961.9688" y2="961.9688" />
+		<line style="stroke:none;stroke-width:1.0;" x1="398" x2="398" y1="799" y2="961.9688" />
+		<line style="stroke:none;stroke-width:1.0;" x1="602" x2="602" y1="799" y2="961.9688" />
+		<!--SRC=[bLNRRkCs47tNLt25VR01nyewJGCKzGAEdNIxS2wrdUPH68cqh9OYLPAoOnJzzmvrj-nSDay9PywPCpDdb4-fWYW1ehTHB0nJ49fuouXH6NCSvrCiGfvHHZR6fFeNprEm6qQnsMH1ffaA9KA46OOoyL8EmcG9FzE6yZZmfZ-TFTgdfxkvbu16QdpofuY0M30rJ34N2r2snZ-9rF283n-eCrMWDumciQ1ULU1Cfane5cOgDdjGuIOsB3IPOgEp6B6w5D2qKvRpfZ99f2Yq70MViB87d5TIg_YlShsEG-OjcTeofJqA1WBGpDVvmzVNCzSn_q0Mf2cFGp2n5Ayduo13bXhjsGnyy5kejzBNiM8xREghuqmelNd1iGZWZrXNYXL4FHU45Fj4PjfdByOTaCywnQcoiOjZyUqo_813-BU_WJpAMSG4NM7kk84Ic-VsROKMSvXf8nCCd2Bbe2BcHqfcwH5j52aMWM7qD2zOCvmaXOp6PX1ABjLOCTeGBqzdwX0u6vyFHvUdGAKQMotMHkMZhXHPIRMtSrKx5apIj2thUAzTRiGGp29XnLJqUaXCWpPfntnTnYhyDgNrfMwpjepQPRGXKeJU9iLWPm0dhDfbjzSgiK1t2fP-mNYfjh2mnHf4JVDLkPydYyN3it_xSB_ofm_pXqNEZVZ3U1rgUYtewkrVlBxykZGgAXpeumdrcfknTXWGzrhcIp8GwN7delebiDVOka8j8HcGtxTIi0PS7qs3Ep1WNH7lcBPgvZU1AfTx_F8b_hNC10MrxuLVC1c_ZXkZue3fuL_QxV_h4FofjzT36zeTOU8p6d9oi2ttEsnXGEm1YOZS_JaTa9LCC4okXYzD_TBz_KFcMT1JZFiqG1xSPiu9dCnAarhwk_toZpcv75wssT3o7QPURjcyDmJTMayMdLgEsydgOjIW2tSVIn5I_yCn_LxQabO4MHgf2XbIH79sJKR3qJj2iXHlB5_1K_5RDIHoPRDoDvTtK6wqk8k-yv_Zu12EpDDC7_y1sQjqlwrMZyjsFxK9StpNHpzCSCfGFqAIizI0reQ1Qh9MCY4WADdPSzF4I4k64_U-pwxHFQbKXbnSdFzSggbv3ZRSS7NJgYssCbhxsw5AaYff9DvqMMnqTVxbgfJjFpKBV4Uu_PI-fxvDTw3_kMx-AE-uWUDnVQYTEUpzHNrWJNdx5VY6NxxvpMytzxDU_ty0]-->
+	</g>
+	<style type="text/css">
+		<![CDATA[
+		[data-mouse-over-selected="false"] {
+			opacity_: 0.5;
+		}
+
+		[data-mouse-over-selected="true"] {
+			opacity_: 1.0;
+			outline: 3px double green;
+			outline-offset: 2px; 
+		}
+
+		]]>
+	</style>
+	<script type="text/javascript" xlink:href="InteractiveC4_files/svg.min.js" />
+	<script>
+<![CDATA[(function (){
+	/**
+	 * @param {SVG.G} node
+	 * @param {SVG.G} topG
+	 * @return {{node: Set<SVG.G>, edges:Set<SVG.G>}}
+	 */
+	function getEdgesAndDistance1Nodes(node, topG) {
+		const nodeName = node.attr("id").match(/elem_(.+)/)[1];
+		const selector = "[id^=link_]"
+		const candidates = topG.find(selector)
+		let edges = new Set();
+		let nodes = new Set();
+		for (let link of candidates) {
+			const res = link.attr("id").match(/link_([A-Za-z\d]+)_([A-Za-z\d]+)/);
+			if (res && res.length==3) {
+				const N1 = res[1];
+				const N2 = res[2];
+				if (N1==nodeName) {
+					const N2selector = `[id^=elem_${N2}]`;
+					nodes.add(topG.findOne(N2selector));
+					edges.add(link);
+				} else if (N2==nodeName) {
+					const N1selector = `[id^=elem_${N1}]`;
+					nodes.add(topG.findOne(N1selector));
+					edges.add(link);
+				}
+			}
+		}
+		return {
+			"nodes" : nodes,
+			"edges" : edges
+		};
+	}
+
+	/**
+	 * @param {SVG.G} node
+	 * @param {function(SVG.Dom)}
+	 * @return {{node: Set<SVG.G>, edges:Set<SVG.G>}}
+	 */
+	function walk(node, func) {
+		let children = node.children();
+		for (let child of children) {
+			walk(child, func)
+		}
+		func(node);
+	}
+	let s = SVG("svg > g")
+	/**
+	 * @param {SVGElement} domEl
+	 * @return {{SVGElement}}
+	 */
+	function findEnclosingG(domEl) {
+		let curEl = domEl;
+		while (curEl.nodeName != "g") {
+			curEl = curEl.parentElement;
+		}
+		return curEl;
+	}
+	function onMouseOverElem(domEl) {
+		let e = SVG(findEnclosingG(domEl.target));
+		walk(s,
+			e => { if (SVG(e)!=s)
+				SVG(e).attr('data-mouse-over-selected',"false");
+			});
+		// walk(e, e => SVG(e).attr('data-mouse-over-selected',"true"));
+		// let {nodes, edges} = getEdgesAndDistance1Nodes(SVG(e), s);
+		// for (let node of nodes) {
+		// 	walk(node, e => SVG(e).attr('data-mouse-over-selected',"true"));
+		// }
+		// for (let edge of edges) {
+		// 	walk(edge, e => SVG(e).attr('data-mouse-over-selected',"true"));
+		// }
+		SVG(e).attr('data-mouse-over-selected',"true");
+	}
+
+	function onMouseOutElem(domEl) {
+		let e = SVG(findEnclosingG(domEl.target));
+		walk(s, e => e.attr('data-mouse-over-selected',null));
+	}
+	let gs = s.find("g[id^=elem_]");
+	for (let g of gs) {
+		g.on("mouseover", onMouseOverElem);
+		g.on("mouseout", onMouseOutElem);
+	}
+})();
+]]></script>
+</svg>
