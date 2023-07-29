@@ -2,7 +2,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="988px" preserveAspectRatio="none" style="width:633px;height:988px;background:#FFFFFF;" version="1.1" viewBox="0 0 633 988" width="633px" zoomAndPan="magnify">
 	<defs>
 		<style type="text/css">
-			<![CDATA[.elem {
+			<![CDATA[
+			.elem {
 				cursor: pointer;
 			}
 
@@ -10,10 +11,9 @@
 				opacity: 0.5;
 			}
 
-				.elem.selected, .link.selected {
-					opacity: 1;
-				}
-
+			.elem.selected, .link.selected {
+				opacity: 1;
+			}
 			]]>
 		</style>
 		<script>
@@ -428,7 +428,7 @@
 
 		]]>
 	</style>
-	<script type="text/javascript" xlink:href="InteractiveC4_files/svg.min.js" />
+	<script type="text/javascript" xlink:href="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js" />
 	<script>
 <![CDATA[(function (){
 	/**
