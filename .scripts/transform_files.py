@@ -229,7 +229,7 @@ def update_c4_next_beta_version():
 
 def update_all_includes():
     # reference tag version is with starting 'v'
-    print(f"updating include paths with new tag version {release_version} ...")
+    print(f"updating include/theme paths with new tag version {release_version} ...")
     files = glob.glob("./**/*", recursive=True)
     for file in files:
         if file.endswith(".puml") or file.endswith(".md"):
@@ -239,8 +239,17 @@ def update_all_includes():
                 "!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/",
                 f"!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/{release_version}/",
             )
-
-    print("include paths updated")
+            replace_in_file(
+                file,
+                "from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/",
+                f"from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/{release_version}/",
+            )
+            replace_in_file(
+                file,
+                "](https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes/",
+                f"](https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/{release_version}/themes/",
+            )
+    print(f"include/theme paths updated")
 
 
 def process_url_match(m: re.Match[str]):
@@ -253,6 +262,14 @@ def process_url_match(m: re.Match[str]):
     replaced = text.replace(
         "!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/",
         new_path,
+    )
+    replaced = replaced.replace(
+        "from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/",
+        f"from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/{release_version}/",
+    )
+    replaced = replaced.replace(
+        "](https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes/",
+        f"](https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/{release_version}/themes/",
     )
 
     if new_path not in replaced:
@@ -367,6 +384,12 @@ def create_plantuml_stdlib_c4_folder(target_path):
     replace_first_regex_copy_file(
         "C4_Dynamic.puml",
         os.path.join(target_path, "C4_Dynamic.puml"),
+        inclusive_endif,
+        "!include <C4/C4_Component>",
+    )
+    replace_first_regex_copy_file(
+        "C4_Sequence.puml",
+        os.path.join(target_path, "C4_Sequence.puml"),
         inclusive_endif,
         "!include <C4/C4_Component>",
     )

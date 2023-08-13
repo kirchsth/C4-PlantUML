@@ -27,7 +27,7 @@ extended with my open PRs.
 [comment]: # ("image is based on percy/C4_Container Diagram Sample - bigbankplc-styles.puml")
 [![Container diagram for Internet Banking System](https://www.plantuml.com/plantuml/png/hLPHRzis47xthxYwBMe3YesXwyk007LiRKrX9vxbj7iOO9oaiqIK8ZMIicCC--yxof8LEnawO7j9p2Fl-pvzTppfetLeN5N8tZj8jDgHSI0Sx8NB0TDKEA4LIjug2bGfIA48q6HLGSh1rMmLpYVhso_XvlPkEd-OXTVzKH-SXieII9sWb8VUAx65jpiq0cD96teKrjb1_pApF-m1l18gaLLAC1gFHkFfZvkfLWwPqunAh_4LIKjFp-NEbVQdyTZWVfInvYfcPfDm5kiRiUhnDs6ItBgSqQwM4fLxMCp7zCZxAQKlKgXKR7kzwDFzryqoN4NtTvlxX_NyzYuS3DcaDMOMR5MMsZXG6co92LaG2bnEeB0W6CHeAGLz35LCPDWteJAmZWnfToZ91h3FHP93gjKxrmAsQAWEXJOq704ptcvFOKDWw8-A62TjAILbB3be_eEZnwPyTHBaQ7r1OeAKja9HsfkaQIZ95v2VPT2FCVd6YISR-W6ysV9YggKsrs_2URW8xzQRd-_vp_H-Vh_Y_JWxxlPVlt__OJRvu7DiZYLTXoBBNIJOsyYl1qFUEIfRix3hbWsIbkvtHJu5hC_f3xsw5SbQ6Tg3IZmqFrChPx9QSLrQ7RuT_t4ZSWT9rpEqEQLpeLZB6Re77_y_5DgvZgBdX9C49pyX5PWPB62h3TmgHqQHWnjKttn7H0VhgEZrbcIiLeEaiauNP0AOddxr9z26GM_hciUS7HohNDQ9AEiOO9BeIZdRPnr7wCqD1r8qXq7o0sDT2kWFuSyU07Hw1tkADrYMVFWhnJ0fIoaIz7EWpw7FkCC0ej9uyOilKn-RaHGxbb5BiuxF9j1SGK2Lrk4JRzm--7B28i-PROaC5_6sfAibPkJPMzOeCQ9q0KnKLaaqFhmqUYTIie1IlioohLHo76727S1fTh8sqi9Ee4yH1lXv8JPwRyayKrJeM4Xgx5ZKYrRJz7K0ls61xCIv5f2Y4Fw2sYgsvBXc_rgRVIRkA01Isec4BkNDua6A3lsuyMLeVderqQzpE5ixRSY27uvWA1FMcRga81ItPL7_3Y2lxmfWvN983AMad41f0zzMP2r8dV62N39wPbHphzafuJjsUVjouymq7pDTtfbptt78cyB0zMt5p5u_crmiwgzJsuUFRa052hcnTO29mgi5hvihvvdNEO6eIL72GYH6Mxrr43ucEQgCu9Z9i4ym6sqTAcEghS62BkvqPxjlpxOB4Wwqp_VKVC1OLwvhWU1qbGDm1fN5sedE_jwAv9DnqLtQ1qlMStzQhvSH7pm_PqlyxfccwJkuXcvpvqTrhBiHKSDr0w11geFd3T4IrlCsWC_yLXtNv5qrwwq6eLFmtu0sDvpSoUukopdeYZ2ri3MwgEVLtWX75fpsH0tFx6RAa2VC9svTD5d4i1ReoaThZ4x8MJzUQZZFgoptHqSVBTPB1ZghmLdwHLTsFdLlEPvMY_cbLzqsmn-_UURXB-7TR33iRRLsP20rk5V7Tqtx_GIx4Rpr1HTQ3OQrPztNbT_bvPTsk_UHLLQ5_1i0 "Container diagram for Internet Banking System")](https:////www.plantuml.com/plantuml/uml/hLPHRzis47xthxYwBMe3YesXwyk007LiRKrX9vxbj7iOO9oaiqIK8ZMIicCC--yxof8LEnawO7j9p2Fl-pvzTppfetLeN5N8tZj8jDgHSI0Sx8NB0TDKEA4LIjug2bGfIA48q6HLGSh1rMmLpYVhso_XvlPkEd-OXTVzKH-SXieII9sWb8VUAx65jpiq0cD96teKrjb1_pApF-m1l18gaLLAC1gFHkFfZvkfLWwPqunAh_4LIKjFp-NEbVQdyTZWVfInvYfcPfDm5kiRiUhnDs6ItBgSqQwM4fLxMCp7zCZxAQKlKgXKR7kzwDFzryqoN4NtTvlxX_NyzYuS3DcaDMOMR5MMsZXG6co92LaG2bnEeB0W6CHeAGLz35LCPDWteJAmZWnfToZ91h3FHP93gjKxrmAsQAWEXJOq704ptcvFOKDWw8-A62TjAILbB3be_eEZnwPyTHBaQ7r1OeAKja9HsfkaQIZ95v2VPT2FCVd6YISR-W6ysV9YggKsrs_2URW8xzQRd-_vp_H-Vh_Y_JWxxlPVlt__OJRvu7DiZYLTXoBBNIJOsyYl1qFUEIfRix3hbWsIbkvtHJu5hC_f3xsw5SbQ6Tg3IZmqFrChPx9QSLrQ7RuT_t4ZSWT9rpEqEQLpeLZB6Re77_y_5DgvZgBdX9C49pyX5PWPB62h3TmgHqQHWnjKttn7H0VhgEZrbcIiLeEaiauNP0AOddxr9z26GM_hciUS7HohNDQ9AEiOO9BeIZdRPnr7wCqD1r8qXq7o0sDT2kWFuSyU07Hw1tkADrYMVFWhnJ0fIoaIz7EWpw7FkCC0ej9uyOilKn-RaHGxbb5BiuxF9j1SGK2Lrk4JRzm--7B28i-PROaC5_6sfAibPkJPMzOeCQ9q0KnKLaaqFhmqUYTIie1IlioohLHo76727S1fTh8sqi9Ee4yH1lXv8JPwRyayKrJeM4Xgx5ZKYrRJz7K0ls61xCIv5f2Y4Fw2sYgsvBXc_rgRVIRkA01Isec4BkNDua6A3lsuyMLeVderqQzpE5ixRSY27uvWA1FMcRga81ItPL7_3Y2lxmfWvN983AMad41f0zzMP2r8dV62N39wPbHphzafuJjsUVjouymq7pDTtfbptt78cyB0zMt5p5u_crmiwgzJsuUFRa052hcnTO29mgi5hvihvvdNEO6eIL72GYH6Mxrr43ucEQgCu9Z9i4ym6sqTAcEghS62BkvqPxjlpxOB4Wwqp_VKVC1OLwvhWU1qbGDm1fN5sedE_jwAv9DnqLtQ1qlMStzQhvSH7pm_PqlyxfccwJkuXcvpvqTrhBiHKSDr0w11geFd3T4IrlCsWC_yLXtNv5qrwwq6eLFmtu0sDvpSoUukopdeYZ2ri3MwgEVLtWX75fpsH0tFx6RAa2VC9svTD5d4i1ReoaThZ4x8MJzUQZZFgoptHqSVBTPB1ZghmLdwHLTsFdLlEPvMY_cbLzqsmn-_UURXB-7TR33iRRLsP20rk5V7Tqtx_GIx4Rpr1HTQ3OQrPztNbT_bvPTsk_UHLLQ5_1i0)
 
-C4-PlantUML combines the benefits of [PlantUML](https://plantuml.com/) and the [C4 model](https://c4model.com/) for providing a simple way of describing and communicate software architectures – especially during up-front design sessions – with an intuitive language using open source and platform independent tools.
+C4-PlantUML combines the benefits of [PlantUML](https://plantuml.com/) and the [C4 model](https://c4model.com/) for providing a simple way of describing and communicating software architectures – especially during up-front design sessions – with an intuitive language using open source and platform independent tools.
 
 C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippets) for creating C4 diagrams with PlantUML.
 
@@ -36,7 +36,7 @@ C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippet
     - [Including the C4-PlantUML library](#including-the-c4-plantuml-library)
     - [Now let's create a C4 Container diagram](#now-lets-create-a-c4-container-diagram)
   - [Supported Diagram Types](#supported-diagram-types)
-    - [System Context & System Landscape diagrams](#system-context-system-landscape-diagrams)
+    - [System Context & System Landscape diagrams](#system-context--system-landscape-diagrams)
     - [Container diagram](#container-diagram)
     - [Component diagram](#component-diagram)
     - [Dynamic diagram](#dynamic-diagram)
@@ -610,11 +610,11 @@ Rel_D(user, user1, "requests", "async message", "if sprite starts with &, it def
 
 Additional tags/stereotypes can be added to the existing element stereotypes (component, ...) and highlight,... specific aspects:
 
-- `AddElementTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`:
+- `AddElementTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite, ?borderStyle, ?borderThickness)`:
   Introduces a new element tag. The styles of the tagged elements are updated and the tag is displayed in the calculated legend.
 - `AddRelTag(tagStereo, ?textColor, ?lineColor, ?lineStyle, ?sprite, ?techn, ?legendText, ?legendSprite, ?lineThickness)`:
   Introduces a new Relationship tag. The styles of the tagged relationships are updated and the tag is displayed in the calculated legend.
-- `AddBoundaryTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText)`:
+- `AddBoundaryTag(tagStereo, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText, ?borderStyle, ?borderThickness)`:
   Introduces a new Boundary tag. The styles of the tagged boundaries are updated and the tag is displayed in the calculated legend.
 - `UpdateElementStyle(elementName, ?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?sprite, ?techn, ?legendText, ?legendSprite)`:
   This call updates the default style of the elements (component, ...) and creates no additional legend entry.
@@ -625,9 +625,10 @@ Additional tags/stereotypes can be added to the existing element stereotypes (co
   If the element name is "" then it updates generic, enterprise, system and container boundary style in on call.
 - `RoundedBoxShape()`: This call returns the name of the rounded box shape and can be used as ?shape argument.
 - `EightSidedShape()`: This call returns the name of the eight sided shape and can be used as ?shape argument.
-- `DashedLine()`: This call returns the name of the dashed line and can be used as ?lineStyle argument.
-- `DottedLine()`: This call returns the name of the dotted line and can be used as ?lineStyle argument.
-- `BoldLine()`: This call returns the name of the bold line and can be used as ?lineStyle argument.
+- `DashedLine()`: This call returns the name of the dashed line and can be used as ?lineStyle or ?borderStyle argument.
+- `DottedLine()`: This call returns the name of the dotted line and can be used as ?lineStyle or ?borderStyle argument.
+- `BoldLine()`: This call returns the name of the bold line and can be used as ?lineStyle or ?borderStyle argument.
+- `SolidLine()`: This call returns the name of the solid line and can be used as ?lineStyle or ?borderStyle argument (enables e.g. a reset of dashed boundaries).
 
 Each element can be extended with one or multiple custom tags via the keyword argument `$tags="..."`, like `Container(spaAdmin, "Admin SPA", $tags="v1.1")`.
 Multiple tags can be combined with `+`, like `Container(api, "API", $tags="v1.0+v1.1")`.
