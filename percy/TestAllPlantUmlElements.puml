@@ -1,4 +1,4 @@
-  @startuml
+@startuml
 
 ' If ENABLE_ALL_PLANT_ELEMENTS is set BEFORE the first C4_* file is loaded,
 ' nearly "all" PlantUML elements can be used like
@@ -13,9 +13,9 @@
   ' !theme C4_green from ./../themes
   !include ./../C4_Component.puml
 !else
-  !theme C4_united from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes
-  ' !theme C4_green from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes
-  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+  !theme C4_united from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
+  ' !theme C4_green from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
+  !include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Component.puml
 !endif
 
 LAYOUT_TOP_DOWN()

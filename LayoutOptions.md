@@ -661,7 +661,7 @@ via `ENABLE_ALL_PLANT_ELEMENTS`. It can be set with following 2 options
 ```plantuml
 @startuml
 !ENABLE_ALL_PLANT_ELEMENTS = 1
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Component.puml
 ...
 @enduml
 ```
@@ -676,7 +676,7 @@ but the style is not correct displayed.
 ```plantuml
 @startuml
 !ENABLE_ALL_PLANT_ELEMENTS = 1
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Component.puml
 
 Component(comp, "Copy component")
 
@@ -694,7 +694,7 @@ SHOW_LEGEND()
 @enduml
 ```
 
-![Sample with PlantUML elements](https://www.plantuml.com/plantuml/png/NP1VQy8m5CNV-ockPJ05jGpsD11iDMmFiHF_u6D9cgXbRLAIspc__HBjIjtRpRs_Sy-vcLja1fkg30OaZHDAifZIR4tZT9SHIbOatMrX1Y_1e51vsGW9PyJQlaMHOPVfgS1pmnihJQuLIeNJN5THNJBbLquiYhBWqU9rilQj_Of65RCeZMjb2rtLMdbDxUs3xZtCNJM6SA7hA-H_tN3qYAXZSRf1lkXXOtYw-S_2ckLVx2GVX4i-53nskcK2iPiy0ojT7iMm-9PWhmhP3norWRvY11TtPxTNC6ISMHdsyWYUt9SclG0Tw19iP9djsyl-XM-C5C2lZl8GRQ5xp8ramiBHwAeTRxgnDpoO0gK5rDvY-_5vo2Xv9-boE0hcKWdthxy0)
+![Sample with PlantUML elements](https://www.plantuml.com/plantuml/png/NP1FQy904CNl-HHZA5J16Wez5GGJ3UrXJSK_U0oRx6Y2oMxOdLJzzjsjDiJUPkVzPjwRdHdYcjgwyWPn4aOiJaF6qXKBasqQitWP9ziDJE7L6vGohrg1K10rvZq8D3zFZYKLRTOQrBcIX98ckQg3Kwdpmb0HpDzULXMNj5ko02zM5oXiCvshkb7IuOrpzhhtCBVL6FovQgwG_tNzqICY3-NHGRz53nl3K-Fifdx3ynC_uiFW8XkABBHpYmX2gpm3hmYrv5H-8vYh97w1WzBGdnZ1sPxOxHMSUCOD-hqy8ejkIwCkG0-q2TPOfRlxPV_2jne5P5TBEOZTeLlCDN9XuA1LVPVNdUmCzxeaD43AMMm-l_OfYp_YP34SUJEKmlxh3m00)
 
 ### List of supported PlantUML elements
 
