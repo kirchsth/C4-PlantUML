@@ -22,6 +22,8 @@ C4-PlantUML comes with some layout options.
     - [SHOW_ELEMENT_DESCRIPTIONS(?show)](#show_element_descriptionsshow)
     - [SHOW_FOOT_BOXES(?show)](#show_foot_boxesshow)
     - [SHOW_INDEX(?show)](#show_indexshow)
+  - [Optional support of additional PlantUML elements](#optional-support-of-additional-plantuml-elements)
+    - [List of supported PlantUML elements](#list-of-supported-plantuml-elements)
 - [📄 Themes](Themes.md#themes)
 - samples
   - [📄 C4 Model Diagrams](samples/C4CoreDiagrams.md#c4-model-diagrams)
@@ -83,7 +85,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ![LAYOUT_TOP_DOWN Sample](https://www.plantuml.com/plantuml/png/JL1FxvD04BtlfnZh0PfKI8qdJqKqUkWV8jJ64rbWAXltpsPt23R6x-uGQ_lZyiAyDs_Ulbqa6MWoMhnIjjVJW30I-VW-puESin-AngcR8eRUMK9BMUzC_bE5VemqvkMxDvMMbiw7VOw_c1zmu65RibWgYo7pYxN84pWw0el80kYmbsm9DAe8AZ8Y37YLaoP8Sh4llf_EJTkSglRZwN9Crq9K6AApgHoCiXjO5GkgI46I2wkrg6-HqBGVt6G76Mvflzr0KalZDIPh-2s0lqUaTCQkbTwppmKxABpNgfUad5tng7ozWQAkikEdXbS2mjji2uTlvS8LMhivmj86XtR0LNZ94iF15T-2PbP4682KGSst8cVxSq-NqZ-IVUuo9iLNrFzVzOnrZhp9-ALfgffLY-Z1Fcq-8qN-nGMkmPcNApkq0pV_5m00 "LAYOUT_TOP_DOWN Sample")
 
-`LAYOUT_LEFT_RIGHT()` rotates the flow visualization to *from Left to Right* and directed relations like `Rel_Left()`, `Rel_Right()`, `Rel_Up()` and `Rel_Down()` are rotated too.
+`LAYOUT_LEFT_RIGHT()` rotates the flow visualization to _from Left to Right_ and directed relations like `Rel_Left()`, `Rel_Right()`, `Rel_Up()` and `Rel_Down()` are rotated too.
 
 ```plantuml
 @startuml LAYOUT_LEFT_RIGHT Sample
@@ -104,7 +106,7 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ![LAYOUT_LEFT_RIGHT Sample](https://www.plantuml.com/plantuml/png/JKzDJy904BttLwnue2JO1kF94xL1C05jQD5uQfPsj1ltOxCxcqgC_zrfH70lavttvdtCFNA7GSdeGkX6XXPOXsZzRPewtYVl0hkm3nvSOpI2ngGnAlqGhkayTcb-SrL8hd6tMQVmINWBBIthdCXSQ7297QIZTVRwjAlgzUA-ghSForKLJwAe0EUDZdchX9woKJPCuT5nD6uqYSg3Hr3rdGcwvUuGDxCf6vTSMGdZ2VkA6BsJJzp3lkRMaiuBx5bchHGDHs7qY5RvvPHbPP4yBYewSS2kandRFES3babfUi-6YfwXOTJFSgAe856G5wjwWGYEeL0WoSjJjkzZkXX_GT8vqWYCjY3_MfrZxJnTqbnLLL4IQo2TqBFC4j3J5uRnvepwVp87tGObVm00 "LAYOUT_LEFT_RIGHT Sample")
 
-`LAYOUT_LANDSCAPE()` rotates the default flow visualization to *from Left to Right* like `LAYOUT_LEFT_RIGHT()` additional **directed relations** like Rel_Left(), Rel_Right(), Rel_Up() and Rel_Down() **are not rotated** anymore.
+`LAYOUT_LANDSCAPE()` rotates the default flow visualization to _from Left to Right_ like `LAYOUT_LEFT_RIGHT()` additional **directed relations** like Rel_Left(), Rel_Right(), Rel_Up() and Rel_Down() **are not rotated** anymore.
 
 ```plantuml
 @startuml LAYOUT_LANDSCAPE Sample
@@ -209,9 +211,9 @@ Legend labels and details can be defined via `\n` in `$legendTest` arguments too
 !else
   !include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
 !endif
-' $legendText with \n defines the label and details of the legend entry ("backend container" is label, "eight sided shape" is details) 
+' $legendText with \n defines the label and details of the legend entry ("backend container" is label, "eight sided shape" is details)
 AddElementTag("backendContainer", $fontColor=$ELEMENT_FONT_COLOR, $bgColor="#335DA5", $shape=EightSidedShape(), $legendText="backend container\neight sided shape")
-' $legendText without \n defines only a label 
+' $legendText without \n defines only a label
 AddRelTag("async", $textColor=$ARROW_FONT_COLOR, $lineColor=$ARROW_COLOR, $lineStyle=DashedLine(), $legendText="async call")
 ' if no $legendText defined, $tag is automatically the label and all additional displayed properties are the details
 AddRelTag("sync/async", $textColor=$ARROW_FONT_COLOR, $lineColor=$ARROW_COLOR, $lineStyle=DottedLine())
@@ -241,9 +243,9 @@ Legend details can be deactivated via `SHOW_LEGEND($details=None())`
 !else
   !include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
 !endif
-' $legendText with \n defines the label and details of the legend entry ("backend container" is label, "eight sided shape" is details) 
+' $legendText with \n defines the label and details of the legend entry ("backend container" is label, "eight sided shape" is details)
 AddElementTag("backendContainer", $fontColor=$ELEMENT_FONT_COLOR, $bgColor="#335DA5", $shape=EightSidedShape(), $legendText="backend container\neight sided shape")
-' $legendText without \n defines only a label 
+' $legendText without \n defines only a label
 AddRelTag("async", $textColor=$ARROW_FONT_COLOR, $lineColor=$ARROW_COLOR, $lineStyle=DashedLine(), $legendText="async call")
 ' if no $legendText defined, $tag is automatically the label and all additional displayed properties are the details
 AddRelTag("sync/async", $textColor=$ARROW_FONT_COLOR, $lineColor=$ARROW_COLOR, $lineStyle=DottedLine())
@@ -636,3 +638,97 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 
 ![SHOW_INDEX() Sample](https://www.plantuml.com/plantuml/png/LL1DRzD04BtlhnZ28OuKR1LnujGG8ef4IuHToiqQUwVrYlrOTcTbAiH_Pmmf0Lz6ddaVx-rbPanSd5NFZ1zjqGGJSyolcoRXN3yOdifGCgKnU2RFzHXSyzMaSSeyDVjNBuuMFTzUVsZekzmrQLdsBNqhv4UguwAisgkFT_txcxU7BzL6gIEb77o5sXc_XTLkcIPpGWvfjL7jOsPo_PjGlCRqM8qNMrYtwAAbzKQ1V7k9WiPJgcOQUenHLEveW5sCrep89lYLhFRFjx1hZ_NDeHDA8dXPNy3rv_rosraRvWnBiGmSG5f558WhbequGJSRPah0nf4Lhop9rc0y8EHJET067n8wU8hQ7xokDZ3XRyc15daj7Ec36i8zm0_ugVv7d-fM_CTFefsSnKzz8llqJEUcjrd2oBpgkcChg0NqztgMUKUSvPUMSP-2-vToILuNPty1 "SHOW_INDEX() Sample")
 
+## Optional support of additional PlantUML elements
+
+More often a full support of all PlantUML elements are requested.  
+They can be set via the new optional `plant="...."` argument of the calls
+
+- `System(..., ?plant)`,
+- `System_Ext(..., ?plant)`,
+- `Container(..., ?plant)`,
+- `Container_Ext(..., ?plant)`,
+- `Component(..., ?plant)`,
+- `Component_Ext(..., ?plant)`
+
+The already specified `...Db...()` and `...Queue...()` calls are not extended.
+
+But based on the additional (internal) overhead it has to be explicit enabled
+via `ENABLE_ALL_PLANT_ELEMENTS`. It can be set with following 2 options
+
+- `!ENABLE_ALL_PLANT_ELEMENTS = 1` directly in the scripts file
+  BEFORE the first C4\_\* file is loaded, like e.g.
+
+```plantuml
+@startuml
+!ENABLE_ALL_PLANT_ELEMENTS = 1
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+...
+@enduml
+```
+
+- or via additional command line parameter `-DENABLE_ALL_PLANT_ELEMENTS=1`
+
+If `ENABLE_ALL_PLANT_ELEMENTS` is not set, the diagrams displays the requested "PlantUML element"
+but the style is not correct displayed.
+
+**A simple sample with additional "PlantUML elements":**
+
+```plantuml
+@startuml
+!ENABLE_ALL_PLANT_ELEMENTS = 1
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Component(comp, "Copy component")
+
+Component(config, "Config component", $plant="package")
+
+ComponentDb(dbA, "DB A")
+' alternative syntax for ComponentDb() with $plant="database"
+Component(dbB, "DB B", $plant="database")
+
+Rel_U(comp, config, "Configured by")
+Rel_L(comp, dbA, "Reads from")
+Rel_R(comp, dbB, "Writes to")
+
+SHOW_LEGEND()
+@enduml
+```
+
+![Sample with PlantUML elements](https://www.plantuml.com/plantuml/png/NP1VQy8m5CNV-ockPJ05jGpsD11iDMmFiHF_u6D9cgXbRLAIspc__HBjIjtRpRs_Sy-vcLja1fkg30OaZHDAifZIR4tZT9SHIbOatMrX1Y_1e51vsGW9PyJQlaMHOPVfgS1pmnihJQuLIeNJN5THNJBbLquiYhBWqU9rilQj_Of65RCeZMjb2rtLMdbDxUs3xZtCNJM6SA7hA-H_tN3qYAXZSRf1lkXXOtYw-S_2ckLVx2GVX4i-53nskcK2iPiy0ojT7iMm-9PWhmhP3norWRvY11TtPxTNC6ISMHdsyWYUt9SclG0Tw19iP9djsyl-XM-C5C2lZl8GRQ5xp8ramiBHwAeTRxgnDpoO0gK5rDvY-_5vo2Xv9-boE0hcKWdthxy0)
+
+### List of supported PlantUML elements
+
+| PlantUML element | Support  | Comment                                                                                                               |
+| ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
+| rectangle        | &#x2705; | already supported (works even without ENABLE_ALL_PLANT_ELEMENTS)                                                      |
+| database         | &#x2705; | already supported (works even without ENABLE_ALL_PLANT_ELEMENTS)                                                      |
+| queue            | &#x2705; | already supported (works even without ENABLE_ALL_PLANT_ELEMENTS)                                                      |
+| node             | &#x274C; | **should not be used**, already defined for Node() (works even without ENABLE_ALL_PLANT_ELEMENTS)                     |
+| person           | &#x274C; | **should not be used**, already defined for Person() (works even without ENABLE_ALL_PLANT_ELEMENTS)                   |
+|                  |          |                                                                                                                       |
+| actor            | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| agent            | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| artifact         | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| boundary         | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| card             | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| circle           | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| cloud            | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| collections      | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| control          | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| entity           | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| file             | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| folder           | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| frame            | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| hexagon          | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| interface        | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| package          | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| stack            | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| storage          | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| usecase          | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+| usecase/         | &#x2611; | requires ENABLE_ALL_PLANT_ELEMENTS                                                                                    |
+|                  |          |                                                                                                                       |
+| actor/           | &#x274C; | requires ENABLE_ALL_PLANT_ELEMENTS, not working (font color not changed to $bkColor) - and/or conflict with existing? |
+| label            | &#x274C; | requires ENABLE_ALL_PLANT_ELEMENTS, not working (font color not changed to $bkColor)                                  |
+
+If `ENABLE_ALL_PLANT_ELEMENTS` is not set, the diagrams displays the requested "PlantUML element"
+but the style is not correct.
