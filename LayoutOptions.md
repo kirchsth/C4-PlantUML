@@ -641,14 +641,14 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 ## Optional support of additional PlantUML elements
 
 More often a full support of all PlantUML elements are requested.  
-They can be set via the new optional `plant="...."` argument of the calls
+They can be set via the new optional `baseShape="...."` argument of the calls
 
-- `System(..., ?plant)`,
-- `System_Ext(..., ?plant)`,
-- `Container(..., ?plant)`,
-- `Container_Ext(..., ?plant)`,
-- `Component(..., ?plant)`,
-- `Component_Ext(..., ?plant)`
+- `System(..., ?baseShape)`,
+- `System_Ext(..., ?baseShape)`,
+- `Container(..., ?baseShape)`,
+- `Container_Ext(..., ?baseShape)`,
+- `Component(..., ?baseShape)`,
+- `Component_Ext(..., ?baseShape)`
 
 The already specified `...Db...()` and `...Queue...()` calls are not extended.
 
@@ -680,11 +680,11 @@ but the style is not correct displayed.
 
 Component(comp, "Copy component")
 
-Component(config, "Config component", $plant="package")
+Component(config, "Config component", $baseShape="package")
 
 ComponentDb(dbA, "DB A")
-' alternative syntax for ComponentDb() with $plant="database"
-Component(dbB, "DB B", $plant="database")
+' alternative syntax for ComponentDb() with $baseShape="database"
+Component(dbB, "DB B", $baseShape="database")
 
 Rel_U(comp, config, "Configured by")
 Rel_L(comp, dbA, "Reads from")
@@ -694,7 +694,7 @@ SHOW_LEGEND()
 @enduml
 ```
 
-![Sample with PlantUML elements](https://www.plantuml.com/plantuml/png/NP1FQy904CNl-HHZA5J16Wez5GGJ3UrXJSK_U0oRx6Y2oMxOdLJzzjsjDiJUPkVzPjwRdHdYcjgwyWPn4aOiJaF6qXKBasqQitWP9ziDJE7L6vGohrg1K10rvZq8D3zFZYKLRTOQrBcIX98ckQg3Kwdpmb0HpDzULXMNj5ko02zM5oXiCvshkb7IuOrpzhhtCBVL6FovQgwG_tNzqICY3-NHGRz53nl3K-Fifdx3ynC_uiFW8XkABBHpYmX2gpm3hmYrv5H-8vYh97w1WzBGdnZ1sPxOxHMSUCOD-hqy8ejkIwCkG0-q2TPOfRlxPV_2jne5P5TBEOZTeLlCDN9XuA1LVPVNdUmCzxeaD43AMMm-l_OfYp_YP34SUJEKmlxh3m00)
+![Sample with PlantUML elements](https://www.plantuml.com/plantuml/png/NP1FR_8m3CRl_HIcUgKN94OrQQT9IBHGROVG8Vw8OvKcXbQqIPMu0xxzai4GSBFz_6m_ziGIDzGrTT1BipXXQHupbYzOdAtpbANpD5klO0olGQzIekuaGadKslSeClmusbTKTaLdqGYj21MDX6wYGsL4QQcCfcylYvehsinPX2UdIvIkc4zrqshbyTPl3cvvNxXe2E5KjsSGVzLmy8YeNRNtq6zmXmtXNy4jhahUuZXikJZmFJuqpug-B6BNEqiWTif_u3MXKPogRmHxLiHFiDC6xZi6S7HdFioMdBXFmpjViaWkWvCd8pVOELbYdM-kLpuTqXcKK9mTvI5sXIvsbyYbXPtHpLLUtcI_T6igGWka_OhLvzSsP-b7citwWs3Ydkv-_0C0)
 
 ### List of supported PlantUML elements
 
