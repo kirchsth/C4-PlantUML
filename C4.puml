@@ -13,7 +13,7 @@
 ' ##################################
 !function C4Version()
   ' 2 spaces and ' are used as unique marker, that the release scripts makes the correct version update
-  !$c4Version  =  "2.9.0extended--fixedAddNodeTag"
+  !$c4Version  =  "2.10.0extended"
   !return $c4Version
 !end function
 
@@ -729,7 +729,7 @@ $elementSkin
       !elseif ($borderStyle == $SOLID_LINE)
         !$tagDetails = $tagDetails + $LEGEND_SOLID_LINE + ", "
       !else
-        !$tagDetails = $tagDetails + $lineStyle + ", "
+        !$tagDetails = $tagDetails + $borderStyle + ", "
       !endif
     !endif
     !if ($borderThickness != "")
