@@ -5,9 +5,9 @@
   
   !include %get_variable_value("RELATIVE_INCLUDE")/C4_Container.puml
 !else
-  !theme C4Language_japanese from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes
+  !theme C4Language_japanese from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
 
-  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  !include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
 !endif
 
 LAYOUT_LANDSCAPE()
