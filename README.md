@@ -68,7 +68,7 @@ C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippet
   - [Background](#background)
   - [License](#license)
 - [📄 Layout Options](LayoutOptions.md#layout-options)
-- [📄 Themes](Themes.md#themes)
+- [📄 Themes (different styles and languages)](Themes.md#themes)
 - samples
   - [📄 C4 Model Diagrams](samples/C4CoreDiagrams.md#c4-model-diagrams)
 
@@ -537,14 +537,14 @@ Color of the displayed images can be changed with `,color={color}`.
 !include <office/users/users.puml>
 
 
-AddRelTag("plantuml", $textColor="$ARROW_FONT_COLOR", $lineColor="$ARROW_COLOR", $sprite="img:http://plantuml.com/logo3.png{scale=0.3}", $legendSprite="img:http://plantuml.com/logo3.png{scale=0.1}", $legendText="console triggered")
+AddRelTag("plantuml", $textColor="$ARROW_FONT_COLOR", $lineColor="$ARROW_COLOR", $sprite="img:https://plantuml.com/logo3.png{scale=0.3}", $legendSprite="img:https://plantuml.com/logo3.png{scale=0.1}", $legendText="console triggered")
 
 Person(user, "user group displayed with a sprite", $sprite="users")
 
 
 Container(container, "Container with scaled and colored OpenIconic", $sprite="&folder,scale=5.0,color=gray")
 
-System(system, "System with an image", $sprite="img:http://plantuml.com/logo3.png")
+System(system, "System with an image", $sprite="img:https://plantuml.com/logo3.png")
 
 Rel(user, system, "Rel with image (via tags)", $tags="plantuml")
 Rel(user, container, "Rel with OpenIconinc", $sprite="&folder")
@@ -667,6 +667,13 @@ Like the element specific tag definitions exist boundary specific calls with the
 - `UpdateContainerBoundaryStyle(?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText, ?borderStyle, ?borderThickness, ?sprite, ?legendSprite)`
 - `UpdateSystemBoundaryStyle(?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText, ?borderStyle, ?borderThickness, ?sprite, ?legendSprite)`
 - `UpdateEnterpriseBoundaryStyle(?bgColor, ?fontColor, ?borderColor, ?shadowing, ?shape, ?type, ?legendText, ?borderStyle, ?borderThickness, ?sprite, ?legendSprite)`
+
+### Define a new legend title
+
+All the above described `Update....(..., ?legendText, ...)` calls can define a new legend text.
+Only the legend title cannot be changed. Therefore, the following call is added to allow it to be changed as well:
+
+- `UpdateLegendTitle(newTitle)`
 
 ### Comments
 
