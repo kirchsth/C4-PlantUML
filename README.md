@@ -31,7 +31,7 @@ C4-PlantUML combines the benefits of [PlantUML](https://plantuml.com/) and the [
 
 C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippets) for creating C4 diagrams with PlantUML.
 
-- [📄 C4-PlantUML](#c4-plantuml)
+- [📄 (Extended) C4-PlantUML](#extended-c4-plantuml)
   - [Getting Started](#getting-started)
     - [Including the C4-PlantUML library](#including-the-c4-plantuml-library)
     - [Now let's create a C4 Container diagram](#now-lets-create-a-c4-container-diagram)
@@ -513,7 +513,7 @@ HIDE_STEREOTYPE()
 @enduml
 ```
 
-![bugfix changes old layout](https://www.plantuml.com/plantuml/png/NP3FRhCm4CJlF8M_d1BfArnwwYaKa5h9RH1_3f4g8GCBM0M3xBMIl7qNvuAuCSFFEwCv6nGQxJHw_wHgHji26n0NynO4MjpyNk9WQsj0DxD2KEWtynJyIjqC1eSWUdr9Hw6m_E81tEb_2osPLKIma0gqlwodUNYzb4N5m-yuZy8qEPuyBmLjPdKK_zaXF9oy_64GfgCf5pBUcLr-L0tTh87Ljk_adOtGuORBP3yWeH7JwzUURkURsj0nIO9Zv-zPTs03SqeYE76HUzWkH7fSFAfoxKvzJqvbJhbMJoDsnXhyrDpfzJQz__YCaoelaYov55Utnvcsewd-0000 "bugfix changes old layout")
+![bugfix changes old layout](https://www.plantuml.com/plantuml/png/NP3FRhCm4CJlF8M_d1BfArnwwYaKa5h9RH1_3f4g8GCBM0M3xBMIl7qNvuAuCSFFEwCv6nGQxJHw_wHgHji26n0NynO4MjpyNk9WQsj0DxD2KEWtynJyIjqC1eSWUdr9Hw6m_E81tEb_2osPLKIma0gqlwodUNYzb4N5m-yuZy8qEPuyvgMWpQoEuZyxX8UJbpyCmdGqvKB6ExFBZwgXcpMmslQTlBCHEjnmcUm793HYUltQq-ryKniw9abmxFmzwmviO4v912SkSW_RXKYFYqTLhjsfxycfp2dNwcd4pbY3dvexlTwczn-VSLBbHP8bb-Bg1ZdJUBJL7m00 "bugfix changes old layout")
 
 The new repositioning of the elements could damage old diagrams.
 Therefore a compatibility mode NO_LAY_ROTATE is introduced.
@@ -545,7 +545,7 @@ HIDE_STEREOTYPE()
 @enduml
 ```
 
-![deactivated bugfix reproduces old layout](https://www.plantuml.com/plantuml/png/NP1HQxim5CNVyobk-_9luT_AO4-3GPqA6xXQh3uK1X8rQa2Z93Tp_VQxfZ1Att8EltFFpJqOv1hjqBD_0DW9A6tRo1-G1ch1AvJV74KDiyGEch7lnrcg5WoIEmY5R7LCYjY_56cI-La4h_34s4ggghUrW0vnCY-Uf_cyRsc2BQqHkXeLKdHVZOCtzLmjxJk3TIzBBtZUdHOh_uozWHiKcgmYe0INIkZzH2oZlYJFgFOOdWF_56ssZ9s4DgFQyF-mzjTRThvITjYOV2BZ3UpqfKhHZFhlVxrey8vBPTiXeG7evVL8r-EixkYG9C6XynzPD-0EZgc9uCXLFi9s8fB5_5hao-wqxzQfr2ctrSq8dR4KttIyQ3URykyVOLISioYDakpYxd4GggPJ_G80 "deactivated bugfix reproduces old layout")
+![deactivated bugfix reproduces old layout](https://www.plantuml.com/plantuml/png/NP11QuD048Nl-oiskJI1DbBegL28LQ456uFHGw0W6nrrgTcLtTcQ_FkE2YNavdj-C-_jR2qAW-xSiGUEBV2JQsfvuTBo2aI9ybSWL7oGsF9QTvqUf6eupI2SGI5Rx98Yzez5ccH-5l4t_ipOGggoSnNm5h6thvvdnB1fQ8CxEGkcr0ffT5Fgi_SZJTbQRBtWvMdV2ONvL-p1XVvNK95P10GBgS1i-h4ZHILvHecxy13u-sYrPcmFncgr4ezywI_Nx72rr6rbyvwCT-xwRtM2Mfl_ftLGumsNogP5GWDkngzxkjA3kg53aWI7at_7pWjku9YI28wco7lOzKIoM5oBVEnEVTUJIaSrjvgDS3Icu5d7evvsq_p7PnWLXonAeoGxJlVOqkteL7y0 "deactivated bugfix reproduces old layout")
 
 ## Global Layout Options
 
