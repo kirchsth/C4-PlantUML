@@ -1,0 +1,41 @@
+name: Automate Release Process
+
+on:
+  workflow_dispatch:
+    inputs:
+      transformation:
+        description: 'Transformation to execute (e.g., UpdateC4WithReleaseVersion)'
+        required: true
+      release_version:
+        description: 'Release version (e.g., v2.6.0)'
+        required: true
+      next_version:
+        description: 'Next version (optional, calculated automatically if left empty)'
+        required: true
+      deployed_version:
+        description: 'Deployed version (optional, calculated automatically if left empty)'
+        required: false
+
+jobs:
+  automate-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Execute release automation
+        env:
+          release_version: ${{ github.event.inputs.release_version }}
+          next_version: ${{ github.event.inputs.next_version }}
+          deployed_version: ${{ github.event.inputs.deployed_version }}
+        run: |
+          python ./.scripts/transform_files.py ${{ github.event.inputs.transformation }}
