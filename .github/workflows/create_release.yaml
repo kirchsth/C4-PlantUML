@@ -38,4 +38,37 @@ jobs:
           next_version: ${{ github.event.inputs.next_version }}
           deployed_version: ${{ github.event.inputs.deployed_version }}
         run: |
-          python ./.scripts/transform_files.py ${{ github.event.inputs.transformation }}
+          python ./.scripts/transform_files.py UpdateC4WithReleaseVersion
+          python ./.scripts/transform_files.py UpdateAllIncludes
+          python ./.scripts/transform_files.py UpdateAllImages
+          python ./.scripts/transform_files.py ReplaceREADMEHeader
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create new branch
+        run: |
+          git checkout -b "prerelease/${{ github.event.inputs.release_version }}"
+
+      - name: Check for changes
+        id: git_status
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changes
+        if: steps.git_status.outputs.changed == 'true'
+        run: |
+          git add .
+          git commit -m "Automated release: ${{ github.event.inputs.release_version }}"
+
+      - name: Push new branch
+        if: steps.git_status.outputs.changed == 'true'
+        run: |
+          git push origin "prerelease/${{ github.event.inputs.release_version }}"
+
