@@ -79,7 +79,7 @@ jobs:
             repository: kirchsth/plantuml-stdlib
             path: plantuml-stdlib
             ref: master
-            token: ${{ secrets.GITHUB_TOKEN }}
+            token: ${{ secrets.PLANTUML_STDLIB_PAT }}
 
       - name: Add upstream and fetch
         run: |
