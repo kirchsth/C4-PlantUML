@@ -72,3 +72,27 @@ jobs:
         run: |
           git push origin "prerelease/${{ github.event.inputs.release_version }}"
 
+  
+      - name: Checkout your fork
+        uses: actions/checkout@v4
+        with:
+            repository: kirchsth/plantuml-stdlib
+            path: plantuml-stdlib
+            ref: master
+            token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add upstream and fetch
+        run: |
+             cd plantuml-stdlib
+             git remote add upstream https://github.com/plantuml/plantuml-stdlib.git
+             git fetch upstream
+
+      - name: Merge upstream/master into your fork
+        run: |
+             cd plantuml-stdlib
+             git merge upstream/master
+
+      - name: Push changes back to your fork
+        run: |
+            cd plantuml-stdlib
+            git push origin master 
