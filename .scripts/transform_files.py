@@ -227,6 +227,17 @@ def update_c4_next_beta_version():
     print("C4Version() updated")
 
 
+def update_script_next_version():
+    # $c4Version is defined without starting 'v'
+    print(
+        f"updating description in ./.github/workflows/create_release.yaml with next planned release_version {next_version} ..."
+    )
+    replace_first_regex_in_file(
+        "./.github/workflows/create_release.yaml", r"description: 'Release version \(ex\. [^)]+\)'", f"description: 'Release version (ex. {next_version})'"
+    )
+    print("description updated")
+
+
 def update_all_includes():
     # reference tag version is with starting 'v'
     print(f"updating include/theme paths with new tag version {release_version} ...")
@@ -432,7 +443,21 @@ if sys.argv[0] != "./.scripts/transform_files.py":
     sys.stderr.write(u)
     sys.exit(1)
 
-if sys.argv[1] == "UpdateC4WithReleaseVersion":
+if sys.argv[1] == "WriteCorrectVersionsInGithubOutput":
+    read_environment_variables()
+    output_file = os.environ.get("GITHUB_OUTPUT")
+    if output_file:
+        with open(output_file, "a") as f:
+            f.write(f"release_version={release_version}\n")
+            f.write(f"next_version={next_version}\n")
+            f.write(f"deployed_version={deployed_version}\n")
+    else:
+        print(f"!!!WriteCorrectVersionsInGithubOutput was not called in a Github step!!!")
+    print(f"The (updated) versions are:")
+    print(f"    release_version={release_version}")
+    print(f"    next_version={next_version}")
+    print(f"    deployed_version={deployed_version}")
+elif sys.argv[1] == "UpdateC4WithReleaseVersion":
     read_environment_variables()
     update_c4_release_version()
 elif sys.argv[1] == "UpdateAllIncludes":
@@ -447,6 +472,7 @@ elif sys.argv[1] == "ReplaceREADMEHeader":
 elif sys.argv[1] == "UpdateC4WithNextBeta":
     read_environment_variables()
     update_c4_next_beta_version()
+    update_script_next_version()
 elif sys.argv[1] == "CalculateDeployedVersion":
     calculated_deployed_version = read_next_plantuml_version()
 elif sys.argv[1] == "CreatePlantUMLStdlibC4Folder":

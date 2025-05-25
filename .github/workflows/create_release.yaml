@@ -3,15 +3,12 @@ name: Automate Release Process
 on:
   workflow_dispatch:
     inputs:
-      transformation:
-        description: 'Transformation to execute (e.g., UpdateC4WithReleaseVersion)'
-        required: true
       release_version:
-        description: 'Release version (e.g., v2.6.0)'
+        description: 'Release version (ex. v2.12.0)'
         required: true
       next_version:
         description: 'Next version (optional, calculated automatically if left empty)'
-        required: true
+        required: false
       deployed_version:
         description: 'Deployed version (optional, calculated automatically if left empty)'
         required: false
@@ -22,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -32,25 +29,36 @@ jobs:
       - name: Install dependencies
         run: pip install -r ./.scripts/requirements.txt
 
-      - name: Execute release automation
+      - name: Calculate missing versions
+        id: calc_versions
         env:
           release_version: ${{ github.event.inputs.release_version }}
           next_version: ${{ github.event.inputs.next_version }}
           deployed_version: ${{ github.event.inputs.deployed_version }}
         run: |
-          python ./.scripts/transform_files.py UpdateC4WithReleaseVersion
-          python ./.scripts/transform_files.py UpdateAllIncludes
-          python ./.scripts/transform_files.py UpdateAllImages
-          python ./.scripts/transform_files.py ReplaceREADMEHeader
+          # writes all completed versions to the GITHUB_OUTPUT that it can be used in the next steps
+          python ./.scripts/transform_files.py WriteCorrectVersionsInGithubOutput
 
       - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Create new branch
+      # #### Create new release branch and update files
+      - name: Create new release branch ${{ steps.calc_versions.outputs.release_version }}
         run: |
-          git checkout -b "prerelease/${{ github.event.inputs.release_version }}"
+          git checkout -b "testrelease/${{ steps.calc_versions.outputs.release_version }}"
+
+      - name: Update files with version ${{ steps.calc_versions.outputs.release_version }}
+        env:
+          release_version: ${{ steps.calc_versions.outputs.release_version }}
+          next_version: ${{ steps.calc_versions.outputs.next_version }}
+          deployed_version: ${{ steps.calc_versions.outputs.deployed_version }}
+        run: |
+          python ./.scripts/transform_files.py UpdateC4WithReleaseVersion
+          python ./.scripts/transform_files.py UpdateAllIncludes
+          python ./.scripts/transform_files.py UpdateAllImages
+          python ./.scripts/transform_files.py ReplaceREADMEHeader
 
       - name: Check for changes
         id: git_status
@@ -65,34 +73,76 @@ jobs:
         if: steps.git_status.outputs.changed == 'true'
         run: |
           git add .
-          git commit -m "Automated release: ${{ github.event.inputs.release_version }}"
+          git commit -m "Automated release: ${{ steps.calc_versions.outputs.release_version }}"
 
-      - name: Push new branch
+      - name: Push new release branch
         if: steps.git_status.outputs.changed == 'true'
         run: |
-          git push origin "prerelease/${{ github.event.inputs.release_version }}"
+          git push origin "testrelease/${{ steps.calc_versions.outputs.release_version }}"
 
-  
-      - name: Checkout your fork
+      # #### Create beta version update branch
+      - name: create a new ${{ steps.calc_versions.outputs.next_version }} beta1 branch
+        run: |
+          git pull
+          git checkout master
+          git branch start-${{ steps.calc_versions.outputs.next_version }}-beta1
+          git checkout start-${{ steps.calc_versions.outputs.next_version }}-beta1
+
+      - name: Update files with version ${{ steps.calc_versions.outputs.next_version }} beta1
+        env:
+          release_version: ${{ steps.calc_versions.outputs.release_version }}
+          next_version: ${{ steps.calc_versions.outputs.next_version }}
+          deployed_version: ${{ steps.calc_versions.outputs.deployed_version }}
+        run: |
+          python ./.scripts/transform_files.py UpdateC4WithNextBeta
+
+      - name: Check for changes beta1 branch
+        id: git_status_beta
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changes beta1 branch
+        if: steps.git_status_beta.outputs.changed == 'true'
+        run: |
+          git add .
+          git commit -m "Update version with first beta of ${{ steps.calc_versions.outputs.next_version }} (${{ steps.calc_versions.outputs.release_version }} was created based on previous commit)"
+
+      - name: Push new release beta1 branch
+        if: steps.git_status_beta.outputs.changed == 'true'
+        run: |
+          git push origin start-${{ steps.calc_versions.outputs.next_version }}-beta1
+
+      # Create MR
+      # missing
+      # missing
+      # missing
+
+      # #### Update kirchsth/plantuml-stdlib fork with upstream changes
+      - name: Checkout your plantuml-stdlib fork
         uses: actions/checkout@v4
         with:
-            repository: kirchsth/plantuml-stdlib
-            path: plantuml-stdlib
-            ref: master
-            token: ${{ secrets.PLANTUML_STDLIB_PAT }}
+          repository: kirchsth/plantuml-stdlib
+          path: plantuml-stdlib
+          ref: master
+          token: ${{ secrets.PLANTUML_STDLIB_PAT }}
 
-      - name: Add upstream and fetch
+      - name: sync kirchsth/plantuml-stdlib branch
         run: |
-             cd plantuml-stdlib
-             git remote add upstream https://github.com/plantuml/plantuml-stdlib.git
-             git fetch upstream
+          cd plantuml-stdlib
+          git remote add upstream https://github.com/plantuml/plantuml-stdlib.git
+          git fetch upstream
+          git merge upstream/master
+          git push origin master 
 
-      - name: Merge upstream/master into your fork
+      - name: update kirchsth/plantuml-stdlib branch with new version
+        env:
+          release_version: ${{ steps.calc_versions.outputs.release_version }}
+          next_version: ${{ steps.calc_versions.outputs.next_version }}
+          deployed_version: ${{ steps.calc_versions.outputs.deployed_version }}
         run: |
-             cd plantuml-stdlib
-             git merge upstream/master
+          cd plantuml-stdlib
 
-      - name: Push changes back to your fork
-        run: |
-            cd plantuml-stdlib
-            git push origin master 
