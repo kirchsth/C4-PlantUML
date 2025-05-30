@@ -472,7 +472,8 @@ elif sys.argv[1] == "ReplaceREADMEHeader":
 elif sys.argv[1] == "UpdateC4WithNextBeta":
     read_environment_variables()
     update_c4_next_beta_version()
-    update_script_next_version()
+    # would require additional rights in the Github workflow
+    # update_script_next_version()
 elif sys.argv[1] == "CalculateDeployedVersion":
     calculated_deployed_version = read_next_plantuml_version()
 elif sys.argv[1] == "CreatePlantUMLStdlibC4Folder":
