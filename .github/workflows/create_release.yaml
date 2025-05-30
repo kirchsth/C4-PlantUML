@@ -16,6 +16,8 @@ on:
 jobs:
   automate-release:
     runs-on: ubuntu-latest
+    env:
+      BASE_BRANCH: ${{ github.ref_name }}
 
     steps:
       - name: Checkout repository
@@ -45,7 +47,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       # #### Create new release branch and update files
-      - name: Create new release branch ${{ steps.calc_versions.outputs.release_version }}
+      - name: Create new release branch ${{ steps.calc_versions.outputs.release_version }} based on ${{ env.BASE_BRANCH }}
         run: |
           git checkout -b "testrelease/${{ steps.calc_versions.outputs.release_version }}"
 
@@ -81,10 +83,9 @@ jobs:
           git push origin "testrelease/${{ steps.calc_versions.outputs.release_version }}"
 
       # #### Create beta version update branch
-      - name: create a new ${{ steps.calc_versions.outputs.next_version }} beta1 branch
+      - name: create a new start-${{ steps.calc_versions.outputs.next_version }}-beta1 branch
         run: |
-          git pull
-          git checkout master
+          git checkout ${{ env.BASE_BRANCH }}
           git branch start-${{ steps.calc_versions.outputs.next_version }}-beta1
           git checkout start-${{ steps.calc_versions.outputs.next_version }}-beta1
 
