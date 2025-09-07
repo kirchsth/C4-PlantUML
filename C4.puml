@@ -1014,6 +1014,15 @@ $addTagToLegend($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $sha
 !endprocedure
 
 !unquoted procedure $addElementTagInclReuse($elementName, $tagStereo, $bgColor="", $fontColor="", $borderColor="", $shadowing="", $shape="", $sprite="", $techn="", $legendText="", $legendSprite="", $borderStyle="", $borderThickness="")
+
+'stored tags are already swapped (swap before comparing)
+!if (USE_NEW_STYLE == 1)
+  !$swap=$bgColor
+  !$bgColor=$fontColor
+  !$fontColor=$swap
+  !$borderColor=$swap
+!endif
+
   !$bgColor=$restoreEmpty($elementName, "bgColor", $bgColor, %false())
   !$fontColor=$restoreEmpty($elementName, "fontColor", $fontColor, %false())
   !$borderColor=$restoreEmpty($elementName, "borderColor", $borderColor, %false())
@@ -1026,6 +1035,14 @@ $addTagToLegend($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $sha
   !$legendSprite=$restoreEmpty($elementName, "legendSprite", $legendSprite, %false())
   !$borderStyle=$restoreEmpty($elementName, "borderStyle", $borderStyle, %false())
   !$borderThickness=$restoreEmpty($elementName, "borderThickness", $borderThickness, %false())
+
+' swap back
+!if (USE_NEW_STYLE == 1)
+  !$swap=$bgColor
+  !$bgColor=$fontColor
+  !$fontColor=$swap
+  !$borderColor=$swap
+!endif
 
   AddElementTag($tagStereo, $bgColor, $fontColor, $borderColor, $shadowing, $shape, $sprite, $techn, $legendText, $legendSprite, $borderStyle, $borderThickness)
 !endprocedure
