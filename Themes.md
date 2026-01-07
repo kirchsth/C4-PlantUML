@@ -1,6 +1,6 @@
 # Themes - different styles and languages
 
-[![New style sample - open link](https://www.plantuml.com/plantuml/svg/hLP1Zzis4xtxLqoSV8ZzGRj6aEHIO85uRRNPmDvrBITfJyP86ab4A58bAJj6qV_UeMHPgqs07DABBSvmtdjy759wPnqQLvToz18mSUA0ZYmeEe9r9qdNSEUWG0jEGqnWoV5VfWq1WYke9D0641Plzl-7J4W2OK6eHDOffQDdz-7dFQUYtP-hyERL263qx9o4mhdA_ZAR6JnUvy8LTLnRCebMZfIxJdGvgoGgB-pAkbIAUBPuSxNneO_hrQn4wyXmQB_W2XIAp7Nb5p6AtZzytc_2RVHmlt_uk5lTtOUJAQzjXxa5MrULDWwK1bjXGbwhNmOeB0acCLfAGRUXMgLaf512vU39IBjJHJQ0Oo6I0bAjNheEi4D3TIgreUarCEDTTWaR0aD_rSGuQKSfAIUL1kT_SFJLmP6DQ8iUUPvI9XIxEK_JK599ol5Q9kCOaozSU5d_E80N6GyMMcfpyo9SXUlmVhV_zO5_5W-hXotduxpDZf-_VlrsEN_hQso15Ts48YzS959A8p-UJ3dJAjkni9kE3PAE3YRaIy3wckbuwkLjIJRIq9vKuh5vKPsU-NRB6pDG8nbda7sSY7pttIpH5fIkX6950mhFCFiFURHpFS_82IS9BjP2AZ0tM3Rxqv-DqMX3ncerIMhhT4acWCNbQJo7BWmwQtOyHlKbQ36gfX1b4mDC4bqhPyTC7Psiet9_ou4KpMcIl6AiE-N8A79mozEv8STJ-7i40Bt4oP7YFLOLJ_vCCSohIee4dT1gpA4FUC00eifmBQm_BNniIL8SM4OZpJgUcy3v-06gj0bVUEEM5wBDd4KEcMs531TnMjBL1dFox1rhb1XHkG3cAgyb6X_U67qGALb0AR_FajKgyT9H2dS2fozEMZW8z3N202yOOgEFbimtaaeT2qbdFzP-S16rU1x07rWYMp4K0rAKmfzFMyUM7EZi9yIr0Y2bWqZegRnbF4dHeRzj_3wS7xsQwFSL3CPE6xBWRqOmb0lhJBEd85IcJTay1r0qXmImTWKaXb9IJg2qWUyhiXQapdb0Bhd-ngZpiMQdX6_PpTttEsUfUPhfwmRE_S0XRme3DySKStlppSN5elwvz7turKseH27tjWamKNYrvZ6q4ppphY0G3IbAM8l4QAip1-7Nf42L4zXsvlGnvbbRZygOAZDOKdUcEeBUTfIowuA40ztw7fiF6ElQzIqGNCvo0CwWijWuqTi_sf9yT5_qf_QZ9Ukvt-zscuWd3kVP2dyufslw7gwbsz_xcphM_HtHmFKtm1cf2GuReYDiBje0Fl1BTTQGzxlPfCu8lOAV0zhVSd4lkpyiGz0jOMeXCxfiBgoZ4OuiEEs9pZpBsmL3NZ0VkVMaoIA6jK1NFjfWz4AUzEDGmx2kjjmVFNsqtcrQe7unW_8dNTdxrB_U-BPQhvvwrQSPlltaMOM_XVVBoNIKQUt8G6hmgDgNJVVL18Th-9_VSA7LPDfurdzJ-ImFFtNfqJjMMPVoNm00 "New style sample")](https://www.plantuml.com/plantuml/uml/hLP1Zzis4xtxLqoSV8ZzGRj6aEHIO85uRRNPmDvrBITfJyP86ab4A58bAJj6qV_UeMHPgqs07DABBSvmtdjy759wPnqQLvToz18mSUA0ZYmeEe9r9qdNSEUWG0jEGqnWoV5VfWq1WYke9D0641Plzl-7J4W2OK6eHDOffQDdz-7dFQUYtP-hyERL263qx9o4mhdA_ZAR6JnUvy8LTLnRCebMZfIxJdGvgoGgB-pAkbIAUBPuSxNneO_hrQn4wyXmQB_W2XIAp7Nb5p6AtZzytc_2RVHmlt_uk5lTtOUJAQzjXxa5MrULDWwK1bjXGbwhNmOeB0acCLfAGRUXMgLaf512vU39IBjJHJQ0Oo6I0bAjNheEi4D3TIgreUarCEDTTWaR0aD_rSGuQKSfAIUL1kT_SFJLmP6DQ8iUUPvI9XIxEK_JK599ol5Q9kCOaozSU5d_E80N6GyMMcfpyo9SXUlmVhV_zO5_5W-hXotduxpDZf-_VlrsEN_hQso15Ts48YzS959A8p-UJ3dJAjkni9kE3PAE3YRaIy3wckbuwkLjIJRIq9vKuh5vKPsU-NRB6pDG8nbda7sSY7pttIpH5fIkX6950mhFCFiFURHpFS_82IS9BjP2AZ0tM3Rxqv-DqMX3ncerIMhhT4acWCNbQJo7BWmwQtOyHlKbQ36gfX1b4mDC4bqhPyTC7Psiet9_ou4KpMcIl6AiE-N8A79mozEv8STJ-7i40Bt4oP7YFLOLJ_vCCSohIee4dT1gpA4FUC00eifmBQm_BNniIL8SM4OZpJgUcy3v-06gj0bVUEEM5wBDd4KEcMs531TnMjBL1dFox1rhb1XHkG3cAgyb6X_U67qGALb0AR_FajKgyT9H2dS2fozEMZW8z3N202yOOgEFbimtaaeT2qbdFzP-S16rU1x07rWYMp4K0rAKmfzFMyUM7EZi9yIr0Y2bWqZegRnbF4dHeRzj_3wS7xsQwFSL3CPE6xBWRqOmb0lhJBEd85IcJTay1r0qXmImTWKaXb9IJg2qWUyhiXQapdb0Bhd-ngZpiMQdX6_PpTttEsUfUPhfwmRE_S0XRme3DySKStlppSN5elwvz7turKseH27tjWamKNYrvZ6q4ppphY0G3IbAM8l4QAip1-7Nf42L4zXsvlGnvbbRZygOAZDOKdUcEeBUTfIowuA40ztw7fiF6ElQzIqGNCvo0CwWijWuqTi_sf9yT5_qf_QZ9Ukvt-zscuWd3kVP2dyufslw7gwbsz_xcphM_HtHmFKtm1cf2GuReYDiBje0Fl1BTTQGzxlPfCu8lOAV0zhVSd4lkpyiGz0jOMeXCxfiBgoZ4OuiEEs9pZpBsmL3NZ0VkVMaoIA6jK1NFjfWz4AUzEDGmx2kjjmVFNsqtcrQe7unW_8dNTdxrB_U-BPQhvvwrQSPlltaMOM_XVVBoNIKQUt8G6hmgDgNJVVL18Th-9_VSA7LPDfurdzJ-ImFFtNfqJjMMPVoNm00)
+[![Rounded (corner) style sample - open link](https://www.plantuml.com/plantuml/png/hLRHZzgu4txdhvZI_bJuYGLLRLzEMgaivAvRmS8HjhrxGfDaIAmwTivseEXq__kD4qB8RgK-z5uWdl5yt-VFOoSVh4FZobpsNWF6JXpGaGL5Hx3k96aCzmuojE0qH0IM7F_jjI50S1db1Dhmu-pTxl-m5v90M10gbcL2IU_5PlNuC0_ckt3xvoAuVTC3wBquPo5phh2_J2O6Z-DKkAoCIaicrigHSkDOvvD2elBARgnBf8WcitStQnzwN2ucELf7XaEx6LUWK6J6XLz5B_ou-h9R1vjmzR1RFMuNzm_1OCYBss9gmPP5eOq3fS4M69CNwzS12dE2GOIM4j1rg5G96IcKK2buCjBkL90TmJ4JSGQ9LgzT0zYWeJhbsj1m3Cnulx-43O6XlqfYdAIXb9IIIaRdVt3qpS6HZQYBhanFQ2yKspbDaa2ovShnMWRz2EElN7XPVty4h_Oyc6cfpUshO14iWuVjxjSL_ynMYzM6yr5QP_iltxvzFv--zpKsmu9k0v5cBXIyRQ4V3uQSgPLjMTXjmmPnGmS3yYLWVSsmF_JoDYGhQMXFAlROlAX6ptIpuOtfg96CSvtj94BVVhTpj1ab2w5OKOV2Cqp-GnxjNClJSy99Wekra0XC3URr_XZjMoE1GQmD9uVrIUdrrcIiLeEuj4xdP4Omkpprfz24GU-hxOzGVHtLW4LLYBAA0SOn4pZRPntXoJhATtUU4Srf4BzXh7lbY8aTtF5qxix-4Fxk0K2hTt2aQ8T5mPE_K0JJef0YHYUqwdFe4nvm165Xk1QMdsS-DYSf3YoZacOTputXV1O1LLA5BxnHpGlXUieYkyosG8OBEItfPeqfUVQ6DOoDADm8fYej9HeVNXjz48a_8r9-dsLVgjXBHodS2Po-E6dX8D3N20EyO8YCFbeopoJbEXAIpdui_U0YQlPo17zWZcn5Lmn8aGj_M6qPMNAWzpyXhXO02Hr4J4_bpQD1WWxzrUFtuVperOI_Bw0pTjgG1NzDWg5KM6VGSuDGUstowda4MNLY04kNGMme8UK4IZloVKNMWjGf3yZ5usT6dSyuEoLyowxllzyvSytJJ5lNSUu73dbJ6BWwivZQssUt68lwvzBtmJSte1o5tDagm4J1pPB7K4_mpDkCG5IaA64fOgEjtZi8liKPgfJ0rZE7rvXdRIqgOwgzmPoQCzKIDBQZb4qNn1nerdTjFc2aIzUsmEXobaVW32gBbHEj_RqDoQlxeZsrZvQiv_wutQv3djYTPmlyuPocwLkuccxtuA_jIBTtH0NNtW1df2hOROY6iBfrH_29tx2JYhpTpIfrHcWL_1pGxewBMzdjOUc2RWWJ2tkZy-h2EXhXo8BJdkZCCx-RCUG5yygj9qqMCgm5kl7H2gCLqkt7ZeQdTQNb_cZfm-LspK2TFUYKTxkozUdgNSUtrNBnrAispV3rzyyY-2ruc0-6lRtMZWma1e-gVjaqdr1m6CF__8OBhGR3oZF_WTLcUVYvIVS-iCeob_y2 "Rounded (corner) style sample")](https://www.plantuml.com/plantuml/uml/hLRHZzgu4txdhvZI_bJuYGLLRLzEMgaivAvRmS8HjhrxGfDaIAmwTivseEXq__kD4qB8RgK-z5uWdl5yt-VFOoSVh4FZobpsNWF6JXpGaGL5Hx3k96aCzmuojE0qH0IM7F_jjI50S1db1Dhmu-pTxl-m5v90M10gbcL2IU_5PlNuC0_ckt3xvoAuVTC3wBquPo5phh2_J2O6Z-DKkAoCIaicrigHSkDOvvD2elBARgnBf8WcitStQnzwN2ucELf7XaEx6LUWK6J6XLz5B_ou-h9R1vjmzR1RFMuNzm_1OCYBss9gmPP5eOq3fS4M69CNwzS12dE2GOIM4j1rg5G96IcKK2buCjBkL90TmJ4JSGQ9LgzT0zYWeJhbsj1m3Cnulx-43O6XlqfYdAIXb9IIIaRdVt3qpS6HZQYBhanFQ2yKspbDaa2ovShnMWRz2EElN7XPVty4h_Oyc6cfpUshO14iWuVjxjSL_ynMYzM6yr5QP_iltxvzFv--zpKsmu9k0v5cBXIyRQ4V3uQSgPLjMTXjmmPnGmS3yYLWVSsmF_JoDYGhQMXFAlROlAX6ptIpuOtfg96CSvtj94BVVhTpj1ab2w5OKOV2Cqp-GnxjNClJSy99Wekra0XC3URr_XZjMoE1GQmD9uVrIUdrrcIiLeEuj4xdP4Omkpprfz24GU-hxOzGVHtLW4LLYBAA0SOn4pZRPntXoJhATtUU4Srf4BzXh7lbY8aTtF5qxix-4Fxk0K2hTt2aQ8T5mPE_K0JJef0YHYUqwdFe4nvm165Xk1QMdsS-DYSf3YoZacOTputXV1O1LLA5BxnHpGlXUieYkyosG8OBEItfPeqfUVQ6DOoDADm8fYej9HeVNXjz48a_8r9-dsLVgjXBHodS2Po-E6dX8D3N20EyO8YCFbeopoJbEXAIpdui_U0YQlPo17zWZcn5Lmn8aGj_M6qPMNAWzpyXhXO02Hr4J4_bpQD1WWxzrUFtuVperOI_Bw0pTjgG1NzDWg5KM6VGSuDGUstowda4MNLY04kNGMme8UK4IZloVKNMWjGf3yZ5usT6dSyuEoLyowxllzyvSytJJ5lNSUu73dbJ6BWwivZQssUt68lwvzBtmJSte1o5tDagm4J1pPB7K4_mpDkCG5IaA64fOgEjtZi8liKPgfJ0rZE7rvXdRIqgOwgzmPoQCzKIDBQZb4qNn1nerdTjFc2aIzUsmEXobaVW32gBbHEj_RqDoQlxeZsrZvQiv_wutQv3djYTPmlyuPocwLkuccxtuA_jIBTtH0NNtW1df2hOROY6iBfrH_29tx2JYhpTpIfrHcWL_1pGxewBMzdjOUc2RWWJ2tkZy-h2EXhXo8BJdkZCCx-RCUG5yygj9qqMCgm5kl7H2gCLqkt7ZeQdTQNb_cZfm-LspK2TFUYKTxkozUdgNSUtrNBnrAispV3rzyyY-2ruc0-6lRtMZWma1e-gVjaqdr1m6CF__8OBhGR3oZF_WTLcUVYvIVS-iCeob_y2)
 
 [![Theme sample - open link](https://www.plantuml.com/plantuml/svg/hLRHRzks4txtNt5r-qCTG8dnGzkN0G7gsDwQmauyosttCC0uYMU9A4Lg91N76FQ_xqXRLknqw83r9J6FlE_x-F5uudldqVgcKhqNlgIAOFnstMZfIS36cWfAxsltqt1eSNjLI5ysMUF8vaPxqlugDzMmLgW3mANpGibiE7vxkGYXJ_FPi4BdoGuZikkza3fNZQ0V0yf2nvo1KfEzgiCEUkc7-o_hnNIPtj-jxp-jPhTtqy55xpMii73WchesreCsu6hCoO7KmCf0OqKmoD2H0BCFDLgGLL9BNK0W8-DtDRa4jgNCIn16l_OjO8k6UbSPInTNm8otcsFO4bZweo764IsbeeAqI0x_mTEZXoqRiK-24Xru0nc1e8tK97eZ8QQAAjAUzpBePvX_vSJZ_li9lDhmO6oKiTUlfhFfV7gtMlzypt_6zxFx9SzdnNws__BDctUJqRkGuqgiwNegYzAdKf18mtXmmJDxPIiMTjsoGTxI_Quff80BEVsBe6v9AYf3jzDvWEOzjN96ooMVIwj3CS8_JgH-f-XwWguaCPEQjPoW1_3XZw4mtdSKFI-z8ZZw2K9YOR62ZR5mgprPJHvkK7yD5P7kdAUgrrkGTKOFyiPvKv5DO7pyrHz16mQpYMUUSNQoF-Kw9gAACS0yDutshiywzj3h6mu8jBj1_d_6EXVGlu0_Um3GwHriALjZNVFYBvJ1gAwLpD5Be_iS-eWFc41Qso1-_daSOXDIye5bH6dEyzeS3XSGK8iOFl9cxSON8nPvokngPBYKfnLTBh2WmDwofhcLjKzWf8j6eGtXXJKFKf03LEhRB9j6vq4wAkbtu0qx6Orqy20nf4WBl5_8hDawiiyKLIQJYWvspEEWrJH-cS1lMA6L-bGBA5d5fkUQp947i_dNsjmpSNi18EX1vdGkRv8D17eCxIOSm-5dK9F-EeEJiJUM78JM29OAwRoDHmfISrbMyNS2PRmhW8ql8RSaI7k9oYMXhCWvKARW0VdywfbHXtlDJibGiOlRRnVEnF0os-MTEFSTXu8f31nlAnRk-bddOb5_7Sj--kW7LA5KQnS3J3IzdFFuSEK2yweaa94K5SnbReqp6m_Jnxn4NH3iCnds2UP1MuVAc7fZiQApEztP7igphOAS0-t-dfeFc9d6ToMG7Azo0jwYTXYTwEplBKazQHVTfVtao0Nk3wlL8kM5f-jSZTzTqnPz1xUdMz-5LfsPhaL4kAu1791YyBGWMiBORnFuo5_LOIJlJZDE7H0w1VyDQ7t3oPtixhASWYu9XOjlbDYljbPwSk1D83hmJ6x637d4VEBMMP6b3Ek0BaCqOdH2JklnJCDfNkEuFZhwTBvQx86wpPoadrLbvrFtbUDkDP-TUzLDC_p-pJER_ZAzc_1RPsEC9ml2ubRllpNjimaUhk1_uS2bqOEBw5buL7MpFFpSJlVUiygcKdy3 "Theme sample")](https://www.plantuml.com/plantuml/uml/hLRHRzks4txtNt5r-qCTG8dnGzkN0G7gsDwQmauyosttCC0uYMU9A4Lg91N76FQ_xqXRLknqw83r9J6FlE_x-F5uudldqVgcKhqNlgIAOFnstMZfIS36cWfAxsltqt1eSNjLI5ysMUF8vaPxqlugDzMmLgW3mANpGibiE7vxkGYXJ_FPi4BdoGuZikkza3fNZQ0V0yf2nvo1KfEzgiCEUkc7-o_hnNIPtj-jxp-jPhTtqy55xpMii73WchesreCsu6hCoO7KmCf0OqKmoD2H0BCFDLgGLL9BNK0W8-DtDRa4jgNCIn16l_OjO8k6UbSPInTNm8otcsFO4bZweo764IsbeeAqI0x_mTEZXoqRiK-24Xru0nc1e8tK97eZ8QQAAjAUzpBePvX_vSJZ_li9lDhmO6oKiTUlfhFfV7gtMlzypt_6zxFx9SzdnNws__BDctUJqRkGuqgiwNegYzAdKf18mtXmmJDxPIiMTjsoGTxI_Quff80BEVsBe6v9AYf3jzDvWEOzjN96ooMVIwj3CS8_JgH-f-XwWguaCPEQjPoW1_3XZw4mtdSKFI-z8ZZw2K9YOR62ZR5mgprPJHvkK7yD5P7kdAUgrrkGTKOFyiPvKv5DO7pyrHz16mQpYMUUSNQoF-Kw9gAACS0yDutshiywzj3h6mu8jBj1_d_6EXVGlu0_Um3GwHriALjZNVFYBvJ1gAwLpD5Be_iS-eWFc41Qso1-_daSOXDIye5bH6dEyzeS3XSGK8iOFl9cxSON8nPvokngPBYKfnLTBh2WmDwofhcLjKzWf8j6eGtXXJKFKf03LEhRB9j6vq4wAkbtu0qx6Orqy20nf4WBl5_8hDawiiyKLIQJYWvspEEWrJH-cS1lMA6L-bGBA5d5fkUQp947i_dNsjmpSNi18EX1vdGkRv8D17eCxIOSm-5dK9F-EeEJiJUM78JM29OAwRoDHmfISrbMyNS2PRmhW8ql8RSaI7k9oYMXhCWvKARW0VdywfbHXtlDJibGiOlRRnVEnF0os-MTEFSTXu8f31nlAnRk-bddOb5_7Sj--kW7LA5KQnS3J3IzdFFuSEK2yweaa94K5SnbReqp6m_Jnxn4NH3iCnds2UP1MuVAc7fZiQApEztP7igphOAS0-t-dfeFc9d6ToMG7Azo0jwYTXYTwEplBKazQHVTfVtao0Nk3wlL8kM5f-jSZTzTqnPz1xUdMz-5LfsPhaL4kAu1791YyBGWMiBORnFuo5_LOIJlJZDE7H0w1VyDQ7t3oPtixhASWYu9XOjlbDYljbPwSk1D83hmJ6x637d4VEBMMP6b3Ek0BaCqOdH2JklnJCDfNkEuFZhwTBvQx86wpPoadrLbvrFtbUDkDP-TUzLDC_p-pJER_ZAzc_1RPsEC9ml2ubRllpNjimaUhk1_uS2bqOEBw5buL7MpFFpSJlVUiygcKdy3)
 
@@ -8,17 +8,24 @@
 
 - [📄 C4-PlantUML](README.md#c4-plantuml)
 - [📄 Layout Options](LayoutOptions.md#layout-options)
-- [📄 Themes (different styles and languages)](#themes)
-  - [Use new/old style](#use-newold-style)
+- [📄 Themes (different styles and languages)](#themes---different-styles-and-languages)
+  - [Additional styles](#additional-styles)
+    - [Rounded rectangle style (without color changes, `!ROUNDED_STYLE=1`)](#rounded-rectangle-style-without-color-changes-rounded_style1)
+    - [Update basic themes with a new, modernized style (`!NEW_C4_STYLE=1`)](#update-basic-themes-with-a-new-modernized-style-new_c4_style1)
   - [Use theme](#use-theme)
   - [List of available C4 style themes](#list-of-available-c4-style-themes)
-  - - [C4_blue](#c4_blue)
+    - [C4_blue](#c4_blue)
+      - [C4_blue with `!NEW_C4_STYLE=1`](#c4_blue-with-new_c4_style1)
+      - [C4_blue_new (**without** `!NEW_C4_STYLE=1`)](#c4_blue_new-without-new_c4_style1)
     - [C4_brown](#c4_brown)
+      - [C4_brown_new (**without** `!NEW_C4_STYLE=1`)](#c4_brown_new-without-new_c4_style1)
     - [C4_green](#c4_green)
+      - [C4_green_new (**without** `!NEW_C4_STYLE=1`)](#c4_green_new-without-new_c4_style1)
     - [C4_sandstone](#c4_sandstone)
     - [C4_superhero](#c4_superhero)
     - [C4_united](#c4_united)
     - [C4_violet](#c4_violet)
+      - [C4_violet_new (**without** `!NEW_C4_STYLE=1`)](#c4_violet_new-without-new_c4_style1)
   - [Matt Weagle themes](#matt-weagle-themes)
   - [Write custom themes](#write-custom-themes)
     - [Following variables could be set in a theme, additional to the skinparams and styles](#following-variables-could-be-set-in-a-theme-additional-to-the-skinparams-and-styles)
@@ -39,21 +46,22 @@
 - samples
   - [📄 C4 Model Diagrams](samples/C4CoreDiagrams.md#c4-model-diagrams)
 
-## Use new/old style
+## Additional styles
 
-In July 2025, https://c4model.com/ introduced a new visual style for C4 diagrams. C4-PlantUML now supports this updated styling too.
+### Rounded rectangle style (without color changes, `!ROUNDED_STYLE=1`)
 
-To enable the new style, use one of these options:
-- Add `!NEW_C4_STYLE=1` before including any C4_* files
-- Use the command line argument `-DNEW_C4_STYLE=1`
+To enable rounded rectangles without changing any colors, use one of the following methods:
+
+- Add `!ROUNDED_STYLE=1` before including any C4_* files
+- Pass the command line argument `-DROUNDED_STYLE=1` to PlantUML
 
 > [!WARNING]
-> The `!NEW_C4_STYLE=1` statement must be placed BEFORE all C4_ !include statements.
+> Place the `!ROUNDED_STYLE=1` statement BEFORE all C4_ !include statements.
 
 ```plantuml
 @startuml
 ' activates new style. It has to be set before a theme or a C4_* file is included
-!NEW_C4_STYLE=1
+!ROUNDED_STYLE=1
  
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
@@ -72,7 +80,53 @@ SHOW_LEGEND()
 @enduml
 ```
 
-[![New C4 style sample - open link](https://www.plantuml.com/plantuml/svg/JL1DRvj04BtlhvYa1-FA0RdAgLAbK8AIIiH11TVA2IqmhbVQZzNkK6HL_UyTMZSfbs7dpNlptjn5ae4ceyKAv43gXoICO766I6UDANmXECa8vA17Y4XSZYuWIA0J6WGN-BUuxTx3KMa45K7PGKyZZk9gLnuwXfhsfIe_RGM8gmi69o8VFsPPa7FwNT5fwgU8ON2Mq58wE9DvBUtYwoRIg5MV5RStzTBQFrMPaP4mSAihc26LnP3w9OEeyfVdVTjL-Uw-AVAwJDP2r1YYiuaSZR8RkCwNgY85IIvShqLpPZ7JVNQJ7MKu9yDs0wj66gznjOQV0lXxNPFCs7VIUzOvO0-vzreDafIprzmgtcqWR-fqLxPC2GWVqYqyVIiMBDVQpH6Mc7-koHczv14pQLAy2zfP4QS2KWOrxuhixTV5NK9_GTQvZ34elgB-b-hDrZuoa-jZszODJor3h-YRp0DIv2SkvHYS-PyYciVdGrUL3-NkdWzuXtRau_u6 "New C4 style sample")](https://www.plantuml.com/plantuml/uml/JL1DRvj04BtlhvYa1-FA0RdAgLAbK8AIIiH11TVA2IqmhbVQZzNkK6HL_UyTMZSfbs7dpNlptjn5ae4ceyKAv43gXoICO766I6UDANmXECa8vA17Y4XSZYuWIA0J6WGN-BUuxTx3KMa45K7PGKyZZk9gLnuwXfhsfIe_RGM8gmi69o8VFsPPa7FwNT5fwgU8ON2Mq58wE9DvBUtYwoRIg5MV5RStzTBQFrMPaP4mSAihc26LnP3w9OEeyfVdVTjL-Uw-AVAwJDP2r1YYiuaSZR8RkCwNgY85IIvShqLpPZ7JVNQJ7MKu9yDs0wj66gznjOQV0lXxNPFCs7VIUzOvO0-vzreDafIprzmgtcqWR-fqLxPC2GWVqYqyVIiMBDVQpH6Mc7-koHczv14pQLAy2zfP4QS2KWOrxuhixTV5NK9_GTQvZ34elgB-b-hDrZuoa-jZszODJor3h-YRp0DIv2SkvHYS-PyYciVdGrUL3-NkdWzuXtRau_u6)
+[![Rounded style sample - open link](https://www.plantuml.com/plantuml/svg/JL1DRvj04BtlhvYu1-FA0RdAgLAbK8oIIiH60JVA2IqmhbVQ3xGx55bL_tk7ret3PTXvyzwyD_U1fAVHQB44sP7wAGa3M9mWq5bZ3Dy8JZ80EMWH0XANe_C84kY41i5v_itkcezmL1f11L2sqsEFlRXvtXzsstpRLFLhaN_P210t5n1EH4Fud2HUJl4FHQUn7GFwpbb2It7dJ39eQMTZju5whTeakxijvzRXgKYC38IUMqt63Aai-dYOGuWYVTqVwgP8TzigIyiyMWbHeW_EHh8togvXaSvL1VAId5-iH7LcCTDyTQFjfJz7tMODoqgQGUDo1Ry4yFUs9fgmRUGmiCuBjf0EWrQT9ENiWblPXpMaLHdlyfef7k5Jl86dxzcCfLgxAS0Sy-yvEUCWUSICcXJlWdfInAc0b47Dkm9x-trn5z4_a7KkOmoAPzJ_Krrj7G8pkJxMTLdnr3pqXbvb7f02Ft4kH-_CUuge7lSlJP4_vBij7_0URS_7_GC0 "Rounded style sample")](https://www.plantuml.com/plantuml/uml/JL1DRvj04BtlhvYu1-FA0RdAgLAbK8oIIiH60JVA2IqmhbVQ3xGx55bL_tk7ret3PTXvyzwyD_U1fAVHQB44sP7wAGa3M9mWq5bZ3Dy8JZ80EMWH0XANe_C84kY41i5v_itkcezmL1f11L2sqsEFlRXvtXzsstpRLFLhaN_P210t5n1EH4Fud2HUJl4FHQUn7GFwpbb2It7dJ39eQMTZju5whTeakxijvzRXgKYC38IUMqt63Aai-dYOGuWYVTqVwgP8TzigIyiyMWbHeW_EHh8togvXaSvL1VAId5-iH7LcCTDyTQFjfJz7tMODoqgQGUDo1Ry4yFUs9fgmRUGmiCuBjf0EWrQT9ENiWblPXpMaLHdlyfef7k5Jl86dxzcCfLgxAS0Sy-yvEUCWUSICcXJlWdfInAc0b47Dkm9x-trn5z4_a7KkOmoAPzJ_Krrj7G8pkJxMTLdnr3pqXbvb7f02Ft4kH-_CUuge7lSlJP4_vBij7_0URS_7_GC0)
+
+### Update basic themes with a new, modernized style (`!NEW_C4_STYLE=1`)
+
+In July 2025, [c4model.com](https://c4model.com/) used a new visual style for C4 diagrams. The basic themes (C4_blue [default], C4_brown, C4_green and C4_violet) can now use this updated wireframe styling (internally it swaps background and text colors and uses rounded rectangles).  
+This new style should work with most existing tag definitions (tag colors are automatically swapped), but in some cases, tag definitions may need manual updates.
+
+> [!WARNING]
+> **This feature is only intended and tested for diagrams using the basic themes** (C4_blue [default], C4_brown, C4_green, and C4_violet). Other themes may have unintended side effects if background and font colors are swapped (`!ROUNDED_STYLE=1` could be a good alternative).  
+>
+> Another side effect is the **changed meaning of the color arguments**: when the new style is enabled, `$bgColor` sets the font color and `$fontColor` sets the background color. This allows automatic migration of existing diagrams.  
+> If you are creating new diagrams, use one of the newly added themes (C4_blue_new, C4_brown_new, C4_green_new, or C4_violet_new). These provide a similar wireframe look with rounded rectangles, but do not swap the colors.
+
+To enable the new style, use one of the following methods:
+
+- Add `!NEW_C4_STYLE=1` before including any C4_* files
+- Pass the command line argument `-DNEW_C4_STYLE=1` to PlantUML
+
+> [!WARNING]
+> Place the `!NEW_C4_STYLE=1` statement BEFORE all C4_ !include statements.
+
+```plantuml
+@startuml
+' activates new style. It has to be set before a theme or a C4_* file is included
+!NEW_C4_STYLE=1
+ 
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_LANDSCAPE()
+
+Person(admin, "Administrator")
+System_Boundary(c1, 'Sample') {
+    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare\nmultiple Twitter timelines") {
+      ' init-colors of components/nodes are not swapped, avoids black background
+      Component(facade, "Twitter Facade")
+    }
+}
+System(twitter, "Twitter")
+
+Rel(admin, web_app, "Uses", "HTTPS")
+Rel(facade, twitter, "Gets tweets from", "HTTPS")
+
+SHOW_LEGEND()
+@enduml
+```
+
+[![New C4 style sample - open link](https://www.plantuml.com/plantuml/svg/JL5DQzjC4BxlhvZuFLXviIrSSYeKeYfgKd0SKyarWO8OIUDuwMfNx8uYJCb_xoYrw-v1W-PZde-v3OoU-zQeAM3D-XMP0bWQ8F3Hq0A-CXmm03ke20AnXBtp10Xye9R0UK18Ryh_OQyDWGwWRMtwXXfrjSvsfPJoudcLVLegK5Ud6XoOk_0nZZqEYnVDXxxg0_dQMIRBYzgrSMVGZhpcWHkZgpYzcM_6rFPn5RSOcBoaojIrdRFZJ3TgKAla-MbRbAjaVPUdoIQBhfNQa0_EHjYqsivWaenH1_R8pa-kLNwKPMtvsVMsGN-CwkKCfZcsdQ7fDVnI82yLOgWj-MYWgiIkapqxgY3fEgDhPEtiH5BfVpD8yirYdHKouWa-B9Rm-3qTQuanRWWmodntinRcwEc7RNl3Mi2W63IBB63TaX6mC3d30qn1EFEyTiR9kDj3VHOUOkiQ2e2Um3g6C0WzQcQ0hqut0Ig3zK-evFFYHucdXN-DY_POOqF2y8p_vJqXpe2yD_LsSYZYF_LBfxIeRsJEpbwisGOXB_6XA3QvT8rDPvZBbdlY8ByqXhrtxRyJAdzusfMhx3vRtyaDRyasSj_V "New C4 style sample")]((https://www.plantuml.com/plantuml/svg/JL5DQzjC4BxlhvZuFLXviIrSSYeKeYfgKd0SKyarWO8OIUDuwMfNx8uYJCb_xoYrw-v1W-PZde-v3OoU-zQeAM3D-XMP0bWQ8F3Hq0A-CXmm03ke20AnXBtp10Xye9R0UK18Ryh_OQyDWGwWRMtwXXfrjSvsfPJoudcLVLegK5Ud6XoOk_0nZZqEYnVDXxxg0_dQMIRBYzgrSMVGZhpcWHkZgpYzcM_6rFPn5RSOcBoaojIrdRFZJ3TgKAla-MbRbAjaVPUdoIQBhfNQa0_EHjYqsivWaenH1_R8pa-kLNwKPMtvsVMsGN-CwkKCfZcsdQ7fDVnI82yLOgWj-MYWgiIkapqxgY3fEgDhPEtiH5BfVpD8yirYdHKouWa-B9Rm-3qTQuanRWWmodntinRcwEc7RNl3Mi2W63IBB63TaX6mC3d30qn1EFEyTiR9kDj3VHOUOkiQ2e2Um3g6C0WzQcQ0hqut0Ig3zK-evFFYHucdXN-DY_POOqF2y8p_vJqXpe2yD_LsSYZYF_LBfxIeRsJEpbwisGOXB_6XA3QvT8rDPvZBbdlY8ByqXhrtxRyJAdzusfMhx3vRtyaDRyasSj_V)
 
 ## Use theme
 
@@ -148,6 +202,30 @@ Theme [C4_blue](https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/ma
 
 [![blue theme sample - open link](https://www.plantuml.com/plantuml/svg/hO-noeD048Hxdq8VGBUn-Yj_99s150afmwaR5VRMutQEaBVFcMT8DSF0zy5q1XUHl1GLLlPSzkrZbCJbC-w-N85WVqJHlPfbmvh6P1odNS6APjez1N5wuBLXbcsalgqlntGx3-ITWIDzlLPKcqwIPlwDD6JYJLSs_8kSX3qhx9vj0o-iSnEEIrrkEJy0 "blue theme sample")](https://www.plantuml.com/plantuml/uml/hO-noeD048Hxdq8VGBUn-Yj_99s150afmwaR5VRMutQEaBVFcMT8DSF0zy5q1XUHl1GLLlPSzkrZbCJbC-w-N85WVqJHlPfbmvh6P1odNS6APjez1N5wuBLXbcsalgqlntGx3-ITWIDzlLPKcqwIPlwDD6JYJLSs_8kSX3qhx9vj0o-iSnEEIrrkEJy0)
 
+#### C4_blue with `!NEW_C4_STYLE=1`
+
+C4_blue is one of the basic themes which can be combined with `!NEW_C4_STYLE=1` (the other basic themes C4_brown, C4_green and C4_violet have only a different base color)
+
+```plantuml
+!NEW_C4_STYLE=1
+!theme C4_blue from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes
+```
+
+[![blue theme sample with NEW_C4_STYLE=1 - open link](https://www.plantuml.com/plantuml/png/hS_12eCm383Xkq-X3w1Xu6amS8WtDmPpo4vIDLCXhQL96NlxjNk6dH9-o0UfM9GJhod9haq_rELmxvvjSpeacQoeCGrb98_fo-qwNKKi7m6SUXVB9giVFQERTYDef9Xs3PQKYLpECjCsGbtcjvWUbnQqOa47FvUJR3CJ-Hd_WzfmyO4EMSv43Q568zm7hSK5pLpO-68LjZ2_)](https://www.plantuml.com/plantuml/uml/hS_12eCm383Xkq-X3w1Xu6amS8WtDmPpo4vIDLCXhQL96NlxjNk6dH9-o0UfM9GJhod9haq_rELmxvvjSpeacQoeCGrb98_fo-qwNKKi7m6SUXVB9giVFQERTYDef9Xs3PQKYLpECjCsGbtcjvWUbnQqOa47FvUJR3CJ-Hd_WzfmyO4EMSv43Q568zm7hSK5pLpO-68LjZ2_)
+
+#### C4_blue_new (**without** `!NEW_C4_STYLE=1`)
+
+C4_blue_new is a modernized version of C4_blue with rounded rectangles and all base elements are drawn with a with background (like a wireframe) only the external elements use a gray background.
+
+>[!WARNING]
+> C4_blue_new is a new theme and does not require `!NEW_C4_STYLE=1`. Using both together may lead to unexpected results.
+
+```plantuml
+!theme C4_blue_new from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes
+```
+
+[![new blue theme sample - open link](https://www.plantuml.com/plantuml/png/hSyngeD04CRntbFe0NGQgrVva7G6KYIab5M_g32xBZkpI6wVtPmXrGm3_nzC9sg2Hij5fHiiohuT9uuO7Sxo5GvRRgfU_eY2EPjrrorEKH3cmocSDlDXoRDncQX55zudwjlwba-Fwq3MY2BGrvQYsjtCSS5lK9-ADzqX-izyOTZKoZDf0rQufV7vhIvjQNu0)](https://www.plantuml.com/plantuml/uml/hSyngeD04CRntbFe0NGQgrVva7G6KYIab5M_g32xBZkpI6wVtPmXrGm3_nzC9sg2Hij5fHiiohuT9uuO7Sxo5GvRRgfU_eY2EPjrrorEKH3cmocSDlDXoRDncQX55zudwjlwba-Fwq3MY2BGrvQYsjtCSS5lK9-ADzqX-izyOTZKoZDf0rQufV7vhIvjQNu0)
+
 ### C4_brown
 
 Theme [C4_brown](https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes/puml-theme-C4_brown.puml) can be activated with
@@ -158,6 +236,18 @@ Theme [C4_brown](https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/m
 
 [![brown theme sample - open link](https://www.plantuml.com/plantuml/svg/hOyn2eD044LxJw47q6ciKXaadO4K2Id3gXCLPcUNcLaajy-QCwJwdm_lmU_Kd5ZoL5IseiUoRr-ZX9tBjmHVhcPHJm3YzcRPR4rZKfGfi25RCmKFaHmVVAqsqpP2tzQtOtfS1_1E3GL-OYsgZITAC_v76ZFnWJkgdOakX3wp-ios0HVakOd7fowtd5y0 "brown theme sample")](https://www.plantuml.com/plantuml/uml/hOyn2eD044LxJw47q6ciKXaadO4K2Id3gXCLPcUNcLaajy-QCwJwdm_lmU_Kd5ZoL5IseiUoRr-ZX9tBjmHVhcPHJm3YzcRPR4rZKfGfi25RCmKFaHmVVAqsqpP2tzQtOtfS1_1E3GL-OYsgZITAC_v76ZFnWJkgdOakX3wp-ios0HVakOd7fowtd5y0)
 
+#### C4_brown_new (**without** `!NEW_C4_STYLE=1`)
+
+C4_brown_new is a modernized version of C4_brown with rounded rectangles and all base elements are drawn with a with background (like a wireframe) only the external elements use a gray background.
+
+>[!WARNING]
+> C4_brown_new is a new theme and does not require `!NEW_C4_STYLE=1`. Using both together may lead to unexpected results.
+
+```plantuml
+!theme C4_brown_new from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes
+```
+
+[![new brown theme sample - open link](https://www.plantuml.com/plantuml/png/hS-noeD03C3ntQVG1z0iJj_aXtIpqA6bevoQgf3B7KaEwTltx3DqIWZyVv1EpOabJqLb6tei-tQS91myCXxbIu8lDxEeVm3YZcRTRKjJKfGvi25RCmSFaHoVHgssq3v1tzQty_Iu3k2T6WfySIsgdMTA2_u6ZRbumntL_eakX3wt-ipQW2loqiJphovlUNu0)](https://www.plantuml.com/plantuml/uml/hS-noeD03C3ntQVG1z0iJj_aXtIpqA6bevoQgf3B7KaEwTltx3DqIWZyVv1EpOabJqLb6tei-tQS91myCXxbIu8lDxEeVm3YZcRTRKjJKfGvi25RCmSFaHoVHgssq3v1tzQty_Iu3k2T6WfySIsgdMTA2_u6ZRbumntL_eakX3wt-ipQW2loqiJphovlUNu0)
 
 ### C4_green
 
@@ -168,6 +258,19 @@ Theme [C4_green](https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/m
 ```
 
 [![green theme sample - open link](https://www.plantuml.com/plantuml/svg/hO-noeD048Hxdq8VGBUn-Yj_99s150afmwaJ5VREOtUFaBVFcMT8DSF0zy5qQauiUIugM-5HzkrZ4I2KJzbzkPf5_ICIzsgMpTOq9eLCUp04QwRTKsGN3hvMctaRgM_hop7TpWDvfmQXhrYBQWiJfnc_aSPClEaAjN_c4yDdLk_PDc11c9juVEfoo_a1 "green theme sample")](https://www.plantuml.com/plantuml/uml/hO-noeD048Hxdq8VGBUn-Yj_99s150afmwaJ5VREOtUFaBVFcMT8DSF0zy5qQauiUIugM-5HzkrZ4I2KJzbzkPf5_ICIzsgMpTOq9eLCUp04QwRTKsGN3hvMctaRgM_hop7TpWDvfmQXhrYBQWiJfnc_aSPClEaAjN_c4yDdLk_PDc11c9juVEfoo_a1)
+
+#### C4_green_new (**without** `!NEW_C4_STYLE=1`)
+
+C4_green_new is a modernized version of C4_green with rounded rectangles and all base elements are drawn with a with background (like a wireframe) only the external elements use a gray background.
+
+>[!WARNING]
+> C4_green_new is a new theme and does not require `!NEW_C4_STYLE=1`. Using both together may lead to unexpected results.
+
+```plantuml
+!theme C4_green_new from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes
+```
+
+[![new green theme sample - open link](https://www.plantuml.com/plantuml/png/hSynoeD040NWtbFe0NGRgx_oHz8PI96GKjRrHONTSPcPHNBxh3b3gXaUl0zU9sfPK_15fIi2ohuT5mPe91pbY_TGhgfH_enXUpJBfckQae3TJWhInkt1H6_fD6hHsM-JwTlwTaQFws225GMRBov5jP7pQSPlq0XsRtE7wB_t5u-Gk_BCse05D3VntDNbBzyF)](https://www.plantuml.com/plantuml/uml/hSynoeD040NWtbFe0NGRgx_oHz8PI96GKjRrHONTSPcPHNBxh3b3gXaUl0zU9sfPK_15fIi2ohuT5mPe91pbY_TGhgfH_enXUpJBfckQae3TJWhInkt1H6_fD6hHsM-JwTlwTaQFws225GMRBov5jP7pQSPlq0XsRtE7wB_t5u-Gk_BCse05D3VntDNbBzyF)
 
 ### C4_sandstone
 
@@ -209,11 +312,24 @@ Theme [C4_violet](https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/
 
 [![violet theme sample - open link](https://www.plantuml.com/plantuml/svg/hS_12i8m383X-vvYUu0jbvqyJOQt2HuKZz9jSIiaRMbInRUtzHay9GJ-3pA8cgY9gMfqHyPwx1ylwmcrVaRFzQuQv00GpRlRhEvfJe9nyKxHQRTuXa365Q0LNSdECFRjfPnkvmdOY6A4donLOzr2QSN_e24N7xYYw97eHCYvbNlM9jpGhLqeJmrvo_CB "violet theme sample")](https://www.plantuml.com/plantuml/uml/hS_12i8m383X-vvYUu0jbvqyJOQt2HuKZz9jSIiaRMbInRUtzHay9GJ-3pA8cgY9gMfqHyPwx1ylwmcrVaRFzQuQv00GpRlRhEvfJe9nyKxHQRTuXa365Q0LNSdECFRjfPnkvmdOY6A4donLOzr2QSN_e24N7xYYw97eHCYvbNlM9jpGhLqeJmrvo_CB)
 
+#### C4_violet_new (**without** `!NEW_C4_STYLE=1`)
+
+C4_violet_new is a modernized version of C4_violet with rounded rectangles and all base elements are drawn with a with background (like a wireframe) only the external elements use a gray background.
+
+>[!WARNING]
+> C4_violet_new is a new theme and does not require `!NEW_C4_STYLE=1`. Using both together may lead to unexpected results.
+
+```plantuml
+!theme C4_violet_new from https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/themes
+```
+
+[![new violet theme sample - open link](https://www.plantuml.com/plantuml/png/hS-n2eD0383XtQVG1z0iJfqiqir2XvQEScgg1xdSSSbL-lOz-moT4WB_1-b4JTJagAXqGuTbtuvlwmbrPDpBL_Ikt5I3d02YsPlLwfQc91XdpugipUmT139y8BNeGdQ2lgrln-bn7S0PKOpmqwMeBC-K5lmF6dBnWJkAdeakX2wtyipQW2loqeJZiIvlUNu1)](https://www.plantuml.com/plantuml/uml/hS-n2eD0383XtQVG1z0iJfqiqir2XvQEScgg1xdSSSbL-lOz-moT4WB_1-b4JTJagAXqGuTbtuvlwmbrPDpBL_Ikt5I3d02YsPlLwfQc91XdpugipUmT139y8BNeGdQ2lgrln-bn7S0PKOpmqwMeBC-K5lmF6dBnWJkAdeakX2wtyipQW2loqeJZiIvlUNu1)
+
 ## Matt Weagle themes
 
 Matt Weagle published a set of impressive themes based on ColorBrewer and Seaborn palettes (thank you Matt).
 
-https://github.com/mweagle/C4-PlantUML-Themes contains an overview of all his themes.
+[https://github.com/mweagle/C4-PlantUML-Themes](https://github.com/mweagle/C4-PlantUML-Themes) contains an overview of all his themes.
 
 They can be simply invoked like the `cb_seq_YlOrBr_9` theme
 
@@ -429,7 +545,10 @@ If you have any interesting theme, you can also propose a pull request so that w
 ```plantuml
 !$ROUNDED_BOX_SIZE ?= 25
 !$EIGHT_SIDED_SIZE ?= 18
+!ROUNDED_STYLE ?= 0
 ```
+
+`ROUNDED_STYLE` is without a `$` because it can be set via command line too (`-DROUNDED_STYLE=1`). All predefined `*_new` themes use rounded corners by default (`!ROUNDED_STYLE ?= 1`).
 
 ### (C4 styled) Sequence diagram and themes
 
