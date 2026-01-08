@@ -211,7 +211,7 @@ C4_blue is one of the basic themes which can be combined with `!NEW_C4_STYLE=1` 
 !theme C4_blue from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
 ```
 
-[![blue theme sample with NEW_C4_STYLE=1 - open link](https://www.plantuml.com/plantuml/png/ZSv1IyKm30VmUp_5zW7UWl1EWl3aiTiKmSdmDBeshiMqAqsA-ksDthnvIaZu_v8BYwtI4fd-SLpMwtbzdb-dyUx6z18mOQUJZHfsR_L8NH0fV0jGxSUmHmbjQupL7Lamo-2E1E-nki0Iu7e-FP7Dyl8m0NxgtgE7Nv9D7xEZvl4VNb7ZvxqJYwUu_M6JPS4AHHDVC2FBFT58c3JBYseJxdfsA1et5-sqVWC0)](https://www.plantuml.com/plantuml/uml/ZSv1IyKm30VmUp_5zW7UWl1EWl3aiTiKmSdmDBeshiMqAqsA-ksDthnvIaZu_v8BYwtI4fd-SLpMwtbzdb-dyUx6z18mOQUJZHfsR_L8NH0fV0jGxSUmHmbjQupL7Lamo-2E1E-nki0Iu7e-FP7Dyl8m0NxgtgE7Nv9D7xEZvl4VNb7ZvxqJYwUu_M6JPS4AHHDVC2FBFT58c3JBYseJxdfsA1et5-sqVWC0)
+[![blue theme sample with NEW_C4_STYLE=1 - open link](https://www.plantuml.com/plantuml/svg/fO_1geD034NtVeL-m3CySFNWWKNSsLAeHReI7LD7cXbbag7jtpVjBtILSE_Xm2rPXY3HKP8TwgwlYlxKNfhw_pV9nAB3L9EH8gRNiBhKYcpy1n26UpulOkCO6ODPlQ2NtAmERaimbiL2LVmSQV1otZU03-qddE2Zv2HRlA4uuTU-JU4djCYo8we97NhXJaKDpahastjOgP_U5m00)](https://www.plantuml.com/plantuml/uml/fO_1geD034NtVeL-m3CySFNWWKNSsLAeHReI7LD7cXbbag7jtpVjBtILSE_Xm2rPXY3HKP8TwgwlYlxKNfhw_pV9nAB3L9EH8gRNiBhKYcpy1n26UpulOkCO6ODPlQ2NtAmERaimbiL2LVmSQV1otZU03-qddE2Zv2HRlA4uuTU-JU4djCYo8we97NhXJaKDpahastjOgP_U5m00)
 
 #### C4_blue_new (**without** `!NEW_C4_STYLE=1`)
 
@@ -224,7 +224,7 @@ C4_blue_new is a modernized version of C4_blue with rounded rectangles and all b
 !theme C4_blue_new from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
 ```
 
-[![new blue theme sample - open link](https://www.plantuml.com/plantuml/png/ZS-nReGm30RWdQU01m0lJ9seK3SgTMZL4ON49L6T4CMEQD_-p6sttMHBrl_PdbXCaHgfwSHZn7OUruqghWdFzgSSiVKYcLy0YZc7FOYlMsKizaY2IGPxHFWDnNeM3_FOVv19ylM-0FxftA63EyjD5vAbwl09Br-6djIpE0hR0niD2nR8clY7JsHv9NeZZ9hbRzKMt7NjaA-F9ksqtW00)](https://www.plantuml.com/plantuml/uml/ZS-nReGm30RWdQU01m0lJ9seK3SgTMZL4ON49L6T4CMEQD_-p6sttMHBrl_PdbXCaHgfwSHZn7OUruqghWdFzgSSiVKYcLy0YZc7FOYlMsKizaY2IGPxHFWDnNeM3_FOVv19ylM-0FxftA63EyjD5vAbwl09Br-6djIpE0hR0niD2nR8clY7JsHv9NeZZ9hbRzKMt7NjaA-F9ksqtW00)
+[![new blue theme sample - open link](https://www.plantuml.com/plantuml/svg/fS-npe903C3ndQU01_ZemlHD6EA6YOF6aS1HEMAlNAwze6zlzHMSsgJ__9AsecFI7AYer6F0ick6YJ8EZ7jvJrielMgKVu0qxlMogizJ5ankOqNMscq17cjoNjH3r_oTQMIzddh0fzrddE7BIb6jx2ZF-BCNBNx11KKFH4Sod5Lk1lMuM577ppEjRJRV)](https://www.plantuml.com/plantuml/uml/fS-npe903C3ndQU01_ZemlHD6EA6YOF6aS1HEMAlNAwze6zlzHMSsgJ__9AsecFI7AYer6F0ick6YJ8EZ7jvJrielMgKVu0qxlMogizJ5ankOqNMscq17cjoNjH3r_oTQMIzddh0fzrddE7BIb6jx2ZF-BCNBNx11KKFH4Sod5Lk1lMuM577ppEjRJRV)
 
 ### C4_brown
 
@@ -247,7 +247,7 @@ C4_brown_new is a modernized version of C4_brown with rounded rectangles and all
 !theme C4_brown_new from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
 ```
 
-[![new brown theme sample - open link](https://www.plantuml.com/plantuml/png/ZSyzRiCm30NWtQUm3s1pyTJ9XT7D1Jgqw6Z84cC9eNuWKd1o-yZPicKY0U9zn9jOL9RYgUd4eiTs7jSjnoEi0O_sagDlhKZY3u2iZc5tOijM6BEEGJ38eAE7gylQibYOn_w7L92_xmNmLky63JnTRZeND1M3RtZfD8gddiMGsrvOhrWmGwg9E_mYooVH5w6lMVwlse9xVJkaiz9KjpeV)](https://www.plantuml.com/plantuml/uml/ZSyzRiCm30NWtQUm3s1pyTJ9XT7D1Jgqw6Z84cC9eNuWKd1o-yZPicKY0U9zn9jOL9RYgUd4eiTs7jSjnoEi0O_sagDlhKZY3u2iZc5tOijM6BEEGJ38eAE7gylQibYOn_w7L92_xmNmLky63JnTRZeND1M3RtZfD8gddiMGsrvOhrWmGwg9E_mYooVH5w6lMVwlse9xVJkaiz9KjpeV)
+[![new brown theme sample - open link](https://www.plantuml.com/plantuml/svg/ZSyzRiCm30NWtQUm3s1pyTJ9XT7D1Jgqw6Z84cC9eNuWKd1o-yZPicKY0U9zn9jOL9RYgUd4eiTs7jSjnoEi0O_sagDlhKZY3u2iZc5tOijM6BEEGJ38eAE7gylQibYOn_w7L92_xmNmLky63JnTRZeND1M3RtZfD8gddiMGsrvOhrWmGwg9E_mYooVH5w6lMVwlse9xVJkaiz9KjpeV)](https://www.plantuml.com/plantuml/uml/ZSyzRiCm30NWtQUm3s1pyTJ9XT7D1Jgqw6Z84cC9eNuWKd1o-yZPicKY0U9zn9jOL9RYgUd4eiTs7jSjnoEi0O_sagDlhKZY3u2iZc5tOijM6BEEGJ38eAE7gylQibYOn_w7L92_xmNmLky63JnTRZeND1M3RtZfD8gddiMGsrvOhrWmGwg9E_mYooVH5w6lMVwlse9xVJkaiz9KjpeV)
 
 ### C4_green
 
@@ -270,7 +270,7 @@ C4_green_new is a modernized version of C4_green with rounded rectangles and all
 !theme C4_green_new from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
 ```
 
-[![new green theme sample - open link](https://www.plantuml.com/plantuml/svg/ZS-nZeCm30RWdQU01m0lJ3TnGhTnKeTM7L58N18r2L7iYFRjQxfrwsHBrl_P7eXLvX9yrR35WFNOpsj6Z7F4lRxbBTIMET4FG5PxjpgsPIc4MM-HCNAdjm1tbxKbjZ3sxScho9V_2V0XSuC6tYvLZOlQ5uDVU4cCuwQMs7YtVB114ME698add97ur_i_Zq6oT1LjmbNMTkbuQP1EwWi0)](https://www.plantuml.com/plantuml/uml/ZS-nZeCm30RWdQU01m0lJ3TnGhTnKeTM7L58N18r2L7iYFRjQxfrwsHBrl_P7eXLvX9yrR35WFNOpsj6Z7F4lRxbBTIMET4FG5PxjpgsPIc4MM-HCNAdjm1tbxKbjZ3sxScho9V_2V0XSuC6tYvLZOlQ5uDVU4cCuwQMs7YtVB114ME698add97ur_i_Zq6oT1LjmbNMTkbuQP1EwWi0)
+[![new green theme sample - open link](https://www.plantuml.com/plantuml/svg/fS-n3e90383XdQU01v0kJ4uOueQ9WyQHu54vubsvjBsWRs_r5PpQf7--fAteo9fZA2hr6B7icc5cH1e8j_B1QoozQf8z08zRFI_gypqBibj9aRHsQuJdmiwBUkYQtJcCfDTJ3_Yo-uGJ_5mfgeLSo1F-xIMBtt11qKC8ns0ugTmCwd6seaxVRrhRR7u0)](https://www.plantuml.com/plantuml/uml/fS-n3e90383XdQU01v0kJ4uOueQ9WyQHu54vubsvjBsWRs_r5PpQf7--fAteo9fZA2hr6B7icc5cH1e8j_B1QoozQf8z08zRFI_gypqBibj9aRHsQuJdmiwBUkYQtJcCfDTJ3_Yo-uGJ_5mfgeLSo1F-xIMBtt11qKC8ns0ugTmCwd6seaxVRrhRR7u0)
 
 ### C4_sandstone
 
@@ -323,7 +323,7 @@ C4_violet_new is a modernized version of C4_violet with rounded rectangles and a
 !theme C4_violet_new from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
 ```
 
-[![new violet theme sample - open link](https://www.plantuml.com/plantuml/svg/ZSuzJiKm3C3nlQTe3z1wwSHKLB4LYG74MAM9QIAS3yKEXTjZsDxsfaIo_ZzxOJ5LMgHk48yH-tNUlq8cb3tXrN_K77ilKlW1e9fhEeFuTZJ6QdCIJ3BP7E4pLEjPFApp-48coTlp1lYjSuSE_c7kXf0iDOTtUENFqAD65aVXk66ZOS4AHOiVU4MMHw8dmgWjlwksuQbhfw9vj-XFtry0)](https://www.plantuml.com/plantuml/uml/ZSuzJiKm3C3nlQTe3z1wwSHKLB4LYG74MAM9QIAS3yKEXTjZsDxsfaIo_ZzxOJ5LMgHk48yH-tNUlq8cb3tXrN_K77ilKlW1e9fhEeFuTZJ6QdCIJ3BP7E4pLEjPFApp-48coTlp1lYjSuSE_c7kXf0iDOTtUENFqAD65aVXk66ZOS4AHOiVU4MMHw8dmgWjlwksuQbhfw9vj-XFtry0)
+[![new violet theme sample - open link](https://www.plantuml.com/plantuml/svg/fSyzhi8m3C3nlQTe3_3gfTERYYgs8Z606AkIcYR2-L3iKBWzXYimsPB_-adkMUOinLFLY4MFzT1D3nS9PGgurRSSVMr54ly3v7bhLoUsN0jZDZ481cbDz71tsLWM2qFtTwGvoFam0Zxrlk02NvYhnWL3PS6VlQJn2qx8iYFQa-91-ABGYAiMRVgyq-kcymq0)](https://www.plantuml.com/plantuml/uml/fSyzhi8m3C3nlQTe3_3gfTERYYgs8Z606AkIcYR2-L3iKBWzXYimsPB_-adkMUOinLFLY4MFzT1D3nS9PGgurRSSVMr54ly3v7bhLoUsN0jZDZ481cbDz71tsLWM2qFtTwGvoFam0Zxrlk02NvYhnWL3PS6VlQJn2qx8iYFQa-91-ABGYAiMRVgyq-kcymq0)
 
 ## Matt Weagle themes
 
