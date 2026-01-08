@@ -15,10 +15,13 @@
 ' New C4 style automatically swaps font and background colors, but with those settings the component/node background would be black.
 ' Therefore the colors should be displayed unchanged (the init colors have to be swapped too).
 !$NEW_C4_USE_ORIGINAL_NODE_COLORS ?= 1
-!if (NEW_C4_STYLE == 1 && $NEW_C4_USE_ORIGINAL_NODE_COLORS == 1)
+!$nodeColorsSwappedAlready ?= 0
+!if (NEW_C4_STYLE == 1 && $NEW_C4_USE_ORIGINAL_NODE_COLORS == 1 && $nodeColorsSwappedAlready == 0)
   !$swap=$NODE_BG_COLOR
   !$NODE_BG_COLOR=$NODE_FONT_COLOR
   !$NODE_FONT_COLOR=$swap
+  ' don't swap them again below if C4_... included again
+  !$nodeColorsSwappedAlready=1
 !endif
 
 ' Labels
@@ -78,7 +81,7 @@ SetDefaultLegendEntries("person\nsystem\ncontainer\nexternal_person\nexternal_sy
   !if ($descr != "")
     !$nodeText = $nodeText + '\n\n' + $breakDescr($descr, $NODE_DESCR_MAX_CHAR_WIDTH)
   !endif
-  !return $nodeText 
+  !return $nodeText
 !endfunction
 
 !function $getNode_L($label, $type, $descr, $sprite)
@@ -93,7 +96,7 @@ SetDefaultLegendEntries("person\nsystem\ncontainer\nexternal_person\nexternal_sy
   !if ($descr != "")
     !$nodeText = $nodeText + '\l\l' + $breakDescr($descr, $NODE_DESCR_MAX_CHAR_WIDTH)
   !endif
-  !return $nodeText 
+  !return $nodeText
 !endfunction
 
 !function $getNode_R($label, $type, $descr, $sprite)
@@ -108,7 +111,7 @@ SetDefaultLegendEntries("person\nsystem\ncontainer\nexternal_person\nexternal_sy
   !if ($descr != "")
     !$nodeText = $nodeText + '\r\r' + $breakDescr($descr, $NODE_DESCR_MAX_CHAR_WIDTH)
   !endif
-  !return $nodeText 
+  !return $nodeText
 !endfunction
 
 !unquoted procedure Deployment_Node($alias, $label, $type="", $descr="", $sprite="", $tags="", $link="")
