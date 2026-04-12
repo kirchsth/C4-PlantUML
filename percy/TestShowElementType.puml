@@ -1,0 +1,25 @@
+@startuml
+
+!theme C4Language_japanese from <C4/themes>
+
+' convert it with additional command line argument -DRELATIVE_INCLUDE="./.." to use locally
+!if %variable_exists("RELATIVE_INCLUDE")
+  !include %get_variable_value("RELATIVE_INCLUDE")/C4_Container.puml
+!else
+  !include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
+!endif
+
+SHOW_ELEMENT_TYPE()
+
+Person(admin, "Administrator")
+System_Boundary(c1, 'Sample') {
+    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+}
+System(twitter, "Twitter")
+
+Rel(admin, web_app, "Uses", "HTTPS")
+Rel(web_app, twitter, "Gets tweets from", "HTTPS")
+
+' typically optional, only that text can be compared
+SHOW_LEGEND()
+@enduml

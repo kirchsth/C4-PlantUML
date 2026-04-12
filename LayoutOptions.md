@@ -8,6 +8,7 @@ C4-PlantUML comes with some layout options.
     - [Overall Guidance](#overall-guidance)
     - [Layout Practices](#layout-practices)
   - [LAYOUT_TOP_DOWN() or LAYOUT_LEFT_RIGHT() or LAYOUT_LANDSCAPE()](#layout_top_down-or-layout_left_right-or-layout_landscape)
+  - [SHOW_ELEMENT_TYPE(?hideStereotype)](#show_element_typehidestereotype)
   - [LAYOUT_WITH_LEGEND() or SHOW_LEGEND(?hideStereotype, ?details)](#layout_with_legend-or-show_legendhidestereotype-details)
   - [SHOW_FLOATING_LEGEND(?alias, ?hideStereotype, ?details) and LEGEND()](#show_floating_legendalias-hidestereotype-details-and-legend)
   - [LAYOUT_AS_SKETCH() and SET_SKETCH_STYLE(?bgColor, ?fontColor, ?warningColor, ?fontName, ?footerWarning, ?footerText)](#layout_as_sketch-and-set_sketch_stylebgcolor-fontcolor-warningcolor-fontname-footerwarning-footertext)
@@ -140,6 +141,32 @@ SHOW_LEGEND()
 ```
 
 [![LAYOUT_LANDSCAPE Sample - open link](https://www.plantuml.com/plantuml/svg/NO_DRjim48JlUWhMFKG6N0afUkefgcGa1yKHBAb1Jm8jRIAY_2785TIWwBjtQIks4Lw8-MOvixppo1rEIh8o-_NKDbsPxOewpwejgxco4g9FGlTo6e2DYDP_JrF7v-HLu3WT9W-kDnf1Oz8RbVuMhXyzZcd-xKibkSRsiKpX3_a330Ixd8QvqE0IIvLHzB4pNaTH1SuR7VD12RrXgopSmgFZQDng7TLl7a5rFyoa1-xUulvsmsvEgzwisT-8qJdNn3CSEcujvJp3WMNMIj5p54Ql2EMVDoohgsItRUY90_OrkMMFF_FWPLAQsRFmGy_GCFgUvJIY9ec2kbWp2qHm38K2ILsUTlktR1VZoQISPOpCQ0_o_LUNjLfFB-b-Q9ggfgamT7OlCVU0dYI4wyKPTVtalRJUh4YULKkIjVQA584KPjPNh0oiX1UyOll0zk9rn6NjhhMKpkgMMaFYaOMW8os81h7m47Ra9V4W5Xu2JyQUZ7Dy_V3qt9NR--skY4dUWHuc9Vy3 "LAYOUT_LANDSCAPE Sample")](https://www.plantuml.com/plantuml/uml/NO_DRjim48JlUWhMFKG6N0afUkefgcGa1yKHBAb1Jm8jRIAY_2785TIWwBjtQIks4Lw8-MOvixppo1rEIh8o-_NKDbsPxOewpwejgxco4g9FGlTo6e2DYDP_JrF7v-HLu3WT9W-kDnf1Oz8RbVuMhXyzZcd-xKibkSRsiKpX3_a330Ixd8QvqE0IIvLHzB4pNaTH1SuR7VD12RrXgopSmgFZQDng7TLl7a5rFyoa1-xUulvsmsvEgzwisT-8qJdNn3CSEcujvJp3WMNMIj5p54Ql2EMVDoohgsItRUY90_OrkMMFF_FWPLAQsRFmGy_GCFgUvJIY9ec2kbWp2qHm38K2ILsUTlktR1VZoQISPOpCQ0_o_LUNjLfFB-b-Q9ggfgamT7OlCVU0dYI4wyKPTVtalRJUh4YULKkIjVQA584KPjPNh0oiX1UyOll0zk9rn6NjhhMKpkgMMaFYaOMW8os81h7m47Ra9V4W5Xu2JyQUZ7Dy_V3qt9NR--skY4dUWHuc9Vy3)
+
+## SHOW_ELEMENT_TYPE(?hideStereotype)
+
+Instead of `<<stereotypes>>` is it also possible to show the element type in the technology section.
+This can be enabled with `SHOW_ELEMENT_TYPE()`.
+
+If you use the call `SHOW_LEGEND(false)` then the stereotypes remain visible.
+
+```plantuml
+@startuml SHOW_ELEMENT_TYPE Sample
+!include https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/C4_Container.puml
+
+SHOW_ELEMENT_TYPE()
+
+Person(admin, "Administrator")
+System_Boundary(c1, 'Sample') {
+    Container(web_app, "Web Application", "C#, ASP.NET Core 2.1 MVC", "Allows users to compare multiple Twitter timelines")
+}
+System(twitter, "Twitter")
+
+Rel(admin, web_app, "Uses", "HTTPS")
+Rel(web_app, twitter, "Gets tweets from", "HTTPS")
+@enduml
+```
+
+[![SHOW_ELEMENT_TYPE Sample - open link](https://www.plantuml.com/plantuml/svg/PL3DpjCm4BpxAPPoQ2gLH4MSE3L44Jsq9I8f5QV8JHPYuH_BtYXKY7TdevRsapvVLjwPtPdPRIGPQ3GQwjsNSrlkoqDvRDhcUrL2BOtNADues-cnHnY8VFoOPK5EwKz5mtWP8uREMK9BQUTCzak5ReWqPCM7TvMMbaw7VOQ_6U-nvsPRC5agYo7rh2d4Az5a9KI58JgRoDuekuP5FbSLAKXoOR4IzJKIclQJ6sqlmpNfDcjOthmkL_170B-7JZBXfPNUyvupNY3tNgjEad9smQtYxHhokagFPSCZ0U5zke73jsB6SgtT566E684SS3ulcM96JOgre9aK4GOWPL2pLcHlV-_k4hg1lETEOr1yHVq_rTFMAV8arrtJL3MpPj83VQxvZ1JvYtFv4PnvERBb-_8v_m40 "SHOW_ELEMENT_TYPE Sample")](https://www.plantuml.com/plantuml/uml/PL3DpjCm4BpxAPPoQ2gLH4MSE3L44Jsq9I8f5QV8JHPYuH_BtYXKY7TdevRsapvVLjwPtPdPRIGPQ3GQwjsNSrlkoqDvRDhcUrL2BOtNADues-cnHnY8VFoOPK5EwKz5mtWP8uREMK9BQUTCzak5ReWqPCM7TvMMbaw7VOQ_6U-nvsPRC5agYo7rh2d4Az5a9KI58JgRoDuekuP5FbSLAKXoOR4IzJKIclQJ6sqlmpNfDcjOthmkL_170B-7JZBXfPNUyvupNY3tNgjEad9smQtYxHhokagFPSCZ0U5zke73jsB6SgtT566E684SS3ulcM96JOgre9aK4GOWPL2pLcHlV-_k4hg1lETEOr1yHVq_rTFMAV8arrtJL3MpPj83VQxvZ1JvYtFv4PnvERBb-_8v_m40)
 
 ## LAYOUT_WITH_LEGEND() or SHOW_LEGEND(?hideStereotype, ?details)
 
