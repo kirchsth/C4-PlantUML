@@ -8,8 +8,8 @@
 
 LAYOUT_TOP_DOWN()
 
-!$img="img:https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/80px-Test-Logo.svg.png"
-!$imgSmall="img:https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/20px-Test-Logo.svg.png"
+!$img="img:https://plantuml.com/logo3.png{scale=1.0}"
+!$imgSmall="img:https://plantuml.com/logo3.png{scale=0.25}"
 
 ' SHOW_PERSON_OUTLINE()
 SHOW_PERSON_PORTRAIT()
