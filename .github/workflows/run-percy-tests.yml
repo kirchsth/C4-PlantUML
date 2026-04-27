@@ -14,12 +14,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
       - name: Setup Graphviz
-        uses: ts-graphviz/setup-graphviz@v2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+
       - name: Process diagrams
         uses: Timmy/plantuml-action@v1
         with:
           args: '-v percy -o _parsed -DRELATIVE_INCLUDE="./.."'
+
       - name: Upload
         run: npx @percy/cli upload percy/_parsed
         env:
