@@ -1,6 +1,11 @@
 @startuml
 
-!theme C4Language_japanese from <C4/themes>
+!if %variable_exists("RELATIVE_INCLUDE")
+'   language themes not working on build agent (percy tests)
+'   !theme C4Language_japanese from %get_variable_value("RELATIVE_INCLUDE")/themes
+!else
+  !theme C4Language_japanese from https://raw.githubusercontent.com/kirchsth/C4-PlantUML/extended/themes
+!endif
 
 ' convert it with additional command line argument -DRELATIVE_INCLUDE="./.." to use locally
 !if %variable_exists("RELATIVE_INCLUDE")
