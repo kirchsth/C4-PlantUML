@@ -8,7 +8,7 @@ C4-PlantUML comes with some layout options.
     - [Overall Guidance](#overall-guidance)
     - [Layout Practices](#layout-practices)
   - [LAYOUT_TOP_DOWN() or LAYOUT_LEFT_RIGHT() or LAYOUT_LANDSCAPE()](#layout_top_down-or-layout_left_right-or-layout_landscape)
-  - [SHOW_ELEMENT_TYPE(?hideStereotype)](#show_element_typehidestereotype)
+  - [SHOW_ELEMENT_TYPE(?hideStereotype, ?hidePersonType)](#show_element_typehidestereotype-hidepersontype)
   - [LAYOUT_WITH_LEGEND() or SHOW_LEGEND(?hideStereotype, ?details)](#layout_with_legend-or-show_legendhidestereotype-details)
   - [SHOW_FLOATING_LEGEND(?alias, ?hideStereotype, ?details) and LEGEND()](#show_floating_legendalias-hidestereotype-details-and-legend)
   - [LAYOUT_AS_SKETCH() and SET_SKETCH_STYLE(?bgColor, ?fontColor, ?warningColor, ?fontName, ?footerWarning, ?footerText)](#layout_as_sketch-and-set_sketch_stylebgcolor-fontcolor-warningcolor-fontname-footerwarning-footertext)
@@ -142,12 +142,14 @@ SHOW_LEGEND()
 
 [![LAYOUT_LANDSCAPE Sample - open link](https://www.plantuml.com/plantuml/svg/NO_DRjim48JlUWhMFKG6N0afUkefgcGa1yKHBAb1Jm8jRIAY_2785TIWwBjtQIks4Lw8-MOvixppo1rEIh8o-_NKDbsPxOewpwejgxco4g9FGlTo6e2DYDP_JrF7v-HLu3WT9W-kDnf1Oz8RbVuMhXyzZcd-xKibkSRsiKpX3_a330Ixd8QvqE0IIvLHzB4pNaTH1SuR7VD12RrXgopSmgFZQDng7TLl7a5rFyoa1-xUulvsmsvEgzwisT-8qJdNn3CSEcujvJp3WMNMIj5p54Ql2EMVDoohgsItRUY90_OrkMMFF_FWPLAQsRFmGy_GCFgUvJIY9ec2kbWp2qHm38K2ILsUTlktR1VZoQISPOpCQ0_o_LUNjLfFB-b-Q9ggfgamT7OlCVU0dYI4wyKPTVtalRJUh4YULKkIjVQA584KPjPNh0oiX1UyOll0zk9rn6NjhhMKpkgMMaFYaOMW8os81h7m47Ra9V4W5Xu2JyQUZ7Dy_V3qt9NR--skY4dUWHuc9Vy3 "LAYOUT_LANDSCAPE Sample")](https://www.plantuml.com/plantuml/uml/NO_DRjim48JlUWhMFKG6N0afUkefgcGa1yKHBAb1Jm8jRIAY_2785TIWwBjtQIks4Lw8-MOvixppo1rEIh8o-_NKDbsPxOewpwejgxco4g9FGlTo6e2DYDP_JrF7v-HLu3WT9W-kDnf1Oz8RbVuMhXyzZcd-xKibkSRsiKpX3_a330Ixd8QvqE0IIvLHzB4pNaTH1SuR7VD12RrXgopSmgFZQDng7TLl7a5rFyoa1-xUulvsmsvEgzwisT-8qJdNn3CSEcujvJp3WMNMIj5p54Ql2EMVDoohgsItRUY90_OrkMMFF_FWPLAQsRFmGy_GCFgUvJIY9ec2kbWp2qHm38K2ILsUTlktR1VZoQISPOpCQ0_o_LUNjLfFB-b-Q9ggfgamT7OlCVU0dYI4wyKPTVtalRJUh4YULKkIjVQA584KPjPNh0oiX1UyOll0zk9rn6NjhhMKpkgMMaFYaOMW8os81h7m47Ra9V4W5Xu2JyQUZ7Dy_V3qt9NR--skY4dUWHuc9Vy3)
 
-## SHOW_ELEMENT_TYPE(?hideStereotype)
+## SHOW_ELEMENT_TYPE(?hideStereotype, ?hidePersonType)
 
 Instead of `<<stereotypes>>` is it also possible to show the element type in the technology section.
 This can be enabled with `SHOW_ELEMENT_TYPE()`.
 
-If you use the call `SHOW_LEGEND(false)` then the stereotypes remain visible.
+If you use the call `SHOW_LEGEND(false)` then the stereotypes remain visible (`$hideStereotype` default is `true`).  
+If you use the call `SHOW_ELEMENT_TYPE($hidePersonType=false)` then all persons are displayed with element type too ´(`$hidePersonType` default is `true`).
+
 
 ```plantuml
 @startuml SHOW_ELEMENT_TYPE Sample

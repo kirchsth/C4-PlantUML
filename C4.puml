@@ -1599,9 +1599,13 @@ $getLegendArea($alias, $hideStereotype, $details)
 
 'SHOW_ELEMENT_TYPE() shows the element type as part of technology text (and typically hides stereotype too).
 !global $showElementTypeViaTech = %false()
-!unquoted procedure SHOW_ELEMENT_TYPE($hideStereotype="true")
+!global $showPersonTypeViaTech = %false()
+!unquoted procedure SHOW_ELEMENT_TYPE($hideStereotype="true", $hidePersonType="true")
   !global $showElementTypeViaTech = %true()
   $getHideStereotype($hideStereotype)
+  !if ($hidePersonType == "false" || $hidePersonType == %false())
+    !global $showPersonTypeViaTech = %true()
+  !endif
 !endprocedure
 
 !unquoted function $updateTechWithElementType($techn, $elementType)

@@ -201,7 +201,9 @@ skinparam participantRoundCorner $ROUNDED_BOX_SIZE
 !procedure $getParticipant($elementType, $alias, $label, $techn, $descr, $sprite, $tags, $link)
   !$sprite=$toElementArg($sprite, $tags, "ElementTagSprite", $elementType)
   !$techn=$toElementArg($techn, $tags, "ElementTagTechn", $elementType)
-  !$techn=$updateTechWithElementType($techn, $elementType)
+  !if ($elementType!="person" || $showPersonTypeViaTech == %true())
+    !$techn=$updateTechWithElementType($techn, $elementType)
+  !endif
   !$stereo = $toStereos($elementType,$tags)
   !$calcLabel = "== " + $breakNewLineLabel($label)
   !$calcTech = "//<size:" + $TECHN_FONT_SIZE + ">[" + $breakNewLineTechn($techn) + "]</size>//"
